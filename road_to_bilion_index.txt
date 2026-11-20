@@ -1,0 +1,2877 @@
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;ko&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot; /&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0, viewport-fit=cover&quot; /&gt;
+  &lt;title&gt;Road To Bilion — 나만의 갓생살기 &amp; 커리어 로드맵&lt;/title&gt;
+  &lt;meta name=&quot;application-name&quot; content=&quot;Road To Bilion&quot; /&gt;
+  &lt;meta name=&quot;apple-mobile-web-app-capable&quot; content=&quot;yes&quot; /&gt;
+  &lt;meta name=&quot;mobile-web-app-capable&quot; content=&quot;yes&quot; /&gt;
+  &lt;meta name=&quot;apple-mobile-web-app-status-bar-style&quot; content=&quot;black-translucent&quot; /&gt;
+  &lt;meta name=&quot;apple-mobile-web-app-title&quot; content=&quot;Road To Bilion&quot; /&gt;
+  &lt;meta id=&quot;meta-theme-color&quot; name=&quot;theme-color&quot; content=&quot;#4f46e5&quot; /&gt;
+  &lt;link rel=&quot;icon&quot; type=&quot;image/svg+xml&quot; href=&quot;data:image/svg+xml,%3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 180 180&#39;%3E%3Cdefs%3E%3ClinearGradient id=&#39;g&#39; x1=&#39;0&#39; y1=&#39;0&#39; x2=&#39;1&#39; y2=&#39;1&#39;%3E%3Cstop offset=&#39;0%25&#39; stop-color=&#39;%236366f1&#39;/%3E%3Cstop offset=&#39;100%25&#39; stop-color=&#39;%237c3aed&#39;/%3E%3C/linearGradient%3E%3C/defs%3E%3Rect width=&#39;180&#39; height=&#39;180&#39; rx=&#39;40&#39; fill=&#39;url(%23g)&#39;/%3E%3Cpath d=&#39;M36 122 L74 84 L100 106 L142 58&#39; fill=&#39;none&#39; stroke=&#39;white&#39; stroke-width=&#39;14&#39; stroke-linecap=&#39;round&#39; stroke-linejoin=&#39;round&#39;/%3E%3Cpath d=&#39;M114 58 L142 58 L142 86&#39; fill=&#39;none&#39; stroke=&#39;white&#39; stroke-width=&#39;14&#39; stroke-linecap=&#39;round&#39; stroke-linejoin=&#39;round&#39;/%3E%3C/svg%3E&quot; /&gt;
+  &lt;link id=&quot;apple-touch-icon-link&quot; rel=&quot;apple-touch-icon&quot; sizes=&quot;180x180&quot; href=&quot;&quot; /&gt;
+  &lt;link id=&quot;pwa-manifest-link&quot; rel=&quot;manifest&quot; href=&quot;&quot; /&gt;
+  &lt;script src=&quot;\[suspicious link removed\]&quot;&gt;&lt;/script&gt;
+  &lt;script src=&quot;https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js&quot;&gt;&lt;/script&gt;
+  &lt;script src=&quot;https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js&quot;&gt;&lt;/script&gt;
+  &lt;script src=&quot;https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js&quot;&gt;&lt;/script&gt;
+  &lt;link rel=&quot;preconnect&quot; href=&quot;https://fonts.googleapis.com&quot; /&gt;
+  &lt;link rel=&quot;preconnect&quot; href=&quot;https://fonts.gstatic.com&quot; crossorigin /&gt;
+  &lt;link href=&quot;https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Noto+Sans+KR:wght@400;500;600;700;800&amp;display=swap&quot; rel=&quot;stylesheet&quot; /&gt;
+  &lt;script&gt;
+    tailwind.config = {
+      darkMode: &#39;class&#39;,
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: [&#39;Inter&#39;, &#39;Noto Sans KR&#39;, &#39;system-ui&#39;, &#39;sans-serif&#39;],
+          },
+          colors: {
+            brand: {
+              50: &#39;#eef2ff&#39;,
+              100: &#39;#e0e7ff&#39;,
+              200: &#39;#c7d2fe&#39;,
+              400: &#39;#818cf8&#39;,
+              500: &#39;#6366f1&#39;,
+              600: &#39;#4f46e5&#39;,
+              700: &#39;#4338ca&#39;,
+            }
+          }
+        }
+      }
+    };
+  &lt;/script&gt;
+  &lt;style&gt;
+    body {
+      font-family: &#39;Inter&#39;, &#39;Noto Sans KR&#39;, -apple-system, BlinkMacSystemFont, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      word-break: keep-all;
+      overflow-wrap: break-word;
+      padding-top: env(safe-area-inset-top);
+      padding-bottom: env(safe-area-inset-bottom);
+    }
+    p, h1, h2, h3, h4, span, label, div {
+      overflow-wrap: break-word;
+    }
+    .progress-ring-circle {
+      transition: stroke-dashoffset 0.55s cubic-bezier(0.4, 0, 0.2, 1);
+      transform: rotate(-90deg);
+      transform-origin: 50% 50%;
+    }
+    .tab-panel {
+      display: none;
+    }
+    .tab-panel.active {
+      display: block;
+      animation: fadeSlide 0.22s ease-out;
+    }
+    @keyframes fadeSlide {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .toast-enter {
+      animation: toastIn 0.25s ease-out forwards;
+    }
+    @keyframes toastIn {
+      from { opacity: 0; transform: translateY(12px) scale(0.96); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    .custom-scroll::-webkit-scrollbar {
+      width: 6px;
+      height: 5px;
+    }
+    .custom-scroll::-webkit-scrollbar-thumb {
+      background: rgba(163, 163, 163, 0.35);
+      border-radius: 9999px;
+    }
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body class=&quot;bg-slate-50 text-slate-900 dark:bg-black dark:text-neutral-100 min-h-screen transition-colors duration-200 overflow-x-hidden&quot;&gt;
+
+  &lt;!-- Top Navigation Bar --&gt;
+  &lt;header class=&quot;sticky top-0 z-30 bg-white/90 dark:bg-black/90 backdrop-blur-md border-b border-slate-200/80 dark:border-neutral-800&quot;&gt;
+    &lt;div class=&quot;max-w-5xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-2 sm:gap-3&quot;&gt;
+      &lt;div class=&quot;flex items-center gap-2.5 min-w-0&quot;&gt;
+        &lt;div class=&quot;w-9 h-9 rounded-xl bg-gradient-to-br from-brand-500 to-violet-600 text-white flex items-center justify-center shadow-sm shrink-0&quot;&gt;
+          &lt;i data-lucide=&quot;trending-up&quot; class=&quot;w-5 h-5&quot;&gt;&lt;/i&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;min-w-0&quot;&gt;
+          &lt;h1 class=&quot;text-base sm:text-lg font-extrabold tracking-tight leading-tight&quot;&gt;Road To Bilion&lt;/h1&gt;
+          &lt;p id=&quot;header-date&quot; class=&quot;text-[11px] text-slate-500 dark:text-neutral-400 leading-tight&quot;&gt;&lt;/p&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+      <div class="flex items-center gap-1.5 sm:gap-2 shrink-0">
+        <div id="header-tier-pill" class="flex items-center gap-1 px-2.5 py-1.5 rounded-full border text-xs font-bold whitespace-nowrap">
+          <span id="header-tier-icon">🥉</span>
+          <span id="header-tier-name">브론즈</span>
+        </div>
+        <div class="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-amber-50 dark:bg-neutral-900 border border-amber-200/80 dark:border-neutral-700 text-amber-700 dark:text-amber-300 text-xs font-semibold whitespace-nowrap">
+          <i data-lucide="flame" class="w-3.5 h-3.5 text-amber-500"></i>
+          <span id="header-streak">1일 연속</span>
+        </div>
+        <div class="hidden md:flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-brand-50 dark:bg-neutral-900 border border-brand-200/70 dark:border-neutral-700 text-brand-700 dark:text-brand-300 text-xs font-semibold whitespace-nowrap">
+          <i data-lucide="award" class="w-3.5 h-3.5 text-brand-500"></i>
+          <span id="header-level">Lv.1</span>
+        </div>
+        <button id="btn-theme-toggle" type="button" aria-label="테마 전환" class="p-2 rounded-xl border border-slate-200 dark:border-neutral-800 bg-white dark:bg-neutral-950 hover:bg-slate-100 dark:hover:bg-neutral-900 transition">
+          <i id="icon-theme" data-lucide="moon" class="w-4 h-4 text-slate-600 dark:text-neutral-300"></i>
+        </button>
+        <button id="btn-open-settings" type="button" aria-label="설정 열기" class="p-2 rounded-xl border border-slate-200 dark:border-neutral-800 bg-white dark:bg-neutral-950 hover:bg-slate-100 dark:hover:bg-neutral-900 transition">
+          <i data-lucide="sliders-horizontal" class="w-4 h-4 text-slate-600 dark:text-neutral-300"></i>
+        </button>
+      </div>
+    </div>
+  &lt;/header&gt;
+
+  &lt;main class=&quot;max-w-5xl mx-auto px-4 sm:px-6 py-5 sm:py-6 space-y-5&quot;&gt;
+
+    <!-- First-Screen Daily Quote Spotlight Banner -->
+    <section class="relative overflow-hidden rounded-2xl bg-gradient-to-r from-indigo-600 via-brand-600 to-violet-600 dark:from-neutral-950 dark:via-neutral-900 dark:to-neutral-950 dark:border dark:border-neutral-800 text-white p-5 sm:p-6 shadow-md">
+      <div class="relative z-10 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div class="space-y-1.5 min-w-0 flex-1">
+          <div class="inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wider bg-white/15 dark:bg-white/10 px-2.5 py-1 rounded-full">
+            <i data-lucide="quote" class="w-3.5 h-3.5"></i>
+            <span>오늘의 갓생 명언</span>
+          </div>
+          <p id="daily-quote" class="text-base sm:text-lg font-bold leading-relaxed break-keep"></p>
+          <p id="daily-quote-author" class="text-xs sm:text-sm text-indigo-100/90 dark:text-neutral-400 font-medium break-keep"></p>
+        </div>
+        <button id="btn-next-quote" type="button" class="self-start sm:self-center shrink-0 inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-white/15 hover:bg-white/25 dark:bg-neutral-900 dark:hover:bg-neutral-800 border border-white/20 dark:border-neutral-700 text-xs font-semibold transition backdrop-blur-sm whitespace-nowrap">
+          <i data-lucide="refresh-cw" class="w-3.5 h-3.5"></i>
+          <span>다른 명언 보기</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- D-Day Countdown Strip -->
+    <section class="bg-white dark:bg-neutral-950 rounded-2xl border border-slate-200/80 dark:border-neutral-800 px-4 py-3.5 shadow-sm">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+        <div class="flex items-center gap-2 flex-wrap min-w-0 flex-1">
+          <span class="inline-flex items-center gap-1 text-xs font-extrabold text-rose-600 dark:text-rose-400 shrink-0 mr-1">
+            <i data-lucide="calendar-clock" class="w-4 h-4"></i>
+            <span>핵심 D-Day</span>
+          </span>
+          <div id="dday-list" class="flex items-center gap-2 flex-wrap"></div>
+        </div>
+        <button id="btn-open-dday" type="button" class="self-start sm:self-center shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-neutral-900 hover:bg-brand-50 dark:hover:bg-neutral-800 hover:text-brand-600 dark:hover:text-brand-300 border border-slate-200/70 dark:border-neutral-800 text-xs font-semibold transition whitespace-nowrap">
+          <i data-lucide="plus" class="w-3.5 h-3.5"></i>
+          <span>D-Day 추가</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- Hero Dashboard Summary -->
+    <section class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+      <!-- Left: Greeting + Tier System + XP -->
+      <div class="lg:col-span-2 bg-white dark:bg-neutral-950 rounded-2xl border border-slate-200/80 dark:border-neutral-800 p-5 sm:p-6 shadow-sm flex flex-col justify-between gap-4 min-w-0">
+        <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-4">
+          <div class="space-y-1.5 min-w-0 flex-1">
+            <div class="flex items-center gap-2 flex-wrap">
+              <span id="level-title" class="inline-flex items-center gap-1 text-xs font-semibold text-brand-600 dark:text-brand-300 bg-brand-50 dark:bg-neutral-900 dark:border dark:border-neutral-800 px-2.5 py-1 rounded-full">Lv.1 · 새싹 갓생러</span>
+              <span id="hero-tier-badge" class="inline-flex items-center gap-1 text-xs font-bold px-2.5 py-1 rounded-full border">🥉 브론즈 등급</span>
+            </div>
+            <h2 class="text-lg sm:text-2xl font-bold tracking-tight leading-snug break-keep">
+              <span id="greeting-name">갓생러</span>님, 오늘도 멋진 하루 만들어볼까요?
+            </h2>
+            <p id="user-motto" class="text-sm text-slate-500 dark:text-neutral-400 leading-relaxed break-keep">작은 루틴이 모여 단단한 나를 만든다.</p>
+          </div>
+
+          <!-- Progress Ring -->
+          <div class="flex items-center gap-3 self-start shrink-0 bg-slate-50 dark:bg-neutral-900 px-4 py-3 rounded-2xl border border-slate-200/70 dark:border-neutral-800">
+            <div class="relative w-16 h-16 shrink-0">
+              <svg class="w-16 h-16" viewBox="0 0 64 64">
+                <circle class="text-slate-200 dark:text-neutral-800" stroke-width="6" stroke="currentColor" fill="transparent" r="26" cx="32" cy="32"></circle>
+                <circle id="overall-progress-ring" class="progress-ring-circle text-brand-500" stroke-width="6" stroke-linecap="round" stroke="currentColor" fill="transparent" r="26" cx="32" cy="32" stroke-dasharray="163.36" stroke-dashoffset="163.36"></circle>
+              </svg>
+              <div class="absolute inset-0 flex items-center justify-center">
+                <span id="overall-progress-pct" class="text-sm font-extrabold">0%</span>
+              </div>
+            </div>
+            <div class="min-w-0">
+              <div class="text-xs font-medium text-slate-500 dark:text-neutral-400">오늘 종합 달성률</div>
+              <div id="overall-progress-count" class="text-sm font-bold mt-0.5">0 / 0 완료</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tier Progression Box (Bronze -> Challenger) -->
+        <div class="p-4 rounded-xl bg-slate-50 dark:bg-neutral-900 border border-slate-200/80 dark:border-neutral-800 space-y-3">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+            <div class="flex items-center gap-2 min-w-0">
+              <span id="tier-card-emoji" class="text-xl shrink-0">🥉</span>
+              <div class="min-w-0">
+                <div class="text-xs sm:text-sm font-bold leading-snug break-keep">
+                  현재 갓생 등급: <span id="tier-card-name" class="text-brand-600 dark:text-brand-400">브론즈</span>
+                  <span id="tier-combined-score" class="ml-1 text-xs font-extrabold text-slate-600 dark:text-neutral-300">(종합 0%)</span>
+                </div>
+                <div id="tier-score-breakdown" class="text-[11px] text-slate-500 dark:text-neutral-400 break-keep">루틴 달성률 0% · 한 달 목표 달성률 0%</div>
+              </div>
+            </div>
+            <span id="tier-next-hint" class="text-xs font-semibold text-brand-600 dark:text-brand-400 shrink-0">실버까지 20% 남음</span>
+          </div>
+
+          <!-- Combined Tier Progress Bar -->
+          <div class="w-full h-2.5 bg-slate-200 dark:bg-neutral-800 rounded-full overflow-hidden">
+            <div id="tier-bar-fill" class="h-full bg-gradient-to-r from-amber-500 via-brand-500 to-violet-500 rounded-full transition-all duration-500" style="width: 0%"></div>
+          </div>
+
+          <!-- 7-Tier Roadmap (responsive 4 cols mobile -> 7 cols sm+) -->
+          <div id="tier-roadmap" class="grid grid-cols-4 sm:grid-cols-7 gap-1.5 pt-0.5"></div>
+        </div>
+
+        <!-- XP Bar -->
+        <div class="space-y-1.5">
+          <div class="flex items-center justify-between gap-2 text-xs font-semibold flex-wrap">
+            <span class="text-slate-600 dark:text-neutral-300">경험치 <span id="xp-text" class="text-brand-600 dark:text-brand-400">0 / 100 XP</span></span>
+            <span id="xp-next-label" class="text-slate-400 dark:text-neutral-500">다음 레벨까지 100 XP</span>
+          </div>
+          <div class="w-full h-2 bg-slate-100 dark:bg-neutral-800 rounded-full overflow-hidden">
+            <div id="xp-bar-fill" class="h-full bg-gradient-to-r from-brand-500 to-violet-500 rounded-full transition-all duration-500" style="width: 0%"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Quick Metrics + Water Tracker -->
+      <div class="bg-white dark:bg-neutral-950 rounded-2xl border border-slate-200/80 dark:border-neutral-800 p-5 shadow-sm flex flex-col justify-between gap-4 min-w-0">
+        <div class="grid grid-cols-2 gap-3">
+          <div class="p-3.5 rounded-xl bg-emerald-50/80 dark:bg-neutral-900 border border-emerald-100 dark:border-neutral-800">
+            <div class="flex items-center gap-1.5 text-xs font-medium text-emerald-700 dark:text-emerald-400">
+              <i data-lucide="timer" class="w-3.5 h-3.5 shrink-0"></i>
+              <span>오늘 집중</span>
+            </div>
+            <div id="stat-focus-min" class="text-xl font-extrabold text-emerald-900 dark:text-neutral-100 mt-1">0분</div>
+          </div>
+          <div class="p-3.5 rounded-xl bg-amber-50/80 dark:bg-neutral-900 border border-amber-100 dark:border-neutral-800">
+            <div class="flex items-center gap-1.5 text-xs font-medium text-amber-700 dark:text-amber-400">
+              <i data-lucide="check-circle-2" class="w-3.5 h-3.5 shrink-0"></i>
+              <span>완료 루틴</span>
+            </div>
+            <div id="stat-routine-done" class="text-xl font-extrabold text-amber-900 dark:text-neutral-100 mt-1">0 / 7</div>
+          </div>
+          <div class="col-span-2 p-3.5 rounded-xl bg-violet-50/80 dark:bg-neutral-900 border border-violet-100 dark:border-neutral-800 flex items-center justify-between gap-2">
+            <div>
+              <div class="flex items-center gap-1.5 text-xs font-medium text-violet-700 dark:text-violet-300">
+                <i data-lucide="target" class="w-3.5 h-3.5 shrink-0"></i>
+                <span>이번 달 목표 달성률</span>
+              </div>
+              <div id="stat-monthly-pct" class="text-xl font-extrabold text-violet-900 dark:text-neutral-100 mt-0.5">0%</div>
+            </div>
+            <button id="btn-jump-monthly" type="button" class="text-xs font-semibold px-3 py-1.5 rounded-lg bg-violet-600 hover:bg-violet-700 text-white transition shrink-0 whitespace-nowrap">관리하기</button>
+          </div>
+        </div>
+
+        <!-- Water Tracker -->
+        <div class="p-4 rounded-xl bg-sky-50/70 dark:bg-neutral-900 border border-sky-100 dark:border-neutral-800 space-y-2.5">
+          <div class="flex items-center justify-between gap-2">
+            <div class="flex items-center gap-1.5 text-xs font-bold text-sky-700 dark:text-sky-400">
+              <i data-lucide="droplets" class="w-4 h-4 text-sky-500 shrink-0"></i>
+              <span>수분 섭취 트래커</span>
+            </div>
+            <span id="water-count-label" class="text-xs font-extrabold text-sky-700 dark:text-sky-300 shrink-0">0 / 8잔</span>
+          </div>
+          <div id="water-cups-grid" class="grid grid-cols-8 gap-1.5"></div>
+          <div class="flex items-center justify-between pt-1 gap-2">
+            <span class="text-[11px] text-sky-600/80 dark:text-neutral-400">컵을 클릭해 기록하세요</span>
+            <button id="btn-water-add" type="button" class="text-xs font-semibold px-2.5 py-1 rounded-lg bg-sky-500 hover:bg-sky-600 text-white transition shrink-0 whitespace-nowrap">+1잔</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Navigation Tabs (Zero-Overlap Clean Horizontal Bar) -->
+    <nav class="bg-white dark:bg-neutral-950 rounded-2xl border border-slate-200/80 dark:border-neutral-800 p-1.5 shadow-sm overflow-x-auto no-scrollbar" aria-label="주요 메뉴">
+      <div class="flex items-center gap-1.5 min-w-max lg:w-full lg:justify-between">
+        <button type="button" data-tab="routines" class="tab-btn shrink-0 whitespace-nowrap inline-flex items-center justify-center gap-1.5 px-3.5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition bg-brand-600 text-white shadow-sm">
+          <i data-lucide="sun" class="w-4 h-4 shrink-0"></i>
+          <span>오늘의 루틴</span>
+        </button>
+        <button type="button" data-tab="roadmaps" class="tab-btn shrink-0 whitespace-nowrap inline-flex items-center justify-center gap-1.5 px-3.5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition text-slate-600 dark:text-neutral-300 hover:bg-slate-100 dark:hover:bg-neutral-900">
+          <i data-lucide="map" class="w-4 h-4 shrink-0"></i>
+          <span>취업 로드맵</span>
+        </button>
+        <button type="button" data-tab="tips" class="tab-btn shrink-0 whitespace-nowrap inline-flex items-center justify-center gap-1.5 px-3.5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition text-slate-600 dark:text-neutral-300 hover:bg-slate-100 dark:hover:bg-neutral-900">
+          <i data-lucide="heart-pulse" class="w-4 h-4 shrink-0"></i>
+          <span>건강·생활 꿀팁</span>
+        </button>
+        <button type="button" data-tab="monthly" class="tab-btn shrink-0 whitespace-nowrap inline-flex items-center justify-center gap-1.5 px-3.5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition text-slate-600 dark:text-neutral-300 hover:bg-slate-100 dark:hover:bg-neutral-900">
+          <i data-lucide="target" class="w-4 h-4 shrink-0"></i>
+          <span>한 달 목표</span>
+        </button>
+        <button type="button" data-tab="focus" class="tab-btn shrink-0 whitespace-nowrap inline-flex items-center justify-center gap-1.5 px-3.5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition text-slate-600 dark:text-neutral-300 hover:bg-slate-100 dark:hover:bg-neutral-900">
+          <i data-lucide="clock" class="w-4 h-4 shrink-0"></i>
+          <span>집중 타이머</span>
+        </button>
+        <button type="button" data-tab="todos" class="tab-btn shrink-0 whitespace-nowrap inline-flex items-center justify-center gap-1.5 px-3.5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition text-slate-600 dark:text-neutral-300 hover:bg-slate-100 dark:hover:bg-neutral-900">
+          <i data-lucide="list-checks" class="w-4 h-4 shrink-0"></i>
+          <span>할 일</span>
+        </button>
+        <button type="button" data-tab="journal" class="tab-btn shrink-0 whitespace-nowrap inline-flex items-center justify-center gap-1.5 px-3.5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition text-slate-600 dark:text-neutral-300 hover:bg-slate-100 dark:hover:bg-neutral-900">
+          <i data-lucide="bar-chart-3" class="w-4 h-4 shrink-0"></i>
+          <span>회고·통계</span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- TAB 1: ROUTINES -->
+    <section id="panel-routines" class="tab-panel active space-y-4">
+      <div class="bg-white dark:bg-neutral-950 rounded-2xl border border-slate-200/80 dark:border-neutral-800 p-5 shadow-sm space-y-4">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+          <div class="flex items-center gap-1.5 flex-wrap">
+            <button type="button" data-time-filter="all" class="time-filter-btn px-3 py-1.5 rounded-full text-xs font-semibold bg-slate-900 text-white dark:bg-white dark:text-black transition whitespace-nowrap">전체</button>
+            <button type="button" data-time-filter="morning" class="time-filter-btn px-3 py-1.5 rounded-full text-xs font-semibold bg-slate-100 dark:bg-neutral-900 text-slate-600 dark:text-neutral-300 hover:bg-slate-200 dark:hover:bg-neutral-800 transition whitespace-nowrap">🌅 아침</button>
+            <button type="button" data-time-filter="afternoon" class="time-filter-btn px-3 py-1.5 rounded-full text-xs font-semibold bg-slate-100 dark:bg-neutral-900 text-slate-600 dark:text-neutral-300 hover:bg-slate-200 dark:hover:bg-neutral-800 transition whitespace-nowrap">☀️ 오후</button>
+            <button type="button" data-time-filter="evening" class="time-filter-btn px-3 py-1.5 rounded-full text-xs font-semibold bg-slate-100 dark:bg-neutral-900 text-slate-600 dark:text-neutral-300 hover:bg-slate-200 dark:hover:bg-neutral-800 transition whitespace-nowrap">🌙 저녁</button>
+          </div>
+          <button id="btn-reset-routines" type="button" class="self-start sm:self-auto text-xs font-medium text-slate-500 hover:text-rose-600 dark:text-neutral-400 dark:hover:text-rose-400 flex items-center gap-1 px-2.5 py-1.5 rounded-lg hover:bg-rose-50 dark:hover:bg-neutral-900 transition whitespace-nowrap">
+            <i data-lucide="rotate-ccw" class="w-3.5 h-3.5"></i>
+            <span>오늘 체크 초기화</span>
+          </button>
+        </div>
+
+        <!-- Add Routine Form -->
+        <form id="form-add-routine" class="flex flex-col sm:flex-row gap-2">
+          <input id="input-routine-title" type="text" placeholder="새 갓생 루틴 입력 (예: 아침 7시 기상, 경제신문 15분 읽기)" class="flex-1 min-w-0 px-3.5 py-2.5 rounded-xl border border-slate-200 dark:border-neutral-800 bg-slate-50 dark:bg-neutral-900 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500" required />
+          <div class="flex gap-2">
+            <select id="select-routine-time" aria-label="시간대 선택" class="px-3 py-2.5 rounded-xl border border-slate-200 dark:border-neutral-800 bg-slate-50 dark:bg-neutral-900 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500">
+              <option value="morning">🌅 아침</option>
+              <option value="afternoon">☀️ 오후</option>
+              <option value="evening">🌙 저녁</option>
+            </select>
+            <button type="submit" class="px-4 py-2.5 rounded-xl bg-brand-600 hover:bg-brand-700 text-white text-sm font-semibold flex items-center gap-1.5 shrink-0 transition shadow-sm whitespace-nowrap">
+              <i data-lucide="plus" class="w-4 h-4"></i>
+              <span>추가</span>
+            </button>
+          </div>
+        </form>
+
+        <!-- Routine List -->
+        <div id="routine-list" class="space-y-2.5"></div>
+      </div>
+    </section>
+
+    <!-- TAB 2: CAREER ROADMAPS (SECURITIES / BANK) -->
+    <section id="panel-roadmaps" class="tab-panel space-y-4">
+      <!-- Category Selector Cards -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+        <button type="button" data-roadmap-cat="securities" class="roadmap-cat-btn text-left p-4 rounded-2xl border-2 border-emerald-500 bg-emerald-50/70 dark:bg-neutral-950 shadow-sm transition space-y-2">
+          <div class="flex items-center justify-between gap-2">
+            <span class="text-sm font-extrabold text-emerald-700 dark:text-emerald-400">📈 증권사 입사 로드맵</span>
+            <span id="rm-pct-securities" class="text-xs font-extrabold px-2 py-0.5 rounded-full bg-white dark:bg-neutral-900 text-emerald-600 dark:text-emerald-400 shrink-0">0%</span>
+          </div>
+          <p class="text-xs text-slate-600 dark:text-neutral-400 leading-relaxed break-keep">투운사·자문인력·리서치 리포트·재무모델링·RA/IB·WM</p>
+          <div class="w-full h-1.5 bg-white/80 dark:bg-neutral-800 rounded-full overflow-hidden">
+            <div id="rm-bar-securities" class="h-full bg-emerald-500 rounded-full transition-all duration-500" style="width: 0%"></div>
+          </div>
+        </button>
+
+        <button type="button" data-roadmap-cat="bank" class="roadmap-cat-btn text-left p-4 rounded-2xl border border-slate-200 dark:border-neutral-800 bg-white dark:bg-neutral-950 hover:border-sky-400 dark:hover:border-sky-600 shadow-sm transition space-y-2">
+          <div class="flex items-center justify-between gap-2">
+            <span class="text-sm font-extrabold text-slate-800 dark:text-neutral-100">🏦 은행권 입사 로드맵</span>
+            <span id="rm-pct-bank" class="text-xs font-extrabold px-2 py-0.5 rounded-full bg-slate-100 dark:bg-neutral-900 text-sky-600 dark:text-sky-400 shrink-0">0%</span>
+          </div>
+          <p class="text-xs text-slate-500 dark:text-neutral-400 leading-relaxed break-keep">신분사·AFPK·외환·NCS·디지털·영업점/슈퍼앱 분석</p>
+          <div class="w-full h-1.5 bg-slate-100 dark:bg-neutral-800 rounded-full overflow-hidden">
+            <div id="rm-bar-bank" class="h-full bg-sky-500 rounded-full transition-all duration-500" style="width: 0%"></div>
+          </div>
+        </button>
+      </div>
+
+      <!-- Active Roadmap Detail Panel -->
+      <div class="bg-white dark:bg-neutral-950 rounded-2xl border border-slate-200/80 dark:border-neutral-800 p-5 shadow-sm space-y-5">
+        <div id="roadmap-overview-box" class="p-4 rounded-xl bg-slate-50 dark:bg-neutral-900 border border-slate-200/80 dark:border-neutral-800 space-y-2.5"></div>
+
+        <form id="form-add-roadmap-item" class="flex flex-col sm:flex-row gap-2">
+          <input id="input-roadmap-title" type="text" placeholder="이 로드맵에 나만의 세부 항목을 추가해보세요" class="flex-1 min-w-0 px-3.5 py-2.5 rounded-xl border border-slate-200 dark:border-neutral-800 bg-slate-50 dark:bg-neutral-900 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500" required />
+          <div class="flex gap-2">
+            <select id="select-roadmap-phase" aria-label="단계 선택" class="px-3 py-2.5 rounded-xl border border-slate-200 dark:border-neutral-800 bg-slate-50 dark:bg-neutral-900 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500">
+              <option value="0">1단계</option>
+              <option value="1">2단계</option>
+              <option value="2">3단계</option>
+              <option value="3">4단계</option>
+            </select>
+            <button type="submit" class="px-4 py-2.5 rounded-xl bg-brand-600 hover:bg-brand-700 text-white text-sm font-semibold flex items-center gap-1.5 shrink-0 transition shadow-sm whitespace-nowrap">
+              <i data-lucide="plus" class="w-4 h-4"></i>
+              <span>항목 추가</span>
+            </button>
+          </div>
+        </form>
+
+        <div id="roadmap-phases-container" class="space-y-4"></div>
+      </div>
+    </section>
+
+    <!-- TAB 3: LIFE & HEALTH TIPS (36 CURATED TIPS) -->
+    <section id="panel-tips" class="tab-panel space-y-4">
+      <div class="bg-white dark:bg-neutral-950 rounded-2xl border border-slate-200/80 dark:border-neutral-800 p-5 shadow-sm space-y-4">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+          <div class="min-w-0">
+            <h3 class="text-base font-extrabold flex items-center gap-2">
+              <i data-lucide="heart-pulse" class="w-4 h-4 text-rose-500 shrink-0"></i>
+              <span>생활 & 건강 갓생 꿀팁 백과 (36선)</span>
+            </h3>
+            <p class="text-xs text-slate-500 dark:text-neutral-400 leading-relaxed break-keep mt-0.5">마음에 드는 꿀팁은 별표로 저장하거나 버튼 한 번으로 오늘의 루틴에 바로 추가해 실천해 보세요.</p>
+          </div>
+          <button id="btn-random-tip" type="button" class="self-start sm:self-center shrink-0 inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-brand-600 hover:bg-brand-700 text-white text-xs font-bold transition shadow-sm whitespace-nowrap">
+            <i data-lucide="shuffle" class="w-3.5 h-3.5"></i>
+            <span>오늘의 랜덤 꿀팁</span>
+          </button>
+        </div>
+
+        <div id="random-tip-banner" class="hidden p-4 rounded-xl bg-brand-50 dark:bg-neutral-900 border border-brand-200 dark:border-brand-800/70 space-y-1.5">
+          <div class="flex items-center justify-between gap-2">
+            <span class="text-[11px] font-bold text-brand-700 dark:text-brand-300">✨ 오늘의 추천 꿀팁</span>
+            <button id="btn-close-random-tip" type="button" aria-label="추천 꿀팁 닫기" class="text-slate-400 hover:text-slate-600 dark:hover:text-neutral-200">
+              <i data-lucide="x" class="w-3.5 h-3.5"></i>
+            </button>
+          </div>
+          <div id="random-tip-title" class="text-sm font-extrabold break-keep"></div>
+          <p id="random-tip-desc" class="text-xs text-slate-600 dark:text-neutral-300 leading-relaxed break-keep"></p>
+        </div>
+
+        <div class="space-y-3">
+          <div class="relative">
+            <i data-lucide="search" class="w-4 h-4 text-slate-400 dark:text-neutral-500 absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none"></i>
+            <input id="input-tip-search" type="text" placeholder="궁금한 키워드로 꿀팁 검색 (예: 수면, 혈당, 거북목, 집중, 절약)" class="w-full pl-10 pr-4 py-2.5 rounded-xl border border-slate-200 dark:border-neutral-800 bg-slate-50 dark:bg-neutral-900 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500" />
+          </div>
+
+          <div id="tip-category-filters" class="flex items-center gap-1.5 flex-wrap">
+            <button type="button" data-tip-cat="all" class="tip-cat-btn px-3 py-1.5 rounded-full text-xs font-semibold bg-slate-900 text-white dark:bg-white dark:text-black transition whitespace-nowrap">전체 (36)</button>
+            <button type="button" data-tip-cat="bookmarked" class="tip-cat-btn px-3 py-1.5 rounded-full text-xs font-semibold bg-slate-100 dark:bg-neutral-900 text-slate-600 dark:text-neutral-300 hover:bg-slate-200 dark:hover:bg-neutral-800 transition whitespace-nowrap">⭐ 북마크</button>
+            <button type="button" data-tip-cat="sleep" class="tip-cat-btn px-3 py-1.5 rounded-full text-xs font-semibold bg-slate-100 dark:bg-neutral-900 text-slate-600 dark:text-neutral-300 hover:bg-slate-200 dark:hover:bg-neutral-800 transition whitespace-nowrap">🌙 수면·기상</button>
+            <button type="button" data-tip-cat="diet" class="tip-cat-btn px-3 py-1.5 rounded-full text-xs font-semibold bg-slate-100 dark:bg-neutral-900 text-slate-600 dark:text-neutral-300 hover:bg-slate-200 dark:hover:bg-neutral-800 transition whitespace-nowrap">🥗 식단·수분</button>
+            <button type="button" data-tip-cat="fitness" class="tip-cat-btn px-3 py-1.5 rounded-full text-xs font-semibold bg-slate-100 dark:bg-neutral-900 text-slate-600 dark:text-neutral-300 hover:bg-slate-200 dark:hover:bg-neutral-800 transition whitespace-nowrap">💪 운동·자세</button>
+            <button type="button" data-tip-cat="mental" class="tip-cat-btn px-3 py-1.5 rounded-full text-xs font-semibold bg-slate-100 dark:bg-neutral-900 text-slate-600 dark:text-neutral-300 hover:bg-slate-200 dark:hover:bg-neutral-800 transition whitespace-nowrap">🧠 집중·멘탈</button>
+            <button type="button" data-tip-cat="life" class="tip-cat-btn px-3 py-1.5 rounded-full text-xs font-semibold bg-slate-100 dark:bg-neutral-900 text-slate-600 dark:text-neutral-300 hover:bg-slate-200 dark:hover:bg-neutral-800 transition whitespace-nowrap">🏠 생활·정리</button>
+            <button type="button" data-tip-cat="money" class="tip-cat-btn px-3 py-1.5 rounded-full text-xs font-semibold bg-slate-100 dark:bg-neutral-900 text-slate-600 dark:text-neutral-300 hover:bg-slate-200 dark:hover:bg-neutral-800 transition whitespace-nowrap">💰 절약·루틴</button>
+          </div>
+        </div>
+
+        <div class="flex items-center justify-between text-xs text-slate-500 dark:text-neutral-400">
+          <span id="tips-count-label">총 36개의 꿀팁</span>
+          <span id="tips-bookmark-count">북마크 0개</span>
+        </div>
+
+        <div id="tips-grid" class="grid grid-cols-1 md:grid-cols-2 gap-3"></div>
+      </div>
+    </section>
+
+    <!-- TAB 4: MONTHLY GOALS -->
+    <section id="panel-monthly" class="tab-panel space-y-4">
+      <div class="bg-white dark:bg-neutral-950 rounded-2xl border border-slate-200/80 dark:border-neutral-800 p-5 shadow-sm space-y-4">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+          <div class="min-w-0">
+            <h3 id="monthly-heading" class="text-base font-bold break-keep">이번 달 핵심 목표</h3>
+            <p class="text-xs text-slate-500 dark:text-neutral-400 leading-relaxed break-keep">한 달 목표 달성률과 오늘 루틴 달성률을 합산해 브론즈부터 챌린저까지 등급이 올라갑니다.</p>
+          </div>
+          <span id="monthly-avg-pill" class="self-start sm:self-center text-xs font-extrabold px-3 py-1.5 rounded-full bg-violet-50 dark:bg-neutral-900 text-violet-700 dark:text-violet-300 dark:border dark:border-neutral-800 shrink-0 whitespace-nowrap">평균 달성률 0%</span>
+        </div>
+
+        <form id="form-add-monthly" class="flex flex-col sm:flex-row gap-2">
+          <input id="input-monthly-title" type="text" placeholder="이번 달에 꼭 이루고 싶은 목표를 입력하세요 (예: 러닝 30km 달성)" class="flex-1 min-w-0 px-3.5 py-2.5 rounded-xl border border-slate-200 dark:border-neutral-800 bg-slate-50 dark:bg-neutral-900 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500" required />
+          <div class="flex gap-2">
+            <select id="select-monthly-category" aria-label="목표 분야" class="px-3 py-2.5 rounded-xl border border-slate-200 dark:border-neutral-800 bg-slate-50 dark:bg-neutral-900 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500">
+              <option value="성장/공부">📚 성장/공부</option>
+              <option value="운동/건강">💪 운동/건강</option>
+              <option value="커리어/재테크">💼 커리어/재테크</option>
+              <option value="취미/생활">🌿 취미/생활</option>
+            </select>
+            <button type="submit" class="px-4 py-2.5 rounded-xl bg-brand-600 hover:bg-brand-700 text-white text-sm font-semibold flex items-center gap-1.5 shrink-0 transition shadow-sm whitespace-nowrap">
+              <i data-lucide="plus" class="w-4 h-4"></i>
+              <span>목표 추가</span>
+            </button>
+          </div>
+        </form>
+
+        <div id="monthly-goal-list" class="space-y-3"></div>
+      </div>
+
+      <div class="bg-white dark:bg-neutral-950 rounded-2xl border border-slate-200/80 dark:border-neutral-800 p-5 shadow-sm space-y-3">
+        <div class="flex items-center justify-between gap-2">
+          <h3 class="text-sm font-bold flex items-center gap-1.5">
+            <i data-lucide="trophy" class="w-4 h-4 text-amber-500 shrink-0"></i>
+            <span>갓생 등급 승급 기준 (루틴 + 한 달 목표 종합 달성률)</span>
+          </h3>
+        </div>
+        <div id="tier-guide-grid" class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-2"></div>
+      </div>
+    </section>
+
+    <!-- TAB 5: FOCUS TIMER (WITH CUSTOM MINUTES & AMBIENT BROWN NOISE) -->
+    <section id="panel-focus" class="tab-panel space-y-4">
+      <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
+        <div class="md:col-span-3 bg-white dark:bg-neutral-950 rounded-2xl border border-slate-200/80 dark:border-neutral-800 p-6 shadow-sm flex flex-col items-center text-center space-y-5">
+          <div class="flex items-center justify-center gap-1.5 flex-wrap">
+            <button type="button" data-timer-min="25" data-timer-label="집중 25분" class="timer-preset-btn px-3 py-1.5 rounded-full text-xs font-semibold bg-brand-600 text-white transition whitespace-nowrap">집중 25분</button>
+            <button type="button" data-timer-min="50" data-timer-label="딥워크 50분" class="timer-preset-btn px-3 py-1.5 rounded-full text-xs font-semibold bg-slate-100 dark:bg-neutral-900 text-slate-600 dark:text-neutral-300 hover:bg-slate-200 dark:hover:bg-neutral-800 transition whitespace-nowrap">딥워크 50분</button>
+            <button type="button" data-timer-min="5" data-timer-label="짧은 휴식 5분" class="timer-preset-btn px-3 py-1.5 rounded-full text-xs font-semibold bg-slate-100 dark:bg-neutral-900 text-slate-600 dark:text-neutral-300 hover:bg-slate-200 dark:hover:bg-neutral-800 transition whitespace-nowrap">휴식 5분</button>
+            <button type="button" data-timer-min="15" data-timer-label="긴 휴식 15분" class="timer-preset-btn px-3 py-1.5 rounded-full text-xs font-semibold bg-slate-100 dark:bg-neutral-900 text-slate-600 dark:text-neutral-300 hover:bg-slate-200 dark:hover:bg-neutral-800 transition whitespace-nowrap">휴식 15분</button>
+          </div>
+
+          <!-- Custom Minutes & Focus Task -->
+          <div class="w-full max-w-sm flex flex-col sm:flex-row gap-2">
+            <input id="input-focus-task" type="text" placeholder="지금 집중할 목표 (선택)" class="flex-1 min-w-0 text-center sm:text-left px-3 py-2 rounded-xl border border-slate-200 dark:border-neutral-800 bg-slate-50 dark:bg-neutral-900 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500" />
+            <div class="flex items-center justify-center gap-1 shrink-0">
+              <input id="input-custom-min" type="number" min="1" max="180" value="25" aria-label="직접 분 입력" class="w-16 text-center px-2 py-2 rounded-xl border border-slate-200 dark:border-neutral-800 bg-slate-50 dark:bg-neutral-900 text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-brand-500" />
+              <button id="btn-apply-custom-min" type="button" class="px-3 py-2 rounded-xl bg-slate-100 dark:bg-neutral-900 hover:bg-slate-200 dark:hover:bg-neutral-800 border border-slate-200 dark:border-neutral-800 text-xs font-semibold transition whitespace-nowrap">분 적용</button>
+            </div>
+          </div>
+
+          <!-- Radial Timer -->
+          <div class="relative w-52 h-52 flex items-center justify-center">
+            <svg class="w-52 h-52" viewBox="0 0 200 200">
+              <circle class="text-slate-100 dark:text-neutral-800" stroke-width="10" stroke="currentColor" fill="transparent" r="86" cx="100" cy="100"></circle>
+              <circle id="timer-ring" class="progress-ring-circle text-brand-500" stroke-width="10" stroke-linecap="round" stroke="currentColor" fill="transparent" r="86" cx="100" cy="100" stroke-dasharray="540.35" stroke-dashoffset="0"></circle>
+            </svg>
+            <div class="absolute inset-0 flex flex-col items-center justify-center">
+              <span id="timer-mode-badge" class="text-xs font-semibold text-brand-600 dark:text-brand-400 mb-1">집중 25분</span>
+              <span id="timer-display" class="text-4xl sm:text-5xl font-extrabold tracking-tight tabular-nums">25:00</span>
+            </div>
+          </div>
+
+          <!-- Timer Controls -->
+          <div class="flex items-center justify-center gap-2 flex-wrap">
+            <button id="btn-timer-toggle" type="button" class="px-6 py-2.5 rounded-xl bg-brand-600 hover:bg-brand-700 text-white text-sm font-bold flex items-center gap-2 shadow-sm transition whitespace-nowrap">
+              <i id="icon-timer-toggle" data-lucide="play" class="w-4 h-4"></i>
+              <span id="label-timer-toggle">집중 시작</span>
+            </button>
+            <button id="btn-timer-reset" type="button" class="px-3.5 py-2.5 rounded-xl border border-slate-200 dark:border-neutral-800 bg-white dark:bg-neutral-900 hover:bg-slate-100 dark:hover:bg-neutral-800 text-sm font-semibold flex items-center gap-1.5 transition whitespace-nowrap">
+              <i data-lucide="rotate-ccw" class="w-4 h-4"></i>
+              <span>초기화</span>
+            </button>
+            <button id="btn-ambient-toggle" type="button" class="px-3.5 py-2.5 rounded-xl border border-slate-200 dark:border-neutral-800 bg-white dark:bg-neutral-900 hover:bg-slate-100 dark:hover:bg-neutral-800 text-xs font-semibold flex items-center gap-1.5 transition whitespace-nowrap" title="부드러운 집중 백색소음">
+              <i id="icon-ambient" data-lucide="headphones" class="w-4 h-4 text-slate-600 dark:text-neutral-300"></i>
+              <span id="label-ambient">백색소음 OFF</span>
+            </button>
+            <button id="btn-sound-toggle" type="button" aria-label="알림음 켜기/끄기" class="p-2.5 rounded-xl border border-slate-200 dark:border-neutral-800 bg-white dark:bg-neutral-900 hover:bg-slate-100 dark:hover:bg-neutral-800 transition" title="완료 알림음">
+              <i id="icon-sound" data-lucide="volume-2" class="w-4 h-4 text-slate-600 dark:text-neutral-300"></i>
+            </button>
+          </div>
+
+          <button id="btn-quick-log-focus" type="button" class="text-xs font-semibold text-emerald-600 dark:text-emerald-400 hover:underline flex items-center gap-1">
+            <i data-lucide="check-circle" class="w-3.5 h-3.5"></i>
+            <span>방금 집중한 세션 바로 완료 기록하기 (+30 XP)</span>
+          </button>
+        </div>
+
+        <!-- Focus Log Card -->
+        <div class="md:col-span-2 bg-white dark:bg-neutral-950 rounded-2xl border border-slate-200/80 dark:border-neutral-800 p-5 shadow-sm flex flex-col">
+          <div class="flex items-center justify-between mb-3">
+            <h3 class="text-sm font-bold flex items-center gap-1.5">
+              <i data-lucide="history" class="w-4 h-4 text-brand-500"></i>
+              <span>오늘의 집중 기록</span>
+            </h3>
+            <span id="focus-session-count" class="text-xs font-semibold text-slate-500 dark:text-neutral-400">0세션</span>
+          </div>
+          <div id="focus-log-list" class="flex-1 space-y-2 overflow-y-auto max-h-80 custom-scroll"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 6: TODOS & TOP 3 -->
+    <section id="panel-todos" class="tab-panel space-y-4">
+      <div class="bg-white dark:bg-neutral-950 rounded-2xl border border-slate-200/80 dark:border-neutral-800 p-5 shadow-sm space-y-4">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+          <div class="min-w-0">
+            <h3 class="text-base font-bold">오늘의 할 일 & 핵심 목표</h3>
+            <p class="text-xs text-slate-500 dark:text-neutral-400 leading-relaxed break-keep">별표(★)를 눌러 오늘 반드시 끝낼 핵심 목표를 상단에 고정하세요.</p>
+          </div>
+          <div class="flex items-center gap-1.5 shrink-0">
+            <button type="button" data-todo-filter="all" class="todo-filter-btn px-3 py-1.5 rounded-full text-xs font-semibold bg-slate-900 text-white dark:bg-white dark:text-black transition whitespace-nowrap">전체</button>
+            <button type="button" data-todo-filter="active" class="todo-filter-btn px-3 py-1.5 rounded-full text-xs font-semibold bg-slate-100 dark:bg-neutral-900 text-slate-600 dark:text-neutral-300 transition whitespace-nowrap">진행 중</button>
+            <button type="button" data-todo-filter="done" class="todo-filter-btn px-3 py-1.5 rounded-full text-xs font-semibold bg-slate-100 dark:bg-neutral-900 text-slate-600 dark:text-neutral-300 transition whitespace-nowrap">완료</button>
+          </div>
+        </div>
+
+        <form id="form-add-todo" class="flex flex-col sm:flex-row gap-2">
+          <input id="input-todo-title" type="text" placeholder="오늘 끝낼 할 일을 입력하세요" class="flex-1 min-w-0 px-3.5 py-2.5 rounded-xl border border-slate-200 dark:border-neutral-800 bg-slate-50 dark:bg-neutral-900 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500" required />
+          <div class="flex gap-2">
+            <select id="select-todo-tag" aria-label="카테고리" class="px-3 py-2.5 rounded-xl border border-slate-200 dark:border-neutral-800 bg-slate-50 dark:bg-neutral-900 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500">
+              <option value="자기계발">📚 자기계발</option>
+              <option value="업무/공부">💻 업무/공부</option>
+              <option value="운동/건강">💪 운동/건강</option>
+              <option value="생활">🌿 생활</option>
+            </select>
+            <button type="submit" class="px-4 py-2.5 rounded-xl bg-brand-600 hover:bg-brand-700 text-white text-sm font-semibold flex items-center gap-1.5 shrink-0 transition shadow-sm whitespace-nowrap">
+              <i data-lucide="plus" class="w-4 h-4"></i>
+              <span>추가</span>
+            </button>
+          </div>
+        </form>
+
+        <div id="todo-list" class="space-y-2.5"></div>
+      </div>
+    </section>
+
+    <!-- TAB 7: JOURNAL, HEATMAP, ACHIEVEMENTS & ANALYTICS -->
+    <section id="panel-journal" class="tab-panel space-y-4">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+        <!-- Monthly Heatmap Calendar (Grass) -->
+        <div class="bg-white dark:bg-neutral-950 rounded-2xl border border-slate-200/80 dark:border-neutral-800 p-5 shadow-sm space-y-3">
+          <div class="flex items-center justify-between gap-2">
+            <div class="min-w-0">
+              <h3 id="heatmap-title" class="text-sm font-bold flex items-center gap-1.5">
+                <i data-lucide="calendar-days" class="w-4 h-4 text-emerald-500 shrink-0"></i>
+                <span>이번 달 갓생 잔디 캘린더</span>
+              </h3>
+              <p class="text-xs text-slate-500 dark:text-neutral-400 break-keep">하루 루틴 달성률이 높을수록 잔디 색이 진해집니다.</p>
+            </div>
+            <div class="flex items-center gap-1 shrink-0 text-[10px] text-slate-400 dark:text-neutral-500">
+              <span>적음</span>
+              <span class="w-3 h-3 rounded bg-slate-100 dark:bg-neutral-900 border border-slate-200 dark:border-neutral-800"></span>
+              <span class="w-3 h-3 rounded bg-emerald-200 dark:bg-emerald-950"></span>
+              <span class="w-3 h-3 rounded bg-emerald-400 dark:bg-emerald-700"></span>
+              <span class="w-3 h-3 rounded bg-emerald-600 dark:bg-emerald-500"></span>
+              <span>많음</span>
+            </div>
+          </div>
+          <div class="grid grid-cols-7 gap-1.5 text-center text-[11px] font-semibold text-slate-400 dark:text-neutral-500 pt-1">
+            <span>일</span><span>월</span><span>화</span><span>수</span><span>목</span><span>금</span><span>토</span>
+          </div>
+          <div id="monthly-heatmap-grid" class="grid grid-cols-7 gap-1.5"></div>
+        </div>
+
+        <!-- Weekly Chart -->
+        <div class="bg-white dark:bg-neutral-950 rounded-2xl border border-slate-200/80 dark:border-neutral-800 p-5 shadow-sm space-y-3">
+          <div class="flex items-center justify-between gap-2">
+            <div class="min-w-0">
+              <h3 class="text-sm font-bold">최근 7일 갓생 달성률 (%)</h3>
+              <p class="text-xs text-slate-500 dark:text-neutral-400 break-keep">오늘 루틴을 체크하면 그래프가 실시간 반영됩니다.</p>
+            </div>
+            <span id="weekly-avg-badge" class="text-xs font-bold px-2.5 py-1 rounded-full bg-brand-50 dark:bg-neutral-900 text-brand-700 dark:text-brand-300 dark:border dark:border-neutral-800 shrink-0">오늘 0%</span>
+          </div>
+          <div class="relative h-56">
+            <canvas id="weekly-chart"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <!-- Achievement Badges -->
+      <div class="bg-white dark:bg-neutral-950 rounded-2xl border border-slate-200/80 dark:border-neutral-800 p-5 shadow-sm space-y-3">
+        <div class="flex items-center justify-between gap-2">
+          <h3 class="text-sm font-bold flex items-center gap-1.5">
+            <i data-lucide="medal" class="w-4 h-4 text-amber-500"></i>
+            <span>갓생 업적 배지 컬렉션</span>
+          </h3>
+          <span id="achievement-count-badge" class="text-xs font-bold text-amber-600 dark:text-amber-400">0 / 6 해금</span>
+        </div>
+        <div id="achievement-grid" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2.5"></div>
+      </div>
+
+      <!-- Daily Reflection Form + Saved History -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+        <div class="bg-white dark:bg-neutral-950 rounded-2xl border border-slate-200/80 dark:border-neutral-800 p-5 shadow-sm space-y-4">
+          <div class="flex items-center justify-between">
+            <h3 class="text-sm font-bold flex items-center gap-1.5">
+              <i data-lucide="notebook-pen" class="w-4 h-4 text-brand-500"></i>
+              <span>오늘의 3줄 갓생 회고</span>
+            </h3>
+            <span class="text-xs font-semibold text-emerald-600 dark:text-emerald-400">+25 XP</span>
+          </div>
+
+          <div class="space-y-1.5">
+            <label class="text-xs font-semibold text-slate-500 dark:text-neutral-400">오늘 나의 컨디션 & 기분</label>
+            <div id="mood-selector" class="grid grid-cols-3 sm:grid-cols-5 gap-1.5">
+              <button type="button" data-mood="🔥 최고" class="mood-btn py-2 px-1 rounded-xl border border-slate-200 dark:border-neutral-800 text-xs font-semibold hover:bg-slate-100 dark:hover:bg-neutral-900 transition whitespace-nowrap">🔥 최고</button>
+              <button type="button" data-mood="😊 뿌듯" class="mood-btn py-2 px-1 rounded-xl border border-brand-500 bg-brand-50 dark:bg-neutral-900 text-brand-700 dark:text-brand-300 text-xs font-semibold transition whitespace-nowrap">😊 뿌듯</button>
+              <button type="button" data-mood="😌 평온" class="mood-btn py-2 px-1 rounded-xl border border-slate-200 dark:border-neutral-800 text-xs font-semibold hover:bg-slate-100 dark:hover:bg-neutral-900 transition whitespace-nowrap">😌 평온</button>
+              <button type="button" data-mood="😮‍💨 피곤" class="mood-btn py-2 px-1 rounded-xl border border-slate-200 dark:border-neutral-800 text-xs font-semibold hover:bg-slate-100 dark:hover:bg-neutral-900 transition whitespace-nowrap">😮‍💨 피곤</button>
+              <button type="button" data-mood="🌧️ 아쉬움" class="mood-btn py-2 px-1 rounded-xl border border-slate-200 dark:border-neutral-800 text-xs font-semibold hover:bg-slate-100 dark:hover:bg-neutral-900 transition whitespace-nowrap">🌧️ 아쉬움</button>
+            </div>
+          </div>
+
+          <form id="form-journal" class="space-y-3">
+            <div>
+              <label for="journal-good" class="block text-xs font-semibold text-slate-600 dark:text-neutral-300 mb-1">1. 오늘 가장 잘한 일</label>
+              <input id="journal-good" type="text" placeholder="예: 아침에 미루지 않고 스트레칭을 마쳤다" class="w-full px-3 py-2 rounded-xl border border-slate-200 dark:border-neutral-800 bg-slate-50 dark:bg-neutral-900 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500" required />
+            </div>
+            <div>
+              <label for="journal-improve" class="block text-xs font-semibold text-slate-600 dark:text-neutral-300 mb-1">2. 아쉬웠던 점 / 내일 개선할 점</label>
+              <input id="journal-improve" type="text" placeholder="예: 오후에 스마트폰을 덜 보고 집중 시간 지키기" class="w-full px-3 py-2 rounded-xl border border-slate-200 dark:border-neutral-800 bg-slate-50 dark:bg-neutral-900 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500" />
+            </div>
+            <div>
+              <label for="journal-tomorrow" class="block text-xs font-semibold text-slate-600 dark:text-neutral-300 mb-1">3. 내일의 나에게 한마디</label>
+              <input id="journal-tomorrow" type="text" placeholder="예: 완벽하지 않아도 꾸준히 하는 게 진짜 갓생!" class="w-full px-3 py-2 rounded-xl border border-slate-200 dark:border-neutral-800 bg-slate-50 dark:bg-neutral-900 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500" />
+            </div>
+            <button type="submit" class="w-full py-2.5 rounded-xl bg-brand-600 hover:bg-brand-700 text-white text-sm font-bold transition shadow-sm">오늘의 회고 저장하기</button>
+          </form>
+        </div>
+
+        <div class="bg-white dark:bg-neutral-950 rounded-2xl border border-slate-200/80 dark:border-neutral-800 p-5 shadow-sm flex flex-col space-y-3">
+          <div class="flex items-center justify-between">
+            <h3 class="text-sm font-bold">저장된 회고 기록</h3>
+            <span id="journal-count" class="text-xs font-semibold text-slate-500 dark:text-neutral-400">0건</span>
+          </div>
+          <div id="journal-history-list" class="space-y-2.5 overflow-y-auto max-h-96 custom-scroll"></div>
+        </div>
+      </div>
+    </section>
+  &lt;/main&gt;
+
+  &lt;!-- D-Day Add Modal --&gt;
+  &lt;div id=&quot;modal-dday&quot; class=&quot;fixed inset-0 z-50 hidden items-center justify-center bg-black/75 backdrop-blur-sm p-4&quot;&gt;
+    &lt;div class=&quot;bg-white dark:bg-neutral-950 rounded-2xl border border-slate-200 dark:border-neutral-800 w-full max-w-sm p-5 shadow-xl space-y-4&quot;&gt;
+      &lt;div class=&quot;flex items-center justify-between&quot;&gt;
+        &lt;h3 class=&quot;text-base font-bold&quot;&gt;핵심 D-Day 추가&lt;/h3&gt;
+        &lt;button id=&quot;btn-close-dday&quot; type=&quot;button&quot; aria-label=&quot;닫기&quot; class=&quot;p-1.5 rounded-lg hover:bg-slate-100 dark:hover:bg-neutral-900&quot;&gt;
+          &lt;i data-lucide=&quot;x&quot; class=&quot;w-4 h-4&quot;&gt;&lt;/i&gt;
+        &lt;/button&gt;
+      &lt;/div&gt;
+      &lt;form id=&quot;form-dday&quot; class=&quot;space-y-3&quot;&gt;
+        &lt;div&gt;
+          &lt;label for=&quot;input-dday-title&quot; class=&quot;block text-xs font-semibold text-slate-600 dark:text-neutral-300 mb-1&quot;&gt;일정 / 시험 이름&lt;/label&gt;
+          &lt;input id=&quot;input-dday-title&quot; type=&quot;text&quot; maxlength=&quot;25&quot; placeholder=&quot;예: 투자자산운용사 시험&quot; class=&quot;w-full px-3 py-2 rounded-xl border border-slate-200 dark:border-neutral-800 bg-slate-50 dark:bg-neutral-900 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500&quot; required /&gt;
+        &lt;/div&gt;
+        &lt;div&gt;
+          &lt;label for=&quot;input-dday-date&quot; class=&quot;block text-xs font-semibold text-slate-600 dark:text-neutral-300 mb-1&quot;&gt;목표 날짜&lt;/label&gt;
+          &lt;input id=&quot;input-dday-date&quot; type=&quot;date&quot; class=&quot;w-full px-3 py-2 rounded-xl border border-slate-200 dark:border-neutral-800 bg-slate-50 dark:bg-neutral-900 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500&quot; required /&gt;
+        &lt;/div&gt;
+        &lt;button type=&quot;submit&quot; class=&quot;w-full py-2.5 rounded-xl bg-brand-600 hover:bg-brand-700 text-white text-sm font-bold transition&quot;&gt;추가하기&lt;/button&gt;
+      &lt;/form&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;!-- Routine Edit Modal --&gt;
+  &lt;div id=&quot;modal-edit-routine&quot; class=&quot;fixed inset-0 z-50 hidden items-center justify-center bg-black/75 backdrop-blur-sm p-4&quot;&gt;
+    &lt;div class=&quot;bg-white dark:bg-neutral-950 rounded-2xl border border-slate-200 dark:border-neutral-800 w-full max-w-sm p-5 shadow-xl space-y-4&quot;&gt;
+      &lt;div class=&quot;flex items-center justify-between&quot;&gt;
+        &lt;h3 class=&quot;text-base font-bold&quot;&gt;루틴 수정&lt;/h3&gt;
+        &lt;button id=&quot;btn-close-edit-routine&quot; type=&quot;button&quot; aria-label=&quot;닫기&quot; class=&quot;p-1.5 rounded-lg hover:bg-slate-100 dark:hover:bg-neutral-900&quot;&gt;
+          &lt;i data-lucide=&quot;x&quot; class=&quot;w-4 h-4&quot;&gt;&lt;/i&gt;
+        &lt;/button&gt;
+      &lt;/div&gt;
+      &lt;form id=&quot;form-edit-routine&quot; class=&quot;space-y-3&quot;&gt;
+        &lt;div&gt;
+          &lt;label for=&quot;edit-routine-title&quot; class=&quot;block text-xs font-semibold text-slate-600 dark:text-neutral-300 mb-1&quot;&gt;루틴 이름&lt;/label&gt;
+          &lt;input id=&quot;edit-routine-title&quot; type=&quot;text&quot; class=&quot;w-full px-3 py-2 rounded-xl border border-slate-200 dark:border-neutral-800 bg-slate-50 dark:bg-neutral-900 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500&quot; required /&gt;
+        &lt;/div&gt;
+        &lt;div&gt;
+          &lt;label for=&quot;edit-routine-time&quot; class=&quot;block text-xs font-semibold text-slate-600 dark:text-neutral-300 mb-1&quot;&gt;시간대&lt;/label&gt;
+          &lt;select id=&quot;edit-routine-time&quot; class=&quot;w-full px-3 py-2 rounded-xl border border-slate-200 dark:border-neutral-800 bg-slate-50 dark:bg-neutral-900 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500&quot;&gt;
+            &lt;option value=&quot;morning&quot;&gt;🌅 아침&lt;/option&gt;
+            &lt;option value=&quot;afternoon&quot;&gt;☀️ 오후&lt;/option&gt;
+            &lt;option value=&quot;evening&quot;&gt;🌙 저녁&lt;/option&gt;
+          &lt;/select&gt;
+        &lt;/div&gt;
+        &lt;button type=&quot;submit&quot; class=&quot;w-full py-2.5 rounded-xl bg-brand-600 hover:bg-brand-700 text-white text-sm font-bold transition&quot;&gt;수정 저장&lt;/button&gt;
+      &lt;/form&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;!-- Settings Modal --&gt;
+  &lt;div id=&quot;modal-settings&quot; class=&quot;fixed inset-0 z-50 hidden items-center justify-center bg-black/75 backdrop-blur-sm p-4&quot;&gt;
+    &lt;div class=&quot;bg-white dark:bg-neutral-950 rounded-2xl border border-slate-200 dark:border-neutral-800 w-full max-w-md p-6 shadow-xl space-y-5&quot;&gt;
+      &lt;div class=&quot;flex items-center justify-between&quot;&gt;
+        &lt;h3 class=&quot;text-base font-bold&quot;&gt;Road To Bilion 설정&lt;/h3&gt;
+        &lt;button id=&quot;btn-close-settings&quot; type=&quot;button&quot; aria-label=&quot;닫기&quot; class=&quot;p-1.5 rounded-lg hover:bg-slate-100 dark:hover:bg-neutral-900&quot;&gt;
+          &lt;i data-lucide=&quot;x&quot; class=&quot;w-4 h-4&quot;&gt;&lt;/i&gt;
+        &lt;/button&gt;
+      &lt;/div&gt;
+
+      <form id="form-settings" class="space-y-3.5">
+        <div>
+          <label for="settings-nickname" class="block text-xs font-semibold text-slate-600 dark:text-neutral-300 mb-1">닉네임</label>
+          <input id="settings-nickname" type="text" maxlength="20" class="w-full px-3.5 py-2 rounded-xl border border-slate-200 dark:border-neutral-800 bg-slate-50 dark:bg-neutral-900 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500" required />
+        </div>
+        <div>
+          <label for="settings-motto" class="block text-xs font-semibold text-slate-600 dark:text-neutral-300 mb-1">나만의 갓생 다짐 문구</label>
+          <input id="settings-motto" type="text" maxlength="60" class="w-full px-3.5 py-2 rounded-xl border border-slate-200 dark:border-neutral-800 bg-slate-50 dark:bg-neutral-900 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500" />
+        </div>
+        <button type="submit" class="w-full py-2.5 rounded-xl bg-brand-600 hover:bg-brand-700 text-white text-sm font-bold transition">저장하기</button>
+      </form>
+
+      <div class="pt-4 border-t border-slate-200 dark:border-neutral-800 space-y-2.5">
+        <div class="text-xs font-bold text-slate-500 dark:text-neutral-400">데이터 백업 & 관리</div>
+        <div class="grid grid-cols-2 gap-2">
+          <button id="btn-export-json" type="button" class="px-3 py-2 rounded-xl border border-slate-200 dark:border-neutral-800 text-xs font-semibold hover:bg-slate-100 dark:hover:bg-neutral-900 flex items-center justify-center gap-1.5 transition">
+            <i data-lucide="download" class="w-3.5 h-3.5"></i>
+            <span>JSON 내보내기</span>
+          </button>
+          <label class="px-3 py-2 rounded-xl border border-slate-200 dark:border-neutral-800 text-xs font-semibold hover:bg-slate-100 dark:hover:bg-neutral-900 flex items-center justify-center gap-1.5 transition cursor-pointer">
+            <i data-lucide="upload" class="w-3.5 h-3.5"></i>
+            <span>JSON 불러오기</span>
+            <input id="input-import-json" type="file" accept="application/json" class="hidden" />
+          </label>
+        </div>
+        <button id="btn-reset-all-prompt" type="button" class="w-full px-3 py-2 rounded-xl border border-rose-200 dark:border-rose-900/60 text-rose-600 dark:text-rose-400 text-xs font-semibold hover:bg-rose-50 dark:hover:bg-neutral-900 transition">전체 데이터 초기화</button>
+      </div>
+
+      <div class="pt-4 border-t border-slate-200 dark:border-neutral-800 space-y-1.5">
+        <div class="text-xs font-bold text-slate-600 dark:text-neutral-300 flex items-center gap-1.5">
+          <i data-lucide="smartphone" class="w-3.5 h-3.5 text-brand-500"></i>
+          <span>홈 화면(배경화면)에 앱으로 추가하기</span>
+        </div>
+        <p class="text-[11px] text-slate-500 dark:text-neutral-400 leading-relaxed break-keep">
+          이 파일을 <span class="font-semibold text-slate-700 dark:text-neutral-200">index.html</span>로 저장해 무료 호스팅(Netlify Drop·GitHub Pages 등)에 올린 뒤 접속하면, Safari 공유 버튼 또는 Chrome 메뉴에서 <strong>홈 화면에 추가</strong>로 전체화면 앱처럼 실행할 수 있어요.
+        </p>
+      </div>
+    </div>
+  &lt;/div&gt;
+
+  &lt;!-- Confirmation Modal (Replaces native confirm) --&gt;
+  &lt;div id=&quot;modal-confirm&quot; class=&quot;fixed inset-0 z-50 hidden items-center justify-center bg-black/75 backdrop-blur-sm p-4&quot;&gt;
+    &lt;div class=&quot;bg-white dark:bg-neutral-950 rounded-2xl border border-slate-200 dark:border-neutral-800 w-full max-w-sm p-5 shadow-xl space-y-4&quot;&gt;
+      &lt;div class=&quot;space-y-1.5&quot;&gt;
+        &lt;h3 id=&quot;confirm-title&quot; class=&quot;text-base font-bold&quot;&gt;확인&lt;/h3&gt;
+        &lt;p id=&quot;confirm-message&quot; class=&quot;text-sm text-slate-600 dark:text-neutral-300 leading-relaxed break-keep&quot;&gt;&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;flex items-center justify-end gap-2&quot;&gt;
+        &lt;button id=&quot;btn-confirm-cancel&quot; type=&quot;button&quot; class=&quot;px-4 py-2 rounded-xl border border-slate-200 dark:border-neutral-800 text-xs font-semibold hover:bg-slate-100 dark:hover:bg-neutral-900 transition&quot;&gt;취소&lt;/button&gt;
+        &lt;button id=&quot;btn-confirm-ok&quot; type=&quot;button&quot; class=&quot;px-4 py-2 rounded-xl bg-rose-600 hover:bg-rose-700 text-white text-xs font-semibold transition&quot;&gt;확인&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;!-- Toast Container --&gt;
+  &lt;div id=&quot;toast-container&quot; class=&quot;fixed bottom-5 right-5 z-50 flex flex-col gap-2 pointer-events-none max-w-xs sm:max-w-sm&quot;&gt;&lt;/div&gt;
+
+  &lt;script&gt;
+    (function () {
+      const STORAGE_KEY = &#39;road_to_bilion_state_v4&#39;;
+
+      const QUOTES = [
+        { text: &#39;오늘의 작은 실천이 내일의 가장 큰 무기가 됩니다.&#39;, author: &#39;Road To Bilion&#39; },
+        { text: &#39;우리가 반복적으로 하는 일이 곧 우리 자신이다. 탁월함은 행동이 아니라 습관이다.&#39;, author: &#39;아리스토텔레스&#39; },
+        { text: &#39;완벽한 하루보다, 멈추지 않고 이어가는 하루가 진짜 갓생입니다.&#39;, author: &#39;Road To Bilion&#39; },
+        { text: &#39;천 리 길도 한 걸음부터. 지금 5분만 먼저 움직여보세요.&#39;, author: &#39;노자&#39; },
+        { text: &#39;작은 습관의 복리 효과는 시간이 지날수록 상상을 초월한다.&#39;, author: &#39;제임스 클리어&#39; },
+        { text: &#39;어제의 나보다 1%만 더 나아가도 충분합니다.&#39;, author: &#39;Road To Bilion&#39; },
+        { text: &#39;집중하는 25분이 산만한 3시간을 이깁니다.&#39;, author: &#39;딥워크 원칙&#39; },
+        { text: &#39;기록하지 않은 노력은 사라지지만, 기록한 성장은 단단히 쌓입니다.&#39;, author: &#39;Road To Bilion&#39; },
+        { text: &#39;미래를 예측하는 가장 좋은 방법은 미래를 직접 만들어가는 것이다.&#39;, author: &#39;피터 드러커&#39; },
+        { text: &#39;오늘 미룬 일은 내일 더 무거워지지만, 오늘 끝낸 일은 내일의 날개가 됩니다.&#39;, author: &#39;Road To Bilion&#39; }
+      ];
+
+      const TIERS = [
+        { id: &#39;bronze&#39;, name: &#39;브론즈&#39;, min: 0, emoji: &#39;🥉&#39;, pillClass: &#39;bg-amber-100/80 text-amber-900 border-amber-300 dark:bg-neutral-900 dark:text-amber-300 dark:border-amber-700/70&#39;, barClass: &#39;from-amber-600 to-amber-400&#39; },
+        { id: &#39;silver&#39;, name: &#39;실버&#39;, min: 20, emoji: &#39;🥈&#39;, pillClass: &#39;bg-slate-100 text-slate-700 border-slate-300 dark:bg-neutral-900 dark:text-neutral-200 dark:border-neutral-600&#39;, barClass: &#39;from-neutral-500 to-neutral-300&#39; },
+        { id: &#39;gold&#39;, name: &#39;골드&#39;, min: 40, emoji: &#39;🥇&#39;, pillClass: &#39;bg-yellow-100 text-yellow-800 border-yellow-300 dark:bg-neutral-900 dark:text-yellow-300 dark:border-yellow-600/70&#39;, barClass: &#39;from-yellow-500 to-amber-300&#39; },
+        { id: &#39;platinum&#39;, name: &#39;플래티넘&#39;, min: 55, emoji: &#39;💠&#39;, pillClass: &#39;bg-teal-100 text-teal-800 border-teal-300 dark:bg-neutral-900 dark:text-teal-300 dark:border-teal-600/70&#39;, barClass: &#39;from-teal-500 to-cyan-400&#39; },
+        { id: &#39;diamond&#39;, name: &#39;다이아&#39;, min: 70, emoji: &#39;💎&#39;, pillClass: &#39;bg-sky-100 text-sky-800 border-sky-300 dark:bg-neutral-900 dark:text-sky-300 dark:border-sky-600/70&#39;, barClass: &#39;from-sky-500 to-indigo-400&#39; },
+        { id: &#39;master&#39;, name: &#39;마스터&#39;, min: 85, emoji: &#39;👑&#39;, pillClass: &#39;bg-purple-100 text-purple-800 border-purple-300 dark:bg-neutral-900 dark:text-purple-300 dark:border-purple-600/70&#39;, barClass: &#39;from-purple-600 to-fuchsia-400&#39; },
+        { id: &#39;challenger&#39;, name: &#39;챌린저&#39;, min: 95, emoji: &#39;🔥&#39;, pillClass: &#39;bg-rose-100 text-rose-800 border-rose-300 dark:bg-neutral-900 dark:text-rose-300 dark:border-rose-600/70&#39;, barClass: &#39;from-rose-500 via-amber-400 to-cyan-400&#39; }
+      ];
+
+      const LEVEL_TITLES = [
+        &#39;새싹 갓생러&#39;,
+        &#39;루틴 입문자&#39;,
+        &#39;꾸준함의 미학&#39;,
+        &#39;집중 마스터&#39;,
+        &#39;갓생 고수&#39;,
+        &#39;갓생의 신&#39;
+      ];
+
+      const TIME_LABELS = {
+        morning: { label: &#39;아침&#39;, emoji: &#39;🌅&#39;, badgeClass: &#39;bg-amber-50 text-amber-700 dark:bg-neutral-900 dark:text-amber-300 dark:border dark:border-neutral-800&#39; },
+        afternoon: { label: &#39;오후&#39;, emoji: &#39;☀️&#39;, badgeClass: &#39;bg-sky-50 text-sky-700 dark:bg-neutral-900 dark:text-sky-300 dark:border dark:border-neutral-800&#39; },
+        evening: { label: &#39;저녁&#39;, emoji: &#39;🌙&#39;, badgeClass: &#39;bg-indigo-50 text-indigo-700 dark:bg-neutral-900 dark:text-indigo-300 dark:border dark:border-neutral-800&#39; }
+      };
+
+      const ROADMAP_META = {
+        securities: {
+          title: &#39;📈 증권사 입사 로드맵&#39;,
+          subtitle: &#39;IB · 리서치 · WM/PB · S&amp;T/운용 직무 맞춤 자격증·리포트·실무 포트폴리오 전략&#39;,
+          chips: [&#39;핵심: 투자자산운용사&#39;, &#39;자문인력(증권·파생)&#39;, &#39;심화: 신용분석사·CFA·AFPK&#39;, &#39;리서치 리포트 &amp; RA 인턴&#39;],
+          accentText: &#39;text-emerald-700 dark:text-emerald-400&#39;,
+          phaseTitles: [
+            &#39;1단계 · 금융 기초 &amp; 필수 자격증 취득 (1~3개월)&#39;,
+            &#39;2단계 · 심화 자격증 &amp; 리서치·모델링 실력 구축 (4~6개월)&#39;,
+            &#39;3단계 · 실무 경험(RA/인턴) &amp; 하우스 분석 (7~9개월)&#39;,
+            &#39;4단계 · 공채 서류·시사·PT/임원 면접 파이널 돌파&#39;
+          ]
+        },
+        bank: {
+          title: &#39;🏦 은행권 입사 로드맵&#39;,
+          subtitle: &#39;시중은행(KB·신한·하나·우리·NH) 및 국책은행 · 여신/WM/외환/디지털 전형 완벽 대비&#39;,
+          chips: [&#39;핵심: 신용분석사·AFPK&#39;, &#39;외환전문역 1·2종&#39;, &#39;NCS + 경제/금융상식&#39;, &#39;디지털(ADsP·SQLD·금융DT)&#39;],
+          accentText: &#39;text-sky-700 dark:text-sky-400&#39;,
+          phaseTitles: [
+            &#39;1단계 · 은행권 핵심 자격증 &amp; 업권 이해 (1~3개월)&#39;,
+            &#39;2단계 · NCS 필기·경제상식 &amp; 디지털 스펙 강화 (4~6개월)&#39;,
+            &#39;3단계 · 서포터즈·인턴 &amp; 영업점/앱 현장 분석 (7~9개월)&#39;,
+            &#39;4단계 · 자소서·AI역검·토론/PT·임원 면접 완성&#39;
+          ]
+        }
+      };
+
+      const TIP_CAT_META = {
+        sleep: { label: &#39;🌙 수면·기상&#39;, badgeClass: &#39;bg-indigo-50 text-indigo-700 dark:bg-neutral-900 dark:text-indigo-300 dark:border dark:border-neutral-800&#39;, defaultTime: &#39;morning&#39; },
+        diet: { label: &#39;🥗 식단·수분&#39;, badgeClass: &#39;bg-emerald-50 text-emerald-700 dark:bg-neutral-900 dark:text-emerald-300 dark:border dark:border-neutral-800&#39;, defaultTime: &#39;morning&#39; },
+        fitness: { label: &#39;💪 운동·자세&#39;, badgeClass: &#39;bg-amber-50 text-amber-700 dark:bg-neutral-900 dark:text-amber-300 dark:border dark:border-neutral-800&#39;, defaultTime: &#39;afternoon&#39; },
+        mental: { label: &#39;🧠 집중·멘탈&#39;, badgeClass: &#39;bg-violet-50 text-violet-700 dark:bg-neutral-900 dark:text-violet-300 dark:border dark:border-neutral-800&#39;, defaultTime: &#39;afternoon&#39; },
+        life: { label: &#39;🏠 생활·정리&#39;, badgeClass: &#39;bg-sky-50 text-sky-700 dark:bg-neutral-900 dark:text-sky-300 dark:border dark:border-neutral-800&#39;, defaultTime: &#39;evening&#39; },
+        money: { label: &#39;💰 절약·루틴&#39;, badgeClass: &#39;bg-rose-50 text-rose-700 dark:bg-neutral-900 dark:text-rose-300 dark:border dark:border-neutral-800&#39;, defaultTime: &#39;evening&#39; }
+      };
+
+      const LIFE_HEALTH_TIPS = [
+        { id: &#39;tip1&#39;, cat: &#39;sleep&#39;, title: &#39;기상 직후 10분 햇빛 쬐기&#39;, desc: &#39;눈을 뜬 뒤 30분 안에 자연광을 10분 이상 보면 생체 시계가 맞춰지고, 14~16시간 뒤 멜라토닌 분비가 원활해져 밤에 깊게 잠들 수 있어요.&#39; },
+        { id: &#39;tip2&#39;, cat: &#39;sleep&#39;, title: &#39;카페인 오후 2시 컷오프 규칙&#39;, desc: &#39;카페인의 반감기는 5~7시간입니다. 오후 2시 이후 커피나 에너지음료를 줄이면 수면의 질과 깊은 잠 비율이 눈에 띄게 좋아집니다.&#39; },
+        { id: &#39;tip3&#39;, cat: &#39;sleep&#39;, title: &#39;기상 직후 90분 뒤에 첫 커피 마시기&#39;, desc: &#39;일어난 직후에는 각성 호르몬(코르티솔)이 자연스럽게 높아요. 기상 90분 후 커피를 마시면 오후 급격한 피로(카페인 크래시)를 줄일 수 있습니다.&#39; },
+        { id: &#39;tip4&#39;, cat: &#39;sleep&#39;, title: &#39;취침 1시간 전 스마트폰 침대 밖 충전&#39;, desc: &#39;블루라이트와 자극적인 숏폼은 뇌를 각성시킵니다. 충전기를 침대에서 멀리 두면 잠드는 시간이 빨라지고 아침 알람도 한 번에 끄기 쉬워요.&#39; },
+        { id: &#39;tip5&#39;, cat: &#39;sleep&#39;, title: &#39;침실 온도 18~20도 &amp; 어두운 환경 유지&#39;, desc: &#39;체온이 살짝 내려갈 때 깊은 수면에 진입합니다. 취침 전 미지근한 샤워 후 서늘하고 어두운 방에서 잠들면 숙면 효율이 높아집니다.&#39; },
+        { id: &#39;tip6&#39;, cat: &#39;sleep&#39;, title: &#39;오후 피로할 땐 15~20분 파워 낮잠&#39;, desc: &#39;30분 이상 자면 깊은 수면에 들어가 깨어난 뒤 더 멍해집니다. 오후 3시 이전 15~20분만 짧게 눈을 붙이면 집중력이 깔끔하게 회복됩니다.&#39; },
+        { id: &#39;tip7&#39;, cat: &#39;diet&#39;, title: &#39;기상 직후 미지근한 물 한 잔 마시기&#39;, desc: &#39;밤사이 호흡과 땀으로 빠져나간 수분을 보충해 혈액 순환을 돕고 잠든 장을 부드럽게 깨워줍니다. 찬물보다 미지근한 물이 위에 부담이 적어요.&#39; },
+        { id: &#39;tip8&#39;, cat: &#39;diet&#39;, title: &#39;채소 → 단백질 → 탄수화물 거꾸로 식사법&#39;, desc: &#39;식이섬유와 단백질을 먼저 먹고 밥·면을 나중에 먹으면 식후 혈당 스파이크와 식곤증을 크게 줄일 수 있습니다.&#39; },
+        { id: &#39;tip9&#39;, cat: &#39;diet&#39;, title: &#39;식후 15분 가볍게 걷기&#39;, desc: &#39;식사 후 바로 앉아 있거나 눕지 않고 10~15분만 천천히 걸어도 혈당이 안정되고 소화와 오후 컨디션이 훨씬 가벼워집니다.&#39; },
+        { id: &#39;tip10&#39;, cat: &#39;diet&#39;, title: &#39;한 입 20번 이상 천천히 씹어 먹기&#39;, desc: &#39;포만감 호르몬(렙틴)은 식사 시작 후 약 20분 뒤에 신호를 보냅니다. 천천히 먹기만 해도 과식을 자연스럽게 예방할 수 있어요.&#39; },
+        { id: &#39;tip11&#39;, cat: &#39;diet&#39;, title: &#39;액상과당 음료 대신 물·무가당 차 선택&#39;, desc: &#39;달콤한 라떼·탄산·주스는 혈당을 빠르게 올렸다가 곧바로 피로를 부릅니다. 평소 책상 위에 텀블러를 두고 물이나 보리차·녹차를 마셔보세요.&#39; },
+        { id: &#39;tip12&#39;, cat: &#39;diet&#39;, title: &#39;취침 3시간 전 저녁 식사 마무리&#39;, desc: &#39;위장에 음식이 남은 채 잠들면 수면 중에도 소화 기관이 계속 일해 피로 회복이 더뎌지고 역류성 식도염 위험도 높아집니다.&#39; },
+        { id: &#39;tip13&#39;, cat: &#39;fitness&#39;, title: &#39;50분 앉아 있으면 5분 일어나 움직이기&#39;, desc: &#39;장시간 좌식 생활은 허리·하체 순환에 부담을 줍니다. 타이머에 맞춰 1시간마다 자리에서 일어나 기지개를 켜고 가볍게 걸어주세요.&#39; },
+        { id: &#39;tip14&#39;, cat: &#39;fitness&#39;, title: &#39;거북목 예방 10초 턱 당기기(친턱) 스트레칭&#39;, desc: &#39;등을 곧게 펴고 턱을 목 쪽으로 부드럽게 당겨 5초 유지하는 동작을 수시로 반복하면 목·어깨 긴장과 두통 예방에 효과적입니다.&#39; },
+        { id: &#39;tip15&#39;, cat: &#39;fitness&#39;, title: &#39;20-20-20 눈 건강 법칙&#39;, desc: &#39;모니터를 20분 볼 때마다 20초 동안 20피트(약 6m) 이상 먼 곳을 바라보면 눈의 피로와 안구 건조를 크게 덜 수 있습니다.&#39; },
+        { id: &#39;tip16&#39;, cat: &#39;fitness&#39;, title: &#39;모니터 상단을 눈높이와 맞추기&#39;, desc: &#39;노트북을 내려다보면 목에 실리는 하중이 몇 배로 커집니다. 거치대나 책을 받쳐 화면 상단을 눈높이에 맞추는 것만으로 자세가 달라져요.&#39; },
+        { id: &#39;tip17&#39;, cat: &#39;fitness&#39;, title: &#39;엘리베이터 대신 3~5층 계단 오르기&#39;, desc: &#39;따로 운동 시간을 내기 어려운 날에도 출퇴근·등하교 길에 계단을 오르면 하체 근력과 심폐 지구력을 틈새 시간에 챙길 수 있습니다.&#39; },
+        { id: &#39;tip18&#39;, cat: &#39;fitness&#39;, title: &#39;하루 3분 마이크로 운동(스쿼트·플랭크)&#39;, desc: &#39;완벽한 1시간 운동을 기다리며 미루기보다, 매일 스쿼트 20개나 플랭크 1분부터 시작하면 운동 습관의 문턱이 확 낮아집니다.&#39; },
+        { id: &#39;tip19&#39;, cat: &#39;mental&#39;, title: &#39;2분 규칙: 2분 안에 끝나는 일은 즉시 처리&#39;, desc: &#39;설거지 컵 헹구기, 짧은 메일 답장, 영수증 정리처럼 2분이면 끝나는 일을 미루지 않고 바로 처리하면 머릿속 잔여 스트레스가 사라집니다.&#39; },
+        { id: &#39;tip20&#39;, cat: &#39;mental&#39;, title: &#39;집중할 땐 스마트폰 흑백 모드 &amp; 다른 방에 두기&#39;, desc: &#39;스마트폰이 시야에 있기만 해도 인지 자원이 소모됩니다. 집중 시간에는 무음으로 다른 공간에 두거나 화면을 흑백 모드로 바꿔보세요.&#39; },
+        { id: &#39;tip21&#39;, cat: &#39;mental&#39;, title: &#39;긴장·스트레스 즉시 완화 4-7-8 호흡법&#39;, desc: &#39;코로 4초 들이마시고, 7초 멈춘 뒤, 입으로 8초간 천천히 내쉬는 호흡을 3~4회 반복하면 부교감 신경이 활성화되어 마음이 빠르게 진정됩니다.&#39; },
+        { id: &#39;tip22&#39;, cat: &#39;mental&#39;, title: &#39;취침 전 3분 브레인 덤프(머릿속 비우기)&#39;, desc: &#39;내일 해야 할 일이나 걱정거리를 잠들기 전에 종이나 앱에 모두 적어두면 뇌가 &quot;기억해야 한다&quot;는 압박에서 벗어나 편하게 잠듭니다.&#39; },
+        { id: &#39;tip23&#39;, cat: &#39;mental&#39;, title: &#39;멀티태스킹 대신 단일 작업 타임블로킹&#39;, desc: &#39;여러 일을 동시에 전환할 때마다 집중력이 회복되는 데 15~20분이 걸립니다. 한 번에 하나의 핵심 과제에만 25~50분을 통으로 배정하세요.&#39; },
+        { id: &#39;tip24&#39;, cat: &#39;mental&#39;, title: &#39;하루 1가지 작은 성취·감사 기록하기&#39;, desc: &#39;거창한 성과가 아니어도 오늘 해낸 작은 일 하나를 기록하면 자기효능감이 높아지고 번아웃 없이 꾸준함을 유지할 수 있습니다.&#39; },
+        { id: &#39;tip25&#39;, cat: &#39;life&#39;, title: &#39;원터치 규칙: 물건은 쓰고 바로 제자리에&#39;, desc: &#39;옷이나 가방을 의자 위에 잠깐 올려두는 순간 방이 어질러집니다. 손에서 놓을 때 딱 5초만 써서 원래 자리에 두면 대청소가 필요 없어요.&#39; },
+        { id: &#39;tip26&#39;, cat: &#39;life&#39;, title: &#39;내일 입을 옷과 가방 전날 밤 3분 세팅&#39;, desc: &#39;아침의 사소한 결정 피로를 줄여줍니다. 전날 밤 준비를 끝내두면 아침 시간이 훨씬 여유롭고 지각도 자연스럽게 줄어듭니다.&#39; },
+        { id: &#39;tip27&#39;, cat: &#39;life&#39;, title: &#39;하루 2회 10분 맞통풍 환기&#39;, desc: &#39;실내 이산화탄소 농도가 높아지면 집중력이 떨어지고 졸음이 쏟아집니다. 오전·오후 각 10분씩 마주 보는 창문을 열어 공기를 바꿔주세요.&#39; },
+        { id: &#39;tip28&#39;, cat: &#39;life&#39;, title: &#39;1-In 1-Out 미니멀 정리 원칙&#39;, desc: &#39;새 옷이나 물건을 하나 들이면 안 쓰는 오래된 물건 하나를 비우는 습관을 들이면 집안 공간과 시야가 항상 깔끔하게 유지됩니다.&#39; },
+        { id: &#39;tip29&#39;, cat: &#39;life&#39;, title: &#39;알림 배치 확인(하루 3회 몰아보기)&#39;, desc: &#39;불필요한 앱 푸시 알림을 끄고 메신저·메일 확인 시간을 정해두면, 남의 일정이 아닌 내 우선순위대로 하루를 주도할 수 있습니다.&#39; },
+        { id: &#39;tip30&#39;, cat: &#39;life&#39;, title: &#39;일요일 저녁 15분 주간 리셋 타임&#39;, desc: &#39;책상 정리, 빨래 마무리, 다음 주 핵심 일정 3가지 확인을 일요일 저녁 15분 안에 끝내면 월요일 아침의 부담이 절반으로 줄어듭니다.&#39; },
+        { id: &#39;tip31&#39;, cat: &#39;money&#39;, title: &#39;충동구매 24시간 보류 법칙&#39;, desc: &#39;장바구니에 담은 물건을 바로 결제하지 않고 하루만 기다려보세요. 다음 날에도 꼭 필요하다고 느껴지는 소비만 남게 됩니다.&#39; },
+        { id: &#39;tip32&#39;, cat: &#39;money&#39;, title: &#39;월 1회 정기 구독·고정비 점검&#39;, desc: &#39;OTT, 음악, 멤버십 등 자동 결제되는 구독 서비스를 한 달에 한 번 점검해 안 쓰는 항목만 정리해도 연간 수십만 원을 아낄 수 있어요.&#39; },
+        { id: &#39;tip33&#39;, cat: &#39;money&#39;, title: &#39;선저축 후소비 자동이체 시스템 구축&#39;, desc: &#39;월급이나 용돈이 들어오는 날 저축·투자 계좌로 먼저 자동이체되도록 설정하면 의지력에 의존하지 않고 자산이 꾸준히 쌓입니다.&#39; },
+        { id: &#39;tip34&#39;, cat: &#39;money&#39;, title: &#39;장보기 전 메모 작성 &amp; 공복 쇼핑 금지&#39;, desc: &#39;배고픈 상태로 마트나 배달 앱을 열면 계획에 없던 간식과 과소비가 늘어납니다. 필요한 품목만 메모해 빠르게 장을 보세요.&#39; },
+        { id: &#39;tip35&#39;, cat: &#39;money&#39;, title: &#39;공공도서관·전자책 무료 대출 적극 활용&#39;, desc: &#39;지역 도서관 회원증만 있으면 최신 경제·자기계발 신간과 전자책을 무료로 읽을 수 있어 독서 습관과 절약을 동시에 챙길 수 있습니다.&#39; },
+        { id: &#39;tip36&#39;, cat: &#39;money&#39;, title: &#39;하루 1분 지출 기록으로 새는 돈 파악&#39;, desc: &#39;거창한 가계부 대신 매일 쓴 금액과 항목만 1분 기록해도 카페·편의점 등 무의식적인 소액 지출 패턴이 한눈에 보입니다.&#39; }
+      ];
+
+      function getDefaultRoadmaps() {
+        return {
+          securities: [
+            { id: &#39;sc1&#39;, phase: 0, title: &#39;투자자산운용사 자격증 취득 (증권사 전 직무 기본 필수 스펙)&#39;, tip: &#39;금융상품·세제·운용전략 핵심 빈출 문제 3회독&#39;, done: false },
+            { id: &#39;sc2&#39;, phase: 0, title: &#39;증권투자권유자문인력 또는 파생상품투자권유자문인력 취득&#39;, tip: &#39;WM/PB·S&amp;T 직무 지원 시 강한 실무 우대&#39;, done: false },
+            { id: &#39;sc3&#39;, phase: 0, title: &#39;재무제표 3종 및 핵심 밸류에이션 지표(PER·PBR·ROE·EV/EBITDA) 완벽 숙지&#39;, tip: &#39;전자공시시스템(DART) 사업보고서 직접 읽기 연습&#39;, done: false },
+            { id: &#39;sc4&#39;, phase: 0, title: &#39;매일 아침 글로벌 증시·금리·환율·FOMC/한은 이슈 15분 모닝 브리핑 스크랩&#39;, tip: &#39;시황 변화의 원인과 섹터 영향까지 한 줄 요약&#39;, done: false },
+            { id: &#39;sc5&#39;, phase: 1, title: &#39;희망 직무별 심화 자격증 취득: IB/리서치(신용분석사·CFA Lv.1) / WM(AFPK·CFP) / 리스크(FRM)&#39;, tip: &#39;지원 직무에 맞춰 1~2개 깊이 있게 선택&#39;, done: false },
+            { id: &#39;sc6&#39;, phase: 1, title: &#39;관심 산업(반도체·AI·2차전지·금융 등) 선정 후 기업분석 리서치 리포트 3편 직접 작성&#39;, tip: &#39;투자포인트·리스크·목표주가 산출 근거 포함&#39;, done: false },
+            { id: &#39;sc7&#39;, phase: 1, title: &#39;Excel 재무모델링(DCF·상대가치평가) 및 Python/SQL 기초 금융데이터 분석 실습&#39;, tip: &#39;IB·리서치·퀀트/디지털 직무 강력한 차별화&#39;, done: false },
+            { id: &#39;sc8&#39;, phase: 1, title: &#39;증권사·금융투자협회 모의투자대회 또는 리서치 공모전 참가 및 매매 복기 기록&#39;, tip: &#39;수익률 자체보다 투자 논리와 리스크 관리 과정 강조&#39;, done: false },
+            { id: &#39;sc9&#39;, phase: 2, title: &#39;증권사 리서치센터 RA 또는 IB/WM 체험형·채용연계형 인턴 지원 및 실무 경험 확보&#39;, tip: &#39;대형사뿐 아니라 중형사·자산운용사 인턴도 적극 활용&#39;, done: false },
+            { id: &#39;sc10&#39;, phase: 2, title: &#39;증권사 현직자 커피챗·멘토링 3회 이상 진행하며 하우스별 직무 문화 파악&#39;, tip: &#39;실제 하루 일과·평가 기준·우대 역량 질문 준비&#39;, done: false },
+            { id: &#39;sc11&#39;, phase: 2, title: &#39;주요 증권사(미래에셋·한국투자·NH·삼성·KB 등) 사업보고서 및 강점 사업부 비교 정리&#39;, tip: &#39;회사별 IB/WM/글로벌 전략 차이 명확히 파악&#39;, done: false },
+            { id: &#39;sc12&#39;, phase: 2, title: &#39;나만의 투자 철학 및 성공/실패 투자 사례 1페이지 포트폴리오 완성&#39;, tip: &#39;면접 단골 질문 &quot;최근 관심 종목과 이유&quot; 완벽 대비&#39;, done: false },
+            { id: &#39;sc13&#39;, phase: 3, title: &#39;직무 적합성 중심 자기소개서 마스터본 작성 (정량 성과·시장 인사이트 반영)&#39;, tip: &#39;추상적 열정 대신 구체적 리서치·분석 경험 제시&#39;, done: false },
+            { id: &#39;sc14&#39;, phase: 3, title: &#39;최신 금융·경제 시사 이슈 20선 정리 및 1분 논리적 의견 말하기 훈련&#39;, tip: &#39;결론(두괄식) → 근거 2가지 → 리스크/대안 구조&#39;, done: false },
+            { id: &#39;sc15&#39;, phase: 3, title: &#39;직무 PT 면접(종목 추천/자산배분 발표) 및 WM 세일즈 롤플레잉 모의 연습&#39;, tip: &#39;제한 시간 내 핵심 수치와 논리 전달 연습&#39;, done: false },
+            { id: &#39;sc16&#39;, phase: 3, title: &#39;실무진·임원 예상 질문 50선 답변 정리 및 모의면접 5회 이상 완료&#39;, tip: &#39;압박 질문에도 침착하게 수치·근거 기반으로 답변&#39;, done: false }
+          ],
+          bank: [
+            { id: &#39;bk1&#39;, phase: 0, title: &#39;신용분석사 취득 (은행권 기업금융·여신심사 최우선 우대 자격증)&#39;, tip: &#39;회계학·신용분석 기출 중심으로 2~3개월 집중&#39;, done: false },
+            { id: &#39;bk2&#39;, phase: 0, title: &#39;AFPK 또는 은행FP(자산관리사) 취득 (개인금융·WM/PB 핵심 스펙)&#39;, tip: &#39;재무설계·세무·은퇴설계 개념 실무 연계 이해&#39;, done: false },
+            { id: &#39;bk3&#39;, phase: 0, title: &#39;외환전문역 1종·2종 취득 (수출입·외국환 업무 전문성 어필)&#39;, tip: &#39;1종(개인외환) → 2종(기업무역외환) 순서 추천&#39;, done: false },
+            { id: &#39;bk4&#39;, phase: 0, title: &#39;은행업 핵심 지표(기준금리·NIM·예대마진·BIS 비율·연체율) 개념 및 현황 정리&#39;, tip: &#39;각 은행 분기 실적 발표 자료로 흐름 파악&#39;, done: false },
+            { id: &#39;bk5&#39;, phase: 1, title: &#39;시중은행(KB·신한·하나·우리·NH) 및 국책은행 NCS 유형 분석 &amp; 주 3회 모의고사&#39;, tip: &#39;자료해석·수리·문제해결 시간 단축 집중 훈련&#39;, done: false },
+            { id: &#39;bk6&#39;, phase: 1, title: &#39;TESAT 또는 매경TEST 우수 등급(1급 목표) 취득으로 경제·경영 필기 기반 완성&#39;, tip: &#39;은행 필기 경제/금융상식 파트와 직접 연결&#39;, done: false },
+            { id: &#39;bk7&#39;, phase: 1, title: &#39;디지털 금융 우대 자격증 1개 이상 취득 (ADsP·SQLD·빅데이터분석기사·금융DT)&#39;, tip: &#39;최근 은행권 디지털/AI 리터러시 우대 비중 확대&#39;, done: false },
+            { id: &#39;bk8&#39;, phase: 1, title: &#39;매일 경제신문(한경·매경) 사설 및 은행권 디지털 전환·핀테크·ESG 기사 스크랩&#39;, tip: &#39;면접 토론·PT 주제로 직결되는 최신 현안 정리&#39;, done: false },
+            { id: &#39;bk9&#39;, phase: 2, title: &#39;시중은행 대학생 서포터즈·홍보대사 또는 체험형 청년인턴 지원 및 수료&#39;, tip: &#39;우수 활동자 서류 면제·가점 혜택 적극 활용&#39;, done: false },
+            { id: &#39;bk10&#39;, phase: 2, title: &#39;지원 희망 은행 영업점 3곳 이상 직접 방문 (고객 응대·상품·디지털 점포 분석 노트)&#39;, tip: &#39;현장에서 느낀 개선점과 강점을 자소서·면접에 녹이기&#39;, done: false },
+            { id: &#39;bk11&#39;, phase: 2, title: &#39;주요 은행 슈퍼앱(KB스타뱅킹·SOL뱅크·하나원큐 등) UI/UX 비교 및 신상품 아이디어 2건 도출&#39;, tip: &#39;2030·시니어·소상공인 타깃별 페인포인트 분석&#39;, done: false },
+            { id: &#39;bk12&#39;, phase: 2, title: &#39;은행별 연간 경영전략·핵심가치·글로벌 진출 현황 비교 정리표 완성&#39;, tip: &#39;왜 하필 이 은행인지 명확한 지원동기 근거 확보&#39;, done: false },
+            { id: &#39;bk13&#39;, phase: 3, title: &#39;고객 중심·협업·목표 달성·윤리의식 중심 경험 정리 및 은행별 맞춤 자소서 완성&#39;, tip: &#39;아르바이트·세일즈·고객 응대 경험도 구체적으로 스토리화&#39;, done: false },
+            { id: &#39;bk14&#39;, phase: 3, title: &#39;AI 역량검사(영상 면접·전략 게임) 실전 모의 테스트 및 표정·발성 피드백&#39;, tip: &#39;일관성 있는 성향 응답과 또렷한 시선 처리 연습&#39;, done: false },
+            { id: &#39;bk15&#39;, phase: 3, title: &#39;찬반 토론 면접(점포 축소·금리·가상자산 등) 및 세일즈/PT 면접 스터디 주 2회 진행&#39;, tip: &#39;경청하는 태도와 균형 잡힌 근거 제시가 핵심&#39;, done: false },
+            { id: &#39;bk16&#39;, phase: 3, title: &#39;최종 임원 면접 대비 1분 자기소개·지원동기·입행 후 10년 커리어 플랜 완성&#39;, tip: &#39;진정성 있는 태도와 은행원으로서의 신뢰감 전달&#39;, done: false }
+          ]
+        };
+      }
+
+      function formatDateKey(d) {
+        return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, &#39;0&#39;)}-${String(d.getDate()).padStart(2, &#39;0&#39;)}`;
+      }
+
+      function getTodayKey() {
+        return formatDateKey(new Date());
+      }
+
+      function getFutureDateKey(daysAhead) {
+        const d = new Date();
+        d.setDate(d.getDate() + daysAhead);
+        return formatDateKey(d);
+      }
+
+      function getDefaultState() {
+        return {
+          profile: {
+            nickname: &#39;갓생러&#39;,
+            motto: &#39;작은 루틴이 모여 단단한 나를 만든다.&#39;,
+            theme: &#39;light&#39;
+          },
+          xp: 0,
+          streak: 1,
+          lastActiveDate: getTodayKey(),
+          quoteIndex: 0,
+          waterCups: 0,
+          celebratedToday: false,
+          lastTierId: &#39;bronze&#39;,
+          journalXpDate: &#39;&#39;,
+          bookmarkedTips: [],
+          ddays: [
+            { id: &#39;d1&#39;, title: &#39;투자자산운용사 시험&#39;, date: getFutureDateKey(45) },
+            { id: &#39;d2&#39;, title: &#39;금융권 공채 서류 마감&#39;, date: getFutureDateKey(90) }
+          ],
+          routines: [
+            { id: &#39;r1&#39;, title: &#39;기상 후 미지근한 물 한 잔 마시기&#39;, time: &#39;morning&#39;, done: false },
+            { id: &#39;r2&#39;, title: &#39;아침 10분 햇빛 쬐기 &amp; 스트레칭&#39;, time: &#39;morning&#39;, done: false },
+            { id: &#39;r3&#39;, title: &#39;경제신문·글로벌 증시 모닝 브리핑 15분 읽기&#39;, time: &#39;morning&#39;, done: false },
+            { id: &#39;r4&#39;, title: &#39;금융 자격증(투운사/신분사) 1강의 &amp; 문제 풀이&#39;, time: &#39;afternoon&#39;, done: false },
+            { id: &#39;r5&#39;, title: &#39;식후 15분 가볍게 산책하며 혈당 관리&#39;, time: &#39;afternoon&#39;, done: false },
+            { id: &#39;r6&#39;, title: &#39;25분 딥워크 집중 1세트 완료&#39;, time: &#39;evening&#39;, done: false },
+            { id: &#39;r7&#39;, title: &#39;취침 전 스마트폰 멀리 두고 하루 회고&#39;, time: &#39;evening&#39;, done: false }
+          ],
+          monthlyGoals: [
+            { id: &#39;m1&#39;, title: &#39;투자자산운용사 / 신용분석사 핵심 과목 1회독 완료&#39;, category: &#39;커리어/재테크&#39;, progress: 0 },
+            { id: &#39;m2&#39;, title: &#39;관심 산업·기업 분석 리서치 노트 3편 작성하기&#39;, category: &#39;성장/공부&#39;, progress: 0 },
+            { id: &#39;m3&#39;, title: &#39;주 3회 이상 운동 실천하기 (월 12회)&#39;, category: &#39;운동/건강&#39;, progress: 0 }
+          ],
+          roadmaps: getDefaultRoadmaps(),
+          todos: [
+            { id: &#39;t1&#39;, title: &#39;오늘 가장 중요한 공부/자격증 1가지 끝내기&#39;, tag: &#39;업무/공부&#39;, priority: true, done: false },
+            { id: &#39;t2&#39;, title: &#39;경제·금융 시사 기사 2건 요약 정리&#39;, tag: &#39;자기계발&#39;, priority: false, done: false },
+            { id: &#39;t3&#39;, title: &#39;운동 30분 실천하기&#39;, tag: &#39;운동/건강&#39;, priority: false, done: false }
+          ],
+          focusMinutesToday: 0,
+          focusLogs: [],
+          journals: [],
+          historyByDate: {}
+        };
+      }
+
+      function loadState() {
+        try {
+          const raw = localStorage.getItem(STORAGE_KEY) || localStorage.getItem(&#39;road_to_bilion_state_v3&#39;) || localStorage.getItem(&#39;road_to_bilion_state_v2&#39;);
+          if (!raw) return getDefaultState();
+          const parsed = JSON.parse(raw);
+          const def = getDefaultState();
+          const defaultRm = getDefaultRoadmaps();
+
+          const cleanList = (arr, fallback) =&gt; {
+            if (!Array.isArray(arr)) return fallback;
+            const filtered = arr.filter((item) =&gt; !/jlpt/i.test(String(item &amp;&amp; item.title ? item.title : &#39;&#39;)));
+            return filtered.length &gt; 0 ? filtered : fallback;
+          };
+
+          const merged = {
+            ...def,
+            ...parsed,
+            profile: { ...def.profile, ...(parsed.profile || {}) },
+            ddays: Array.isArray(parsed.ddays) ? parsed.ddays : def.ddays,
+            routines: cleanList(parsed.routines, def.routines),
+            monthlyGoals: cleanList(parsed.monthlyGoals, def.monthlyGoals),
+            todos: cleanList(parsed.todos, def.todos),
+            bookmarkedTips: Array.isArray(parsed.bookmarkedTips) ? parsed.bookmarkedTips : [],
+            roadmaps: {
+              securities: Array.isArray(parsed.roadmaps &amp;&amp; parsed.roadmaps.securities) ? parsed.roadmaps.securities : defaultRm.securities,
+              bank: Array.isArray(parsed.roadmaps &amp;&amp; parsed.roadmaps.bank) ? parsed.roadmaps.bank : defaultRm.bank
+            }
+          };
+          const today = getTodayKey();
+          if (merged.lastActiveDate !== today) {
+            merged.lastActiveDate = today;
+            merged.waterCups = 0;
+            merged.focusMinutesToday = 0;
+            merged.celebratedToday = false;
+            merged.routines = (merged.routines || []).map((r) =&gt; ({ ...r, done: false }));
+            merged.streak = (merged.streak || 0) + 1;
+          }
+          return merged;
+        } catch (e) {
+          return getDefaultState();
+        }
+      }
+
+      function saveState() {
+        try {
+          localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+        } catch (e) {
+          // Ignore storage errors
+        }
+      }
+
+      let state = loadState();
+      let activeTab = &#39;routines&#39;;
+      let activeRoadmapCat = &#39;securities&#39;;
+      let activeTipCat = &#39;all&#39;;
+      let tipSearchQuery = &#39;&#39;;
+      let routineTimeFilter = &#39;all&#39;;
+      let todoFilter = &#39;all&#39;;
+      let selectedMood = &#39;😊 뿌듯&#39;;
+      let pendingConfirmAction = null;
+      let editingRoutineId = null;
+      let weeklyChart = null;
+
+      // Timer &amp; Ambient Audio state
+      let timerTotalSec = 25 * 60;
+      let timerRemainingSec = 25 * 60;
+      let timerModeLabel = &#39;집중 25분&#39;;
+      let timerRunning = false;
+      let timerInterval = null;
+      let soundEnabled = true;
+      let ambientOn = false;
+      let ambientCtx = null;
+      let ambientNode = null;
+
+      function escapeHtml(str) {
+        return String(str)
+          .replace(/&amp;/g, &#39;&amp;amp;&#39;)
+          .replace(/&lt;/g, &#39;&amp;lt;&#39;)
+          .replace(/&gt;/g, &#39;&amp;gt;&#39;)
+          .replace(/&quot;/g, &#39;&amp;quot;&#39;)
+          .replace(/&#39;/g, &#39;&amp;#39;&#39;);
+      }
+
+      function showToast(message, type = &#39;info&#39;) {
+        const container = document.getElementById(&#39;toast-container&#39;);
+        const el = document.createElement(&#39;div&#39;);
+        const colors = {
+          info: &#39;bg-slate-900 text-white dark:bg-white dark:text-black&#39;,
+          success: &#39;bg-emerald-600 text-white&#39;,
+          xp: &#39;bg-brand-600 text-white&#39;
+        };
+        el.className = `toast-enter pointer-events-auto px-4 py-2.5 rounded-xl shadow-lg text-xs sm:text-sm font-semibold leading-snug break-keep ${colors[type] || colors.info}`;
+        el.textContent = message;
+        container.appendChild(el);
+        setTimeout(() =&gt; {
+          el.style.opacity = &#39;0&#39;;
+          el.style.transform = &#39;translateY(6px)&#39;;
+          el.style.transition = &#39;all 0.25s ease&#39;;
+          setTimeout(() =&gt; el.remove(), 260);
+        }, 2800);
+      }
+
+      function getLevelInfo(xp) {
+        const safeXp = Math.max(0, Number(xp) || 0);
+        const level = Math.floor(safeXp / 100) + 1;
+        const currentXp = safeXp % 100;
+        const title = LEVEL_TITLES[Math.min(level - 1, LEVEL_TITLES.length - 1)];
+        return { level, currentXp, nextXp: 100, title };
+      }
+
+      function addXp(amount, reason) {
+        const before = getLevelInfo(state.xp).level;
+        state.xp = Math.max(0, (state.xp || 0) + amount);
+        const afterInfo = getLevelInfo(state.xp);
+        if (amount &gt; 0) {
+          showToast(`${reason} (+${amount} XP)`, &#39;xp&#39;);
+        }
+        if (afterInfo.level &gt; before) {
+          showToast(`🎉 레벨 업! Lv.${afterInfo.level} ${afterInfo.title} 달성!`, &#39;success&#39;);
+          fireConfetti();
+        }
+      }
+
+      function fireConfetti() {
+        try {
+          if (typeof confetti === &#39;function&#39;) {
+            confetti({ particleCount: 80, spread: 70, origin: { y: 0.65 } });
+          }
+        } catch (e) {}
+      }
+
+      function playChime() {
+        if (!soundEnabled) return;
+        try {
+          const AudioCtx = window.AudioContext || window.webkitAudioContext;
+          if (!AudioCtx) return;
+          const ctx = new AudioCtx();
+          const notes = [523.25, 659.25, 783.99];
+          notes.forEach((freq, idx) =&gt; {
+            const osc = ctx.createOscillator();
+            const gain = ctx.createGain();
+            osc.type = &#39;sine&#39;;
+            osc.frequency.value = freq;
+            gain.gain.setValueAtTime(0.001, ctx.currentTime + idx * 0.14);
+            gain.gain.exponentialRampToValueAtTime(0.14, ctx.currentTime + idx * 0.14 + 0.03);
+            gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + idx * 0.14 + 0.35);
+            osc.connect(gain);
+            gain.connect(ctx.destination);
+            osc.start(ctx.currentTime + idx * 0.14);
+            osc.stop(ctx.currentTime + idx * 0.14 + 0.38);
+          });
+        } catch (e) {}
+      }
+
+      function toggleAmbientNoise() {
+        try {
+          if (ambientOn) {
+            if (ambientNode) {
+              ambientNode.stop();
+              ambientNode.disconnect();
+              ambientNode = null;
+            }
+            if (ambientCtx) {
+              ambientCtx.close();
+              ambientCtx = null;
+            }
+            ambientOn = false;
+            showToast(&#39;집중 백색소음을 껐어요.&#39;, &#39;info&#39;);
+          } else {
+            const AudioCtx = window.AudioContext || window.webkitAudioContext;
+            if (!AudioCtx) return;
+            ambientCtx = new AudioCtx();
+            const bufferSize = ambientCtx.sampleRate * 3;
+            const buffer = ambientCtx.createBuffer(1, bufferSize, ambientCtx.sampleRate);
+            const data = buffer.getChannelData(0);
+            let lastOut = 0.0;
+            for (let i = 0; i &lt; bufferSize; i++) {
+              const white = Math.random() * 2 - 1;
+              data[i] = (lastOut + 0.02 * white) / 1.02;
+              lastOut = data[i];
+              data[i] *= 0.22;
+            }
+            const source = ambientCtx.createBufferSource();
+            source.buffer = buffer;
+            source.loop = true;
+            const filter = ambientCtx.createBiquadFilter();
+            filter.type = &#39;lowpass&#39;;
+            filter.frequency.value = 420;
+            const gain = ambientCtx.createGain();
+            gain.gain.value = 0.25;
+            source.connect(filter);
+            filter.connect(gain);
+            gain.connect(ambientCtx.destination);
+            source.start();
+            ambientNode = source;
+            ambientOn = true;
+            showToast(&#39;🎧 부드러운 집중 브라운노이즈 켜짐&#39;, &#39;info&#39;);
+          }
+          renderAmbientButton();
+        } catch (e) {
+          ambientOn = false;
+          renderAmbientButton();
+        }
+      }
+
+      function renderAmbientButton() {
+        const btn = document.getElementById(&#39;btn-ambient-toggle&#39;);
+        const label = document.getElementById(&#39;label-ambient&#39;);
+        if (!btn || !label) return;
+        label.textContent = ambientOn ? &#39;백색소음 ON&#39; : &#39;백색소음 OFF&#39;;
+        btn.className = ambientOn
+          ? &#39;px-3.5 py-2.5 rounded-xl border border-brand-500 bg-brand-50 dark:bg-neutral-900 text-brand-700 dark:text-brand-300 text-xs font-semibold flex items-center gap-1.5 transition whitespace-nowrap&#39;
+          : &#39;px-3.5 py-2.5 rounded-xl border border-slate-200 dark:border-neutral-800 bg-white dark:bg-neutral-900 hover:bg-slate-100 dark:hover:bg-neutral-800 text-xs font-semibold flex items-center gap-1.5 transition whitespace-nowrap&#39;;
+      }
+
+      function applyTheme() {
+        const isDark = state.profile.theme === &#39;dark&#39;;
+        document.documentElement.classList.toggle(&#39;dark&#39;, isDark);
+        const themeMeta = document.getElementById(&#39;meta-theme-color&#39;);
+        if (themeMeta) themeMeta.setAttribute(&#39;content&#39;, isDark ? &#39;#000000&#39; : &#39;#4f46e5&#39;);
+        const icon = document.getElementById(&#39;icon-theme&#39;);
+        if (icon) icon.setAttribute(&#39;data-lucide&#39;, isDark ? &#39;sun&#39; : &#39;moon&#39;);
+        if (window.lucide) lucide.createIcons();
+        if (weeklyChart) renderWeeklyChart();
+      }
+
+      function setupPwaAssets() {
+        try {
+          const canvas = document.createElement(&#39;canvas&#39;);
+          canvas.width = 512;
+          canvas.height = 512;
+          const ctx = canvas.getContext(&#39;2d&#39;);
+          if (!ctx) return;
+
+          const grad = ctx.createLinearGradient(0, 0, 512, 512);
+          grad.addColorStop(0, &#39;#6366f1&#39;);
+          grad.addColorStop(1, &#39;#7c3aed&#39;);
+
+          const r = 112;
+          ctx.beginPath();
+          ctx.moveTo(r, 0);
+          ctx.lineTo(512 - r, 0);
+          ctx.quadraticCurveTo(512, 0, 512, r);
+          ctx.lineTo(512, 512 - r);
+          ctx.quadraticCurveTo(512, 512, 512 - r, 512);
+          ctx.lineTo(r, 512);
+          ctx.quadraticCurveTo(0, 512, 0, 512 - r);
+          ctx.lineTo(0, r);
+          ctx.quadraticCurveTo(0, 0, r, 0);
+          ctx.closePath();
+          ctx.fillStyle = grad;
+          ctx.fill();
+
+          ctx.strokeStyle = &#39;#ffffff&#39;;
+          ctx.lineWidth = 38;
+          ctx.lineCap = &#39;round&#39;;
+          ctx.lineJoin = &#39;round&#39;;
+          ctx.beginPath();
+          ctx.moveTo(104, 344);
+          ctx.lineTo(212, 236);
+          ctx.lineTo(286, 298);
+          ctx.lineTo(404, 166);
+          ctx.stroke();
+
+          ctx.beginPath();
+          ctx.moveTo(324, 166);
+          ctx.lineTo(404, 166);
+          ctx.lineTo(404, 246);
+          ctx.stroke();
+
+          const pngUrl = canvas.toDataURL(&#39;image/png&#39;);
+          const appleLink = document.getElementById(&#39;apple-touch-icon-link&#39;);
+          if (appleLink) appleLink.setAttribute(&#39;href&#39;, pngUrl);
+
+          const manifest = {
+            name: &#39;Road To Bilion&#39;,
+            short_name: &#39;Road To Bilion&#39;,
+            description: &#39;나만의 갓생살기 &amp; 금융권 커리어 로드맵 대시보드&#39;,
+            start_url: &#39;.&#39;,
+            display: &#39;standalone&#39;,
+            background_color: &#39;#000000&#39;,
+            theme_color: &#39;#4f46e5&#39;,
+            icons: [
+              { src: pngUrl, sizes: &#39;192x192&#39;, type: &#39;image/png&#39;, purpose: &#39;any maskable&#39; },
+              { src: pngUrl, sizes: &#39;512x512&#39;, type: &#39;image/png&#39;, purpose: &#39;any maskable&#39; }
+            ]
+          };
+          const blob = new Blob([JSON.stringify(manifest)], { type: &#39;application/manifest+json&#39; });
+          const manifestLink = document.getElementById(&#39;pwa-manifest-link&#39;);
+          if (manifestLink) manifestLink.setAttribute(&#39;href&#39;, URL.createObjectURL(blob));
+        } catch (e) {
+          // Ignore canvas/manifest errors in restricted contexts
+        }
+      }
+
+      function computeTodayRoutinePct() {
+        const total = state.routines.length;
+        if (total === 0) return 0;
+        const done = state.routines.filter((r) =&gt; r.done).length;
+        return Math.round((done / total) * 100);
+      }
+
+      function computeMonthlyGoalPct() {
+        const list = state.monthlyGoals || [];
+        if (list.length === 0) return 0;
+        const sum = list.reduce((acc, g) =&gt; acc + Math.min(100, Math.max(0, Number(g.progress) || 0)), 0);
+        return Math.round(sum / list.length);
+      }
+
+      function computeRoadmapPct(cat) {
+        const list = (state.roadmaps &amp;&amp; state.roadmaps[cat]) || [];
+        if (list.length === 0) return 0;
+        const done = list.filter((i) =&gt; i.done).length;
+        return Math.round((done / list.length) * 100);
+      }
+
+      function computeTierInfo() {
+        const routinePct = computeTodayRoutinePct();
+        const monthlyPct = computeMonthlyGoalPct();
+        const hasRoutines = state.routines.length &gt; 0;
+        const hasMonthly = (state.monthlyGoals || []).length &gt; 0;
+
+        let combinedPct = 0;
+        if (hasRoutines &amp;&amp; hasMonthly) {
+          combinedPct = Math.round((routinePct + monthlyPct) / 2);
+        } else if (hasRoutines) {
+          combinedPct = routinePct;
+        } else if (hasMonthly) {
+          combinedPct = monthlyPct;
+        }
+
+        let tierIndex = 0;
+        for (let i = TIERS.length - 1; i &gt;= 0; i--) {
+          if (combinedPct &gt;= TIERS[i].min) {
+            tierIndex = i;
+            break;
+          }
+        }
+        const current = TIERS[tierIndex];
+        const next = tierIndex &lt; TIERS.length - 1 ? TIERS[tierIndex + 1] : null;
+        return { routinePct, monthlyPct, combinedPct, tierIndex, current, next };
+      }
+
+      function updateTodayHistory() {
+        state.historyByDate[getTodayKey()] = computeTodayRoutinePct();
+      }
+
+      function switchTab(tabName) {
+        activeTab = tabName;
+        document.querySelectorAll(&#39;.tab-btn&#39;).forEach((b) =&gt; {
+          const isSelected = b.dataset.tab === activeTab;
+          b.className = isSelected
+            ? &#39;tab-btn shrink-0 whitespace-nowrap inline-flex items-center justify-center gap-1.5 px-3.5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition bg-brand-600 text-white shadow-sm&#39;
+            : &#39;tab-btn shrink-0 whitespace-nowrap inline-flex items-center justify-center gap-1.5 px-3.5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition text-slate-600 dark:text-neutral-300 hover:bg-slate-100 dark:hover:bg-neutral-900&#39;;
+        });
+        document.querySelectorAll(&#39;.tab-panel&#39;).forEach((p) =&gt; {
+          p.classList.toggle(&#39;active&#39;, p.id === `panel-${activeTab}`);
+        });
+        if (activeTab === &#39;journal&#39;) {
+          renderWeeklyChart();
+          renderMonthlyHeatmap();
+          renderAchievements();
+        }
+      }
+
+      // Render D-Days
+      function renderDDays() {
+        const list = document.getElementById(&#39;dday-list&#39;);
+        const ddays = state.ddays || [];
+        if (ddays.length === 0) {
+          list.innerHTML = &#39;&lt;span class=&quot;text-xs text-slate-400 dark:text-neutral-500&quot;&gt;시험이나 채용 마감일을 추가해 D-Day를 관리해 보세요.&lt;/span&gt;&#39;;
+          return;
+        }
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
+
+        list.innerHTML = ddays
+          .map((d) =&gt; {
+            const target = new Date(d.date + &#39;T00:00:00&#39;);
+            const diffDays = Math.round((target - today) / (1000 * 60 * 60 * 24));
+            let badgeText = &#39;D-Day&#39;;
+            let badgeColor = &#39;bg-rose-600 text-white&#39;;
+            if (diffDays &gt; 0) {
+              badgeText = `D-${diffDays}`;
+              badgeColor = diffDays &lt;= 14 ? &#39;bg-rose-100 text-rose-700 dark:bg-rose-950/70 dark:text-rose-300&#39; : &#39;bg-brand-100 text-brand-700 dark:bg-neutral-800 dark:text-brand-300&#39;;
+            } else if (diffDays &lt; 0) {
+              badgeText = `D+${Math.abs(diffDays)}`;
+              badgeColor = &#39;bg-slate-200 text-slate-600 dark:bg-neutral-800 dark:text-neutral-400&#39;;
+            }
+            return `
+              &lt;div class=&quot;inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-slate-50 dark:bg-neutral-900 border border-slate-200/80 dark:border-neutral-800 text-xs&quot;&gt;
+                &lt;span class=&quot;font-extrabold px-1.5 py-0.5 rounded-full text-[11px] ${badgeColor}&quot;&gt;${badgeText}&lt;/span&gt;
+                &lt;span class=&quot;font-semibold text-slate-700 dark:text-neutral-200&quot;&gt;${escapeHtml(d.title)}&lt;/span&gt;
+                &lt;button type=&quot;button&quot; data-dday-delete=&quot;${escapeHtml(d.id)}&quot; aria-label=&quot;D-Day 삭제&quot; class=&quot;text-slate-400 hover:text-rose-500 transition ml-0.5&quot;&gt;
+                  &lt;i data-lucide=&quot;x&quot; class=&quot;w-3 h-3&quot;&gt;&lt;/i&gt;
+                &lt;/button&gt;
+              &lt;/div&gt;`;
+          })
+          .join(&#39;&#39;);
+        if (window.lucide) lucide.createIcons();
+      }
+
+      // Render Summary Hero + Quote + Tier System
+      function renderSummary() {
+        const d = new Date();
+        const days = [&#39;일&#39;, &#39;월&#39;, &#39;화&#39;, &#39;수&#39;, &#39;목&#39;, &#39;금&#39;, &#39;토&#39;];
+        document.getElementById(&#39;header-date&#39;).textContent =
+          `${d.getFullYear()}년 ${d.getMonth() + 1}월 ${d.getDate()}일 (${days[d.getDay()]})`;
+        document.getElementById(&#39;monthly-heading&#39;).textContent = `${d.getFullYear()}년 ${d.getMonth() + 1}월 핵심 목표`;
+
+        const levelInfo = getLevelInfo(state.xp);
+        document.getElementById(&#39;header-level&#39;).textContent = `Lv.${levelInfo.level}`;
+        document.getElementById(&#39;header-streak&#39;).textContent = `${state.streak}일 연속`;
+        document.getElementById(&#39;level-title&#39;).textContent = `Lv.${levelInfo.level} · ${levelInfo.title}`;
+        document.getElementById(&#39;greeting-name&#39;).textContent = state.profile.nickname || &#39;갓생러&#39;;
+        document.getElementById(&#39;user-motto&#39;).textContent = state.profile.motto || &#39;작은 루틴이 모여 단단한 나를 만든다.&#39;;
+
+        document.getElementById(&#39;xp-text&#39;).textContent = `${levelInfo.currentXp} / ${levelInfo.nextXp} XP`;
+        document.getElementById(&#39;xp-next-label&#39;).textContent = `다음 레벨까지 ${levelInfo.nextXp - levelInfo.currentXp} XP`;
+        document.getElementById(&#39;xp-bar-fill&#39;).style.width = `${levelInfo.currentXp}%`;
+
+        const quoteObj = QUOTES[state.quoteIndex % QUOTES.length];
+        document.getElementById(&#39;daily-quote&#39;).textContent = `“${quoteObj.text}”`;
+        document.getElementById(&#39;daily-quote-author&#39;).textContent = `— ${quoteObj.author}`;
+
+        const tierInfo = computeTierInfo();
+        const prevIdx = TIERS.findIndex((t) =&gt; t.id === (state.lastTierId || &#39;bronze&#39;));
+        if (tierInfo.tierIndex &gt; prevIdx) {
+          state.lastTierId = tierInfo.current.id;
+          fireConfetti();
+          showToast(`${tierInfo.current.emoji} 승급 축하! [${tierInfo.current.name}] 등급에 도달했어요!`, &#39;success&#39;);
+        } else if (tierInfo.tierIndex &lt; prevIdx) {
+          state.lastTierId = tierInfo.current.id;
+        }
+
+        const headerPill = document.getElementById(&#39;header-tier-pill&#39;);
+        headerPill.className = `flex items-center gap-1 px-2.5 py-1.5 rounded-full border text-xs font-bold whitespace-nowrap ${tierInfo.current.pillClass}`;
+        document.getElementById(&#39;header-tier-icon&#39;).textContent = tierInfo.current.emoji;
+        document.getElementById(&#39;header-tier-name&#39;).textContent = tierInfo.current.name;
+
+        const heroTierBadge = document.getElementById(&#39;hero-tier-badge&#39;);
+        heroTierBadge.className = `inline-flex items-center gap-1 text-xs font-bold px-2.5 py-1 rounded-full border ${tierInfo.current.pillClass}`;
+        heroTierBadge.textContent = `${tierInfo.current.emoji} ${tierInfo.current.name} 등급`;
+
+        document.getElementById(&#39;tier-card-emoji&#39;).textContent = tierInfo.current.emoji;
+        document.getElementById(&#39;tier-card-name&#39;).textContent = tierInfo.current.name;
+        document.getElementById(&#39;tier-combined-score&#39;).textContent = `(종합 ${tierInfo.combinedPct}%)`;
+        document.getElementById(&#39;tier-score-breakdown&#39;).textContent =
+          `루틴 달성률 ${tierInfo.routinePct}% · 한 달 목표 달성률 ${tierInfo.monthlyPct}%`;
+        document.getElementById(&#39;tier-next-hint&#39;).textContent = tierInfo.next
+          ? `${tierInfo.next.name}까지 ${Math.max(0, tierInfo.next.min - tierInfo.combinedPct)}% 남음`
+          : &#39;최고 등급 챌린저 달성!&#39;;
+
+        const tierFill = document.getElementById(&#39;tier-bar-fill&#39;);
+        tierFill.style.width = `${tierInfo.combinedPct}%`;
+        tierFill.className = `h-full bg-gradient-to-r ${tierInfo.current.barClass} rounded-full transition-all duration-500`;
+
+        const roadmap = document.getElementById(&#39;tier-roadmap&#39;);
+        roadmap.innerHTML = TIERS.map((t, idx) =&gt; {
+          const isCurrent = idx === tierInfo.tierIndex;
+          const isUnlocked = idx &lt;= tierInfo.tierIndex;
+          return `
+            &lt;div class=&quot;flex flex-col items-center justify-center py-1.5 px-1 rounded-lg border text-center transition ${
+              isCurrent
+                ? `${t.pillClass} shadow-sm ring-1 ring-brand-400/50`
+                : isUnlocked
+                ? &#39;bg-white dark:bg-neutral-950 border-slate-200 dark:border-neutral-800 text-slate-700 dark:text-neutral-200&#39;
+                : &#39;bg-slate-100/70 dark:bg-black/60 border-transparent text-slate-400 dark:text-neutral-600 opacity-70&#39;
+            }&quot;&gt;
+              &lt;span class=&quot;text-xs sm:text-sm leading-none&quot;&gt;${t.emoji}&lt;/span&gt;
+              &lt;span class=&quot;text-[10px] font-bold mt-1 leading-tight whitespace-nowrap&quot;&gt;${t.name}&lt;/span&gt;
+            &lt;/div&gt;`;
+        }).join(&#39;&#39;);
+
+        const totalItems = state.routines.length + state.todos.length;
+        const doneRoutines = state.routines.filter((r) =&gt; r.done).length;
+        const doneTodos = state.todos.filter((t) =&gt; t.done).length;
+        const doneItems = doneRoutines + doneTodos;
+        const pct = totalItems === 0 ? 0 : Math.round((doneItems / totalItems) * 100);
+
+        document.getElementById(&#39;overall-progress-pct&#39;).textContent = `${pct}%`;
+        document.getElementById(&#39;overall-progress-count&#39;).textContent = `${doneItems} / ${totalItems} 완료`;
+
+        const circumference = 2 * Math.PI * 26;
+        const offset = circumference - (pct / 100) * circumference;
+        document.getElementById(&#39;overall-progress-ring&#39;).style.strokeDashoffset = offset.toFixed(2);
+
+        document.getElementById(&#39;stat-focus-min&#39;).textContent = `${state.focusMinutesToday}분`;
+        document.getElementById(&#39;stat-routine-done&#39;).textContent = `${doneRoutines} / ${state.routines.length}`;
+        document.getElementById(&#39;stat-monthly-pct&#39;).textContent = `${tierInfo.monthlyPct}%`;
+
+        document.getElementById(&#39;water-count-label&#39;).textContent = `${state.waterCups} / 8잔`;
+        const grid = document.getElementById(&#39;water-cups-grid&#39;);
+        grid.innerHTML = &#39;&#39;;
+        for (let i = 1; i &lt;= 8; i++) {
+          const filled = i &lt;= state.waterCups;
+          const btn = document.createElement(&#39;button&#39;);
+          btn.type = &#39;button&#39;;
+          btn.dataset.cup = String(i);
+          btn.ariaLabel = `물 ${i}잔`;
+          btn.className = `h-7 rounded-lg flex items-center justify-center text-xs transition ${
+            filled
+              ? &#39;bg-sky-500 text-white shadow-sm&#39;
+              : &#39;bg-white dark:bg-black border border-sky-200 dark:border-neutral-800 text-sky-300 dark:text-neutral-600 hover:bg-sky-100 dark:hover:bg-neutral-800&#39;
+          }`;
+          btn.textContent = filled ? &#39;💧&#39; : &#39;○&#39;;
+          grid.appendChild(btn);
+        }
+
+        if (state.routines.length &gt; 0 &amp;&amp; doneRoutines === state.routines.length &amp;&amp; !state.celebratedToday) {
+          state.celebratedToday = true;
+          fireConfetti();
+          showToast(&#39;🏆 오늘의 루틴 100% 달성! 진짜 갓생러시네요!&#39;, &#39;success&#39;);
+        }
+      }
+
+      // Render Routines (with Edit button)
+      function renderRoutines() {
+        const list = document.getElementById(&#39;routine-list&#39;);
+        const filtered = state.routines.filter((r) =&gt; routineTimeFilter === &#39;all&#39; || r.time === routineTimeFilter);
+
+        if (filtered.length === 0) {
+          list.innerHTML = `
+            &lt;div class=&quot;text-center py-10 text-slate-400 dark:text-neutral-500 text-sm break-keep&quot;&gt;
+              이 시간대에 등록된 루틴이 없습니다. 위에서 나만의 루틴을 추가해보세요!
+            &lt;/div&gt;`;
+          return;
+        }
+
+        list.innerHTML = filtered
+          .map((r) =&gt; {
+            const meta = TIME_LABELS[r.time] || TIME_LABELS.morning;
+            return `
+              &lt;div class=&quot;group flex items-start sm:items-center justify-between gap-3 p-3.5 rounded-xl border transition ${
+                r.done
+                  ? &#39;bg-emerald-50/50 dark:bg-neutral-900 border-emerald-200/80 dark:border-emerald-900/70&#39;
+                  : &#39;bg-slate-50/60 dark:bg-neutral-900/70 border-slate-200/70 dark:border-neutral-800 hover:border-brand-300 dark:hover:border-neutral-600&#39;
+              }&quot;&gt;
+                &lt;label class=&quot;flex items-start sm:items-center gap-3 flex-1 min-w-0 cursor-pointer&quot;&gt;
+                  &lt;input type=&quot;checkbox&quot; data-routine-toggle=&quot;${escapeHtml(r.id)}&quot; ${r.done ? &#39;checked&#39; : &#39;&#39;} class=&quot;w-5 h-5 mt-0.5 sm:mt-0 rounded-md accent-brand-600 cursor-pointer shrink-0&quot; /&gt;
+                  &lt;span class=&quot;text-sm font-medium leading-snug break-keep ${r.done ? &#39;line-through text-slate-400 dark:text-neutral-500&#39; : &#39;text-slate-800 dark:text-neutral-100&#39;}&quot;&gt;${escapeHtml(r.title)}&lt;/span&gt;
+                &lt;/label&gt;
+                &lt;div class=&quot;flex items-center gap-1.5 shrink-0&quot;&gt;
+                  &lt;span class=&quot;text-[11px] font-semibold px-2 py-0.5 rounded-full whitespace-nowrap ${meta.badgeClass}&quot;&gt;${meta.emoji} ${meta.label}&lt;/span&gt;
+                  &lt;button type=&quot;button&quot; data-routine-edit=&quot;${escapeHtml(r.id)}&quot; aria-label=&quot;루틴 수정&quot; class=&quot;p-1.5 rounded-lg text-slate-400 hover:text-brand-600 hover:bg-brand-50 dark:hover:bg-neutral-800 transition&quot;&gt;
+                    &lt;i data-lucide=&quot;pencil&quot; class=&quot;w-3.5 h-3.5&quot;&gt;&lt;/i&gt;
+                  &lt;/button&gt;
+                  &lt;button type=&quot;button&quot; data-routine-delete=&quot;${escapeHtml(r.id)}&quot; aria-label=&quot;루틴 삭제&quot; class=&quot;p-1.5 rounded-lg text-slate-400 hover:text-rose-500 hover:bg-rose-50 dark:hover:bg-neutral-800 transition&quot;&gt;
+                    &lt;i data-lucide=&quot;trash-2&quot; class=&quot;w-4 h-4&quot;&gt;&lt;/i&gt;
+                  &lt;/button&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;`;
+          })
+          .join(&#39;&#39;);
+        if (window.lucide) lucide.createIcons();
+      }
+
+      // Render Roadmaps
+      function renderRoadmaps() {
+        [&#39;securities&#39;, &#39;bank&#39;].forEach((cat) =&gt; {
+          const pct = computeRoadmapPct(cat);
+          document.getElementById(`rm-pct-${cat}`).textContent = `${pct}%`;
+          document.getElementById(`rm-bar-${cat}`).style.width = `${pct}%`;
+        });
+
+        const catStyles = {
+          securities: &#39;border-2 border-emerald-500 bg-emerald-50/70 dark:bg-neutral-950&#39;,
+          bank: &#39;border-2 border-sky-500 bg-sky-50/70 dark:bg-neutral-950&#39;
+        };
+        document.querySelectorAll(&#39;.roadmap-cat-btn&#39;).forEach((btn) =&gt; {
+          const cat = btn.dataset.roadmapCat;
+          const isActive = cat === activeRoadmapCat;
+          btn.className = `roadmap-cat-btn text-left p-4 rounded-2xl shadow-sm transition space-y-2 ${
+            isActive
+              ? catStyles[cat]
+              : &#39;border border-slate-200 dark:border-neutral-800 bg-white dark:bg-neutral-950 hover:border-slate-300 dark:hover:border-neutral-700&#39;
+          }`;
+        });
+
+        const meta = ROADMAP_META[activeRoadmapCat];
+        const items = (state.roadmaps &amp;&amp; state.roadmaps[activeRoadmapCat]) || [];
+        const doneCount = items.filter((i) =&gt; i.done).length;
+        const pct = computeRoadmapPct(activeRoadmapCat);
+
+        document.getElementById(&#39;roadmap-overview-box&#39;).innerHTML = `
+          &lt;div class=&quot;flex flex-col sm:flex-row sm:items-center justify-between gap-2&quot;&gt;
+            &lt;div class=&quot;space-y-1 min-w-0&quot;&gt;
+              &lt;h3 class=&quot;text-base font-extrabold leading-snug break-keep ${meta.accentText}&quot;&gt;${escapeHtml(meta.title)}&lt;/h3&gt;
+              &lt;p class=&quot;text-xs text-slate-600 dark:text-neutral-400 leading-relaxed break-keep&quot;&gt;${escapeHtml(meta.subtitle)}&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;self-start sm:self-center shrink-0 text-right&quot;&gt;
+              &lt;span class=&quot;text-sm font-extrabold ${meta.accentText}&quot;&gt;${pct}%&lt;/span&gt;
+              &lt;span class=&quot;text-xs text-slate-500 dark:text-neutral-400 ml-1&quot;&gt;(${doneCount}/${items.length} 완료)&lt;/span&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div class=&quot;flex items-center gap-1.5 flex-wrap pt-1&quot;&gt;
+            ${meta.chips.map((c) =&gt; `&lt;span class=&quot;text-[11px] font-semibold px-2.5 py-1 rounded-full bg-white dark:bg-black border border-slate-200 dark:border-neutral-800 text-slate-700 dark:text-neutral-200&quot;&gt;${escapeHtml(c)}&lt;/span&gt;`).join(&#39;&#39;)}
+          &lt;/div&gt;
+        `;
+
+        const container = document.getElementById(&#39;roadmap-phases-container&#39;);
+        container.innerHTML = meta.phaseTitles
+          .map((phaseTitle, phaseIdx) =&gt; {
+            const phaseItems = items.filter((i) =&gt; Number(i.phase) === phaseIdx);
+            const phaseDone = phaseItems.filter((i) =&gt; i.done).length;
+            const phasePct = phaseItems.length === 0 ? 0 : Math.round((phaseDone / phaseItems.length) * 100);
+
+            return `
+              &lt;div class=&quot;rounded-2xl border border-slate-200/80 dark:border-neutral-800 overflow-hidden&quot;&gt;
+                &lt;div class=&quot;px-4 py-3 bg-slate-50 dark:bg-neutral-900 border-b border-slate-200/70 dark:border-neutral-800 flex items-center justify-between gap-2&quot;&gt;
+                  &lt;h4 class=&quot;text-xs sm:text-sm font-bold leading-snug break-keep&quot;&gt;${escapeHtml(phaseTitle)}&lt;/h4&gt;
+                  &lt;span class=&quot;text-xs font-extrabold shrink-0 whitespace-nowrap ${phasePct === 100 ? &#39;text-emerald-600 dark:text-emerald-400&#39; : &#39;text-slate-500 dark:text-neutral-400&#39;}&quot;&gt;${phaseDone}/${phaseItems.length} (${phasePct}%)&lt;/span&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;p-3 space-y-2 bg-white dark:bg-black&quot;&gt;
+                  ${
+                    phaseItems.length === 0
+                      ? &#39;&lt;div class=&quot;text-xs text-slate-400 dark:text-neutral-500 py-3 text-center&quot;&gt;이 단계에 등록된 항목이 없습니다.&lt;/div&gt;&#39;
+                      : phaseItems
+                          .map(
+                            (item) =&gt; `
+                              &lt;div class=&quot;flex items-start justify-between gap-2.5 p-3 rounded-xl border transition ${
+                                item.done
+                                  ? &#39;bg-emerald-50/50 dark:bg-neutral-950 border-emerald-200/80 dark:border-emerald-900/70&#39;
+                                  : &#39;bg-white dark:bg-neutral-950 border-slate-200/70 dark:border-neutral-800 hover:border-brand-300 dark:hover:border-neutral-600&#39;
+                              }&quot;&gt;
+                                &lt;label class=&quot;flex items-start gap-3 flex-1 min-w-0 cursor-pointer&quot;&gt;
+                                  &lt;input type=&quot;checkbox&quot; data-rm-toggle=&quot;${escapeHtml(item.id)}&quot; ${item.done ? &#39;checked&#39; : &#39;&#39;} class=&quot;w-4 h-4 mt-1 rounded accent-brand-600 cursor-pointer shrink-0&quot; /&gt;
+                                  &lt;div class=&quot;min-w-0 flex-1 space-y-0.5&quot;&gt;
+                                    &lt;div class=&quot;text-xs sm:text-sm font-semibold leading-snug break-keep ${item.done ? &#39;line-through text-slate-400 dark:text-neutral-500&#39; : &#39;text-slate-800 dark:text-neutral-100&#39;}&quot;&gt;${escapeHtml(item.title)}&lt;/div&gt;
+                                    ${item.tip ? `&lt;div class=&quot;text-[11px] text-slate-500 dark:text-neutral-400 leading-relaxed break-keep&quot;&gt;💡 ${escapeHtml(item.tip)}&lt;/div&gt;` : &#39;&#39;}
+                                  &lt;/div&gt;
+                                &lt;/label&gt;
+                                &lt;div class=&quot;flex items-center gap-1 shrink-0&quot;&gt;
+                                  &lt;button type=&quot;button&quot; data-rm-to-todo=&quot;${escapeHtml(item.id)}&quot; title=&quot;오늘 할 일로 추가&quot; class=&quot;px-2 py-1 rounded-lg bg-slate-100 dark:bg-neutral-900 hover:bg-brand-50 dark:hover:bg-neutral-800 hover:text-brand-600 dark:hover:text-brand-300 text-[11px] font-semibold transition whitespace-nowrap&quot;&gt;+ 할 일&lt;/button&gt;
+                                  &lt;button type=&quot;button&quot; data-rm-delete=&quot;${escapeHtml(item.id)}&quot; aria-label=&quot;항목 삭제&quot; class=&quot;p-1.5 rounded-lg text-slate-400 hover:text-rose-500 hover:bg-rose-50 dark:hover:bg-neutral-900 transition&quot;&gt;
+                                    &lt;i data-lucide=&quot;trash-2&quot; class=&quot;w-3.5 h-3.5&quot;&gt;&lt;/i&gt;
+                                  &lt;/button&gt;
+                                &lt;/div&gt;
+                              &lt;/div&gt;
+                            `
+                          )
+                          .join(&#39;&#39;)
+                  }
+                &lt;/div&gt;
+              &lt;/div&gt;`;
+          })
+          .join(&#39;&#39;);
+
+        if (window.lucide) lucide.createIcons();
+      }
+
+      // Render Life &amp; Health Tips
+      function renderTips() {
+        const bookmarks = new Set(state.bookmarkedTips || []);
+        const q = tipSearchQuery.trim().toLowerCase();
+
+        const filtered = LIFE_HEALTH_TIPS.filter((tip) =&gt; {
+          if (activeTipCat === &#39;bookmarked&#39; &amp;&amp; !bookmarks.has(tip.id)) return false;
+          if (activeTipCat !== &#39;all&#39; &amp;&amp; activeTipCat !== &#39;bookmarked&#39; &amp;&amp; tip.cat !== activeTipCat) return false;
+          if (q) {
+            const hay = `${tip.title} ${tip.desc} ${(TIP_CAT_META[tip.cat] || {}).label || &#39;&#39;}`.toLowerCase();
+            if (!hay.includes(q)) return false;
+          }
+          return true;
+        });
+
+        document.getElementById(&#39;tips-count-label&#39;).textContent = `표시 중인 꿀팁 ${filtered.length}개`;
+        document.getElementById(&#39;tips-bookmark-count&#39;).textContent = `북마크 ${bookmarks.size}개`;
+
+        const grid = document.getElementById(&#39;tips-grid&#39;);
+        if (filtered.length === 0) {
+          grid.innerHTML = `
+            &lt;div class=&quot;md:col-span-2 text-center py-10 text-slate-400 dark:text-neutral-500 text-sm break-keep&quot;&gt;
+              조건에 맞는 꿀팁이 없습니다. 다른 키워드나 카테고리를 선택해 보세요.
+            &lt;/div&gt;`;
+          return;
+        }
+
+        grid.innerHTML = filtered
+          .map((tip) =&gt; {
+            const meta = TIP_CAT_META[tip.cat] || TIP_CAT_META.life;
+            const isBookmarked = bookmarks.has(tip.id);
+            return `
+              &lt;article class=&quot;p-4 rounded-2xl border border-slate-200/80 dark:border-neutral-800 bg-slate-50/70 dark:bg-neutral-900/70 flex flex-col justify-between gap-3 transition hover:border-brand-300 dark:hover:border-neutral-600&quot;&gt;
+                &lt;div class=&quot;space-y-2&quot;&gt;
+                  &lt;div class=&quot;flex items-center justify-between gap-2&quot;&gt;
+                    &lt;span class=&quot;text-[11px] font-semibold px-2.5 py-0.5 rounded-full whitespace-nowrap ${meta.badgeClass}&quot;&gt;${meta.label}&lt;/span&gt;
+                    &lt;button type=&quot;button&quot; data-tip-bookmark=&quot;${escapeHtml(tip.id)}&quot; aria-label=&quot;꿀팁 북마크&quot; class=&quot;p-1.5 rounded-lg transition ${isBookmarked ? &#39;text-amber-500 bg-amber-50 dark:bg-neutral-800&#39; : &#39;text-slate-400 hover:text-amber-500 hover:bg-slate-100 dark:hover:bg-neutral-800&#39;}&quot;&gt;
+                      &lt;i data-lucide=&quot;star&quot; class=&quot;w-4 h-4 ${isBookmarked ? &#39;fill-amber-400&#39; : &#39;&#39;}&quot;&gt;&lt;/i&gt;
+                    &lt;/button&gt;
+                  &lt;/div&gt;
+                  &lt;h4 class=&quot;text-sm font-bold leading-snug break-keep text-slate-800 dark:text-neutral-100&quot;&gt;${escapeHtml(tip.title)}&lt;/h4&gt;
+                  &lt;p class=&quot;text-xs text-slate-600 dark:text-neutral-300 leading-relaxed break-keep&quot;&gt;${escapeHtml(tip.desc)}&lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;flex items-center justify-end pt-1&quot;&gt;
+                  &lt;button type=&quot;button&quot; data-tip-to-routine=&quot;${escapeHtml(tip.id)}&quot; class=&quot;inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-white dark:bg-black border border-slate-200 dark:border-neutral-800 hover:border-brand-400 hover:text-brand-600 dark:hover:text-brand-300 text-[11px] font-semibold transition whitespace-nowrap&quot;&gt;
+                    &lt;i data-lucide=&quot;plus&quot; class=&quot;w-3 h-3&quot;&gt;&lt;/i&gt;
+                    &lt;span&gt;내 루틴에 추가&lt;/span&gt;
+                  &lt;/button&gt;
+                &lt;/div&gt;
+              &lt;/article&gt;`;
+          })
+          .join(&#39;&#39;);
+        if (window.lucide) lucide.createIcons();
+      }
+
+      // Render Monthly Goals &amp; Tier Guide
+      function renderMonthlyGoals() {
+        const list = document.getElementById(&#39;monthly-goal-list&#39;);
+        const goals = state.monthlyGoals || [];
+        const avgPct = computeMonthlyGoalPct();
+        document.getElementById(&#39;monthly-avg-pill&#39;).textContent = `평균 달성률 ${avgPct}%`;
+
+        if (goals.length === 0) {
+          list.innerHTML = `
+            &lt;div class=&quot;text-center py-10 text-slate-400 dark:text-neutral-500 text-sm break-keep&quot;&gt;
+              아직 등록된 한 달 목표가 없습니다. 이번 달에 이루고 싶은 목표를 추가해보세요!
+            &lt;/div&gt;`;
+        } else {
+          list.innerHTML = goals
+            .map((g) =&gt; {
+              const p = Math.min(100, Math.max(0, Number(g.progress) || 0));
+              const isDone = p &gt;= 100;
+              return `
+                &lt;div class=&quot;p-4 rounded-xl border space-y-3 transition ${
+                  isDone
+                    ? &#39;bg-emerald-50/50 dark:bg-neutral-900 border-emerald-200/80 dark:border-emerald-900/70&#39;
+                    : &#39;bg-slate-50/70 dark:bg-neutral-900/70 border-slate-200/70 dark:border-neutral-800&#39;
+                }&quot;&gt;
+                  &lt;div class=&quot;flex items-start justify-between gap-3&quot;&gt;
+                    &lt;div class=&quot;min-w-0 flex-1 space-y-1&quot;&gt;
+                      &lt;div class=&quot;flex items-center gap-2 flex-wrap&quot;&gt;
+                        &lt;span class=&quot;text-[11px] font-semibold px-2 py-0.5 rounded-full bg-violet-100/80 dark:bg-black text-violet-700 dark:text-violet-300 dark:border dark:border-neutral-800&quot;&gt;${escapeHtml(g.category)}&lt;/span&gt;
+                        ${isDone ? &#39;&lt;span class=&quot;text-[11px] font-bold px-2 py-0.5 rounded-full bg-emerald-100 dark:bg-black text-emerald-700 dark:text-emerald-400 dark:border dark:border-emerald-900/70&quot;&gt;목표 달성 완료!&lt;/span&gt;&#39; : &#39;&#39;}
+                      &lt;/div&gt;
+                      &lt;h4 class=&quot;text-sm font-bold leading-snug break-keep ${isDone ? &#39;text-emerald-800 dark:text-emerald-300&#39; : &#39;text-slate-800 dark:text-neutral-100&#39;}&quot;&gt;${escapeHtml(g.title)}&lt;/h4&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;flex items-center gap-2 shrink-0&quot;&gt;
+                      &lt;span class=&quot;text-sm font-extrabold text-brand-600 dark:text-brand-400 tabular-nums&quot;&gt;${p}%&lt;/span&gt;
+                      &lt;button type=&quot;button&quot; data-monthly-delete=&quot;${escapeHtml(g.id)}&quot; aria-label=&quot;한 달 목표 삭제&quot; class=&quot;p-1.5 rounded-lg text-slate-400 hover:text-rose-500 hover:bg-rose-50 dark:hover:bg-neutral-800 transition&quot;&gt;
+                        &lt;i data-lucide=&quot;trash-2&quot; class=&quot;w-4 h-4&quot;&gt;&lt;/i&gt;
+                      &lt;/button&gt;
+                    &lt;/div&gt;
+                  &lt;/div&gt;
+
+                  &lt;div class=&quot;flex flex-col sm:flex-row sm:items-center gap-3&quot;&gt;
+                    &lt;input type=&quot;range&quot; min=&quot;0&quot; max=&quot;100&quot; step=&quot;5&quot; value=&quot;${p}&quot; data-monthly-range=&quot;${escapeHtml(g.id)}&quot; aria-label=&quot;목표 달성률 조절&quot; class=&quot;flex-1 accent-brand-600 cursor-pointer&quot; /&gt;
+                    &lt;div class=&quot;flex items-center gap-1.5 shrink-0&quot;&gt;
+                      &lt;button type=&quot;button&quot; data-monthly-step=&quot;${escapeHtml(g.id)}&quot; data-delta=&quot;10&quot; class=&quot;px-2.5 py-1 rounded-lg bg-white dark:bg-black border border-slate-200 dark:border-neutral-800 text-xs font-semibold hover:bg-brand-50 dark:hover:bg-neutral-800 hover:text-brand-600 transition&quot;&gt;+10%&lt;/button&gt;
+                      &lt;button type=&quot;button&quot; data-monthly-complete=&quot;${escapeHtml(g.id)}&quot; class=&quot;px-2.5 py-1 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-semibold transition&quot;&gt;100%&lt;/button&gt;
+                    &lt;/div&gt;
+                  &lt;/div&gt;
+                &lt;/div&gt;`;
+            })
+            .join(&#39;&#39;);
+        }
+
+        const tierInfo = computeTierInfo();
+        const guideGrid = document.getElementById(&#39;tier-guide-grid&#39;);
+        guideGrid.innerHTML = TIERS.map((t, idx) =&gt; {
+          const isCurrent = idx === tierInfo.tierIndex;
+          const nextMin = idx &lt; TIERS.length - 1 ? TIERS[idx + 1].min - 1 : 100;
+          return `
+            &lt;div class=&quot;p-2.5 rounded-xl border text-center space-y-1 transition ${
+              isCurrent ? `${t.pillClass} shadow-sm` : &#39;bg-slate-50/70 dark:bg-neutral-900/70 border-slate-200/70 dark:border-neutral-800&#39;
+            }&quot;&gt;
+              &lt;div class=&quot;text-lg leading-none&quot;&gt;${t.emoji}&lt;/div&gt;
+              &lt;div class=&quot;text-xs font-extrabold&quot;&gt;${t.name}&lt;/div&gt;
+              &lt;div class=&quot;text-[11px] text-slate-500 dark:text-neutral-400&quot;&gt;${t.min}%~${nextMin}%&lt;/div&gt;
+            &lt;/div&gt;`;
+        }).join(&#39;&#39;);
+
+        if (window.lucide) lucide.createIcons();
+      }
+
+      // Render Todos
+      function renderTodos() {
+        const list = document.getElementById(&#39;todo-list&#39;);
+        const sorted = [...state.todos].sort((a, b) =&gt; {
+          if (a.done !== b.done) return a.done ? 1 : -1;
+          if (a.priority !== b.priority) return a.priority ? -1 : 1;
+          return 0;
+        });
+
+        const filtered = sorted.filter((t) =&gt; {
+          if (todoFilter === &#39;active&#39;) return !t.done;
+          if (todoFilter === &#39;done&#39;) return t.done;
+          return true;
+        });
+
+        if (filtered.length === 0) {
+          list.innerHTML = `
+            &lt;div class=&quot;text-center py-10 text-slate-400 dark:text-neutral-500 text-sm break-keep&quot;&gt;
+              표시할 할 일이 없습니다. 새로운 목표를 추가해보세요!
+            &lt;/div&gt;`;
+          return;
+        }
+
+        list.innerHTML = filtered
+          .map((t) =&gt; `
+            &lt;div class=&quot;flex items-start sm:items-center justify-between gap-3 p-3.5 rounded-xl border transition ${
+              t.priority &amp;&amp; !t.done
+                ? &#39;bg-amber-50/50 dark:bg-neutral-900 border-amber-200/80 dark:border-amber-800/60&#39;
+                : &#39;bg-slate-50/60 dark:bg-neutral-900/70 border-slate-200/70 dark:border-neutral-800&#39;
+            }&quot;&gt;
+              &lt;label class=&quot;flex items-start sm:items-center gap-3 flex-1 min-w-0 cursor-pointer&quot;&gt;
+                &lt;input type=&quot;checkbox&quot; data-todo-toggle=&quot;${escapeHtml(t.id)}&quot; ${t.done ? &#39;checked&#39; : &#39;&#39;} class=&quot;w-5 h-5 mt-0.5 sm:mt-0 rounded-md accent-brand-600 cursor-pointer shrink-0&quot; /&gt;
+                &lt;div class=&quot;min-w-0 flex-1&quot;&gt;
+                  &lt;div class=&quot;text-sm font-medium leading-snug break-keep ${t.done ? &#39;line-through text-slate-400 dark:text-neutral-500&#39; : &#39;text-slate-800 dark:text-neutral-100&#39;}&quot;&gt;${escapeHtml(t.title)}&lt;/div&gt;
+                  &lt;div class=&quot;flex items-center gap-1.5 mt-1 flex-wrap&quot;&gt;
+                    &lt;span class=&quot;text-[11px] font-medium text-slate-500 dark:text-neutral-400&quot;&gt;${escapeHtml(t.tag)}&lt;/span&gt;
+                    ${t.priority ? &#39;&lt;span class=&quot;text-[10px] font-bold px-1.5 py-0.5 rounded bg-amber-100 dark:bg-black text-amber-700 dark:text-amber-300 dark:border dark:border-amber-800/60&quot;&gt;핵심 목표&lt;/span&gt;&#39; : &#39;&#39;}
+                  &lt;/div&gt;
+                &lt;/div&gt;
+              &lt;/label&gt;
+              &lt;div class=&quot;flex items-center gap-1 shrink-0&quot;&gt;
+                &lt;button type=&quot;button&quot; data-todo-star=&quot;${escapeHtml(t.id)}&quot; aria-label=&quot;핵심 목표 지정&quot; class=&quot;p-1.5 rounded-lg transition ${t.priority ? &#39;text-amber-500 bg-amber-50 dark:bg-neutral-800&#39; : &#39;text-slate-400 hover:text-amber-500 hover:bg-slate-100 dark:hover:bg-neutral-800&#39;}&quot;&gt;
+                  &lt;i data-lucide=&quot;star&quot; class=&quot;w-4 h-4 ${t.priority ? &#39;fill-amber-400&#39; : &#39;&#39;}&quot;&gt;&lt;/i&gt;
+                &lt;/button&gt;
+                &lt;button type=&quot;button&quot; data-todo-delete=&quot;${escapeHtml(t.id)}&quot; aria-label=&quot;할 일 삭제&quot; class=&quot;p-1.5 rounded-lg text-slate-400 hover:text-rose-500 hover:bg-rose-50 dark:hover:bg-neutral-800 transition&quot;&gt;
+                  &lt;i data-lucide=&quot;trash-2&quot; class=&quot;w-4 h-4&quot;&gt;&lt;/i&gt;
+                &lt;/button&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+          `)
+          .join(&#39;&#39;);
+        if (window.lucide) lucide.createIcons();
+      }
+
+      // Render Focus Timer &amp; Logs
+      function renderTimerDisplay() {
+        const mins = Math.floor(timerRemainingSec / 60);
+        const secs = timerRemainingSec % 60;
+        document.getElementById(&#39;timer-display&#39;).textContent =
+          `${String(mins).padStart(2, &#39;0&#39;)}:${String(secs).padStart(2, &#39;0&#39;)}`;
+        document.getElementById(&#39;timer-mode-badge&#39;).textContent = timerModeLabel;
+
+        const circumference = 2 * Math.PI * 86;
+        const progress = timerTotalSec &gt; 0 ? (timerTotalSec - timerRemainingSec) / timerTotalSec : 0;
+        document.getElementById(&#39;timer-ring&#39;).style.strokeDashoffset = (circumference * progress).toFixed(2);
+
+        const icon = document.getElementById(&#39;icon-timer-toggle&#39;);
+        const label = document.getElementById(&#39;label-timer-toggle&#39;);
+        icon.setAttribute(&#39;data-lucide&#39;, timerRunning ? &#39;pause&#39; : &#39;play&#39;);
+        label.textContent = timerRunning ? &#39;일시 정지&#39; : &#39;집중 시작&#39;;
+        if (window.lucide) lucide.createIcons();
+      }
+
+      function renderFocusLogs() {
+        const today = getTodayKey();
+        const todayLogs = state.focusLogs.filter((l) =&gt; l.date === today);
+        document.getElementById(&#39;focus-session-count&#39;).textContent = `${todayLogs.length}세션`;
+        const list = document.getElementById(&#39;focus-log-list&#39;);
+
+        if (todayLogs.length === 0) {
+          list.innerHTML = `
+            &lt;div class=&quot;text-center py-10 text-slate-400 dark:text-neutral-500 text-xs sm:text-sm leading-relaxed break-keep&quot;&gt;
+              아직 오늘 기록된 집중 세션이 없어요.&lt;br/&gt;타이머를 시작해 첫 딥워크를 기록해보세요!
+            &lt;/div&gt;`;
+          return;
+        }
+
+        list.innerHTML = todayLogs
+          .map((l) =&gt; `
+            &lt;div class=&quot;flex items-start justify-between gap-2 p-3 rounded-xl bg-slate-50 dark:bg-neutral-900 border border-slate-200/70 dark:border-neutral-800&quot;&gt;
+              &lt;div class=&quot;min-w-0 flex-1&quot;&gt;
+                &lt;div class=&quot;text-xs sm:text-sm font-semibold leading-snug break-keep&quot;&gt;${escapeHtml(l.task)}&lt;/div&gt;
+                &lt;div class=&quot;text-[11px] text-slate-500 dark:text-neutral-400 mt-0.5&quot;&gt;${escapeHtml(l.time)} · ${escapeHtml(l.mode)}&lt;/div&gt;
+              &lt;/div&gt;
+              &lt;span class=&quot;text-xs font-bold text-emerald-600 dark:text-emerald-400 shrink-0&quot;&gt;+${l.minutes}분&lt;/span&gt;
+            &lt;/div&gt;
+          `)
+          .join(&#39;&#39;);
+      }
+
+      function recordFocusSession() {
+        const mins = Math.max(1, Math.round(timerTotalSec / 60));
+        const taskInput = document.getElementById(&#39;input-focus-task&#39;);
+        const taskName = (taskInput.value || &#39;&#39;).trim() || &#39;집중 딥워크 세션&#39;;
+        const now = new Date();
+        const timeStr = `${String(now.getHours()).padStart(2, &#39;0&#39;)}:${String(now.getMinutes()).padStart(2, &#39;0&#39;)}`;
+
+        state.focusMinutesToday += mins;
+        state.focusLogs.unshift({
+          id: &#39;f_&#39; + Date.now(),
+          date: getTodayKey(),
+          time: timeStr,
+          task: taskName,
+          mode: timerModeLabel,
+          minutes: mins
+        });
+
+        addXp(30, `${mins}분 집중 완료`);
+        playChime();
+        saveState();
+        renderSummary();
+        renderFocusLogs();
+        renderAchievements();
+      }
+
+      // Render Monthly Heatmap Calendar
+      function renderMonthlyHeatmap() {
+        updateTodayHistory();
+        const now = new Date();
+        const year = now.getFullYear();
+        const month = now.getMonth();
+        const todayDate = now.getDate();
+        const firstDay = new Date(year, month, 1).getDay();
+        const daysInMonth = new Date(year, month + 1, 0).getDate();
+
+        const titleEl = document.getElementById(&#39;heatmap-title&#39;);
+        if (titleEl) {
+          titleEl.innerHTML = `&lt;i data-lucide=&quot;calendar-days&quot; class=&quot;w-4 h-4 text-emerald-500 shrink-0&quot;&gt;&lt;/i&gt;&lt;span&gt;${year}년 ${month + 1}월 갓생 잔디 캘린더&lt;/span&gt;`;
+        }
+
+        const cells = [];
+        for (let i = 0; i &lt; firstDay; i++) {
+          cells.push(&#39;&lt;div class=&quot;h-9 rounded-lg&quot;&gt;&lt;/div&gt;&#39;);
+        }
+        for (let day = 1; day &lt;= daysInMonth; day++) {
+          const key = `${year}-${String(month + 1).padStart(2, &#39;0&#39;)}-${String(day).padStart(2, &#39;0&#39;)}`;
+          const pct = Number(state.historyByDate[key] || 0);
+          const isToday = day === todayDate;
+          let colorClass = &#39;bg-slate-100 dark:bg-neutral-900 text-slate-400 dark:text-neutral-500 border-slate-200/70 dark:border-neutral-800&#39;;
+          if (pct &gt;= 100) {
+            colorClass = &#39;bg-emerald-600 dark:bg-emerald-500 text-white border-emerald-600 font-bold&#39;;
+          } else if (pct &gt;= 65) {
+            colorClass = &#39;bg-emerald-400 dark:bg-emerald-700 text-white border-emerald-400 font-bold&#39;;
+          } else if (pct &gt; 0) {
+            colorClass = &#39;bg-emerald-200 dark:bg-emerald-950 text-emerald-900 dark:text-emerald-300 border-emerald-300 dark:border-emerald-900 font-semibold&#39;;
+          }
+          cells.push(`
+            &lt;div title=&quot;${key}: ${pct}%&quot; class=&quot;h-9 rounded-lg border flex flex-col items-center justify-center text-xs transition ${colorClass} ${isToday ? &#39;ring-2 ring-brand-500 ring-offset-1 dark:ring-offset-black&#39; : &#39;&#39;}&quot;&gt;
+              &lt;span&gt;${day}&lt;/span&gt;
+            &lt;/div&gt;
+          `);
+        }
+        document.getElementById(&#39;monthly-heatmap-grid&#39;).innerHTML = cells.join(&#39;&#39;);
+        if (window.lucide) lucide.createIcons();
+      }
+
+      // Render Achievements
+      function renderAchievements() {
+        const doneRoutines = state.routines.filter((r) =&gt; r.done).length;
+        const rmDone = [...(state.roadmaps.securities || []), ...(state.roadmaps.bank || [])].filter((i) =&gt; i.done).length;
+        const badges = [
+          { emoji: &#39;🌱&#39;, title: &#39;첫 루틴 실천&#39;, desc: &#39;오늘 루틴 1개 이상 완료&#39;, unlocked: doneRoutines &gt;= 1 },
+          { emoji: &#39;🏆&#39;, title: &#39;루틴 올클리어&#39;, desc: &#39;오늘 루틴 100% 달성&#39;, unlocked: state.routines.length &gt; 0 &amp;&amp; doneRoutines === state.routines.length },
+          { emoji: &#39;💧&#39;, title: &#39;수분 마스터&#39;, desc: &#39;하루 물 8잔 채우기&#39;, unlocked: state.waterCups &gt;= 8 },
+          { emoji: &#39;⏱️&#39;, title: &#39;딥워크 입문&#39;, desc: &#39;집중 타이머 1세션 기록&#39;, unlocked: state.focusLogs.length &gt;= 1 },
+          { emoji: &#39;🚀&#39;, title: &#39;커리어 첫걸음&#39;, desc: &#39;취업 로드맵 항목 완료&#39;, unlocked: rmDone &gt;= 1 },
+          { emoji: &#39;📝&#39;, title: &#39;성장의 기록자&#39;, desc: &#39;하루 3줄 회고 작성&#39;, unlocked: state.journals.length &gt;= 1 }
+        ];
+        const unlockedCount = badges.filter((b) =&gt; b.unlocked).length;
+        document.getElementById(&#39;achievement-count-badge&#39;).textContent = `${unlockedCount} / ${badges.length} 해금`;
+
+        document.getElementById(&#39;achievement-grid&#39;).innerHTML = badges
+          .map((b) =&gt; `
+            &lt;div class=&quot;p-3 rounded-xl border text-center space-y-1 transition ${
+              b.unlocked
+                ? &#39;bg-amber-50/70 dark:bg-neutral-900 border-amber-200 dark:border-amber-700/70 shadow-sm&#39;
+                : &#39;bg-slate-50/60 dark:bg-black border-slate-200/70 dark:border-neutral-800 opacity-50 grayscale&#39;
+            }&quot;&gt;
+              &lt;div class=&quot;text-2xl leading-none&quot;&gt;${b.emoji}&lt;/div&gt;
+              &lt;div class=&quot;text-xs font-extrabold leading-tight break-keep&quot;&gt;${b.title}&lt;/div&gt;
+              &lt;div class=&quot;text-[10px] text-slate-500 dark:text-neutral-400 leading-snug break-keep&quot;&gt;${b.desc}&lt;/div&gt;
+            &lt;/div&gt;
+          `)
+          .join(&#39;&#39;);
+      }
+
+      // Render Weekly Chart
+      function renderWeeklyChart() {
+        updateTodayHistory();
+        const canvas = document.getElementById(&#39;weekly-chart&#39;);
+        if (!canvas || typeof Chart === &#39;undefined&#39;) return;
+
+        const labels = [];
+        const values = [];
+        const dayNames = [&#39;일&#39;, &#39;월&#39;, &#39;화&#39;, &#39;수&#39;, &#39;목&#39;, &#39;금&#39;, &#39;토&#39;];
+        const now = new Date();
+
+        for (let i = 6; i &gt;= 0; i--) {
+          const d = new Date(now);
+          d.setDate(now.getDate() - i);
+          const key = formatDateKey(d);
+          labels.push(i === 0 ? &#39;오늘&#39; : `${d.getMonth() + 1}/${d.getDate()}(${dayNames[d.getDay()]})`);
+          values.push(Number(state.historyByDate[key] || 0));
+        }
+
+        const todayPct = values[values.length - 1];
+        document.getElementById(&#39;weekly-avg-badge&#39;).textContent = `오늘 ${todayPct}%`;
+
+        const isDark = state.profile.theme === &#39;dark&#39;;
+        const gridColor = isDark ? &#39;rgba(163, 163, 163, 0.14)&#39; : &#39;rgba(148, 163, 184, 0.22)&#39;;
+        const tickColor = isDark ? &#39;#a3a3a3&#39; : &#39;#64748b&#39;;
+
+        if (weeklyChart) weeklyChart.destroy();
+
+        weeklyChart = new Chart(canvas.getContext(&#39;2d&#39;), {
+          type: &#39;bar&#39;,
+          data: {
+            labels,
+            datasets: [
+              {
+                label: &#39;루틴 달성률 (%)&#39;,
+                data: values,
+                backgroundColor: values.map((_, idx) =&gt;
+                  idx === values.length - 1 ? &#39;#6366f1&#39; : &#39;rgba(99, 102, 241, 0.38)&#39;
+                ),
+                borderRadius: 8,
+                maxBarThickness: 32
+              }
+            ]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+              legend: { display: false },
+              tooltip: { callbacks: { label: (ctx) =&gt; `달성률: ${ctx.parsed.y}%` } }
+            },
+            scales: {
+              y: {
+                beginAtZero: true,
+                max: 100,
+                grid: { color: gridColor },
+                ticks: { color: tickColor, stepSize: 25, callback: (v) =&gt; `${v}%` }
+              },
+              x: { grid: { display: false }, ticks: { color: tickColor } }
+            }
+          }
+        });
+      }
+
+      // Render Journals
+      function renderJournals() {
+        document.getElementById(&#39;journal-count&#39;).textContent = `${state.journals.length}건`;
+        const list = document.getElementById(&#39;journal-history-list&#39;);
+
+        if (state.journals.length === 0) {
+          list.innerHTML = `
+            &lt;div class=&quot;text-center py-10 text-slate-400 dark:text-neutral-500 text-sm break-keep&quot;&gt;
+              아직 작성된 회고가 없습니다. 오늘의 3줄 회고를 남겨보세요!
+            &lt;/div&gt;`;
+          return;
+        }
+
+        list.innerHTML = state.journals
+          .map((j) =&gt; `
+            &lt;article class=&quot;p-4 rounded-xl bg-slate-50 dark:bg-neutral-900 border border-slate-200/70 dark:border-neutral-800 space-y-2 min-w-0&quot;&gt;
+              &lt;div class=&quot;flex items-center justify-between gap-2&quot;&gt;
+                &lt;div class=&quot;flex items-center gap-2 flex-wrap&quot;&gt;
+                  &lt;span class=&quot;text-xs font-bold text-slate-700 dark:text-neutral-200&quot;&gt;${escapeHtml(j.date)}&lt;/span&gt;
+                  &lt;span class=&quot;text-xs font-semibold px-2 py-0.5 rounded-full bg-white dark:bg-black border border-slate-200 dark:border-neutral-800&quot;&gt;${escapeHtml(j.mood)}&lt;/span&gt;
+                &lt;/div&gt;
+                &lt;button type=&quot;button&quot; data-journal-delete=&quot;${escapeHtml(j.id)}&quot; aria-label=&quot;회고 삭제&quot; class=&quot;p-1 rounded-lg text-slate-400 hover:text-rose-500 transition shrink-0&quot;&gt;
+                  &lt;i data-lucide=&quot;trash-2&quot; class=&quot;w-3.5 h-3.5&quot;&gt;&lt;/i&gt;
+                &lt;/button&gt;
+              &lt;/div&gt;
+              &lt;div class=&quot;space-y-1 text-xs sm:text-sm leading-relaxed break-keep&quot;&gt;
+                &lt;p&gt;&lt;span class=&quot;font-semibold text-emerald-600 dark:text-emerald-400&quot;&gt;잘한 일:&lt;/span&gt; ${escapeHtml(j.good)}&lt;/p&gt;
+                ${j.improve ? `&lt;p&gt;&lt;span class=&quot;font-semibold text-amber-600 dark:text-amber-400&quot;&gt;개선할 점:&lt;/span&gt; ${escapeHtml(j.improve)}&lt;/p&gt;` : &#39;&#39;}
+                ${j.tomorrow ? `&lt;p&gt;&lt;span class=&quot;font-semibold text-brand-600 dark:text-brand-400&quot;&gt;내일의 나에게:&lt;/span&gt; ${escapeHtml(j.tomorrow)}&lt;/p&gt;` : &#39;&#39;}
+              &lt;/div&gt;
+            &lt;/article&gt;
+          `)
+          .join(&#39;&#39;);
+        if (window.lucide) lucide.createIcons();
+      }
+
+      // Confirmation Modal Helpers
+      function openConfirm(title, message, onOk) {
+        document.getElementById(&#39;confirm-title&#39;).textContent = title;
+        document.getElementById(&#39;confirm-message&#39;).textContent = message;
+        pendingConfirmAction = onOk;
+        const modal = document.getElementById(&#39;modal-confirm&#39;);
+        modal.classList.remove(&#39;hidden&#39;);
+        modal.classList.add(&#39;flex&#39;);
+      }
+
+      function closeConfirm() {
+        const modal = document.getElementById(&#39;modal-confirm&#39;);
+        modal.classList.add(&#39;hidden&#39;);
+        modal.classList.remove(&#39;flex&#39;);
+        pendingConfirmAction = null;
+      }
+
+      function renderAll() {
+        updateTodayHistory();
+        renderDDays();
+        renderSummary();
+        renderRoutines();
+        renderRoadmaps();
+        renderTips();
+        renderMonthlyGoals();
+        renderTodos();
+        renderTimerDisplay();
+        renderAmbientButton();
+        renderFocusLogs();
+        renderJournals();
+        renderMonthlyHeatmap();
+        renderAchievements();
+        if (activeTab === &#39;journal&#39;) {
+          renderWeeklyChart();
+        }
+      }
+
+      // Event Bindings
+      function bindEvents() {
+        document.querySelectorAll(&#39;.tab-btn&#39;).forEach((btn) =&gt; {
+          btn.addEventListener(&#39;click&#39;, () =&gt; switchTab(btn.dataset.tab));
+        });
+
+        document.getElementById(&#39;btn-jump-monthly&#39;).addEventListener(&#39;click&#39;, () =&gt; switchTab(&#39;monthly&#39;));
+
+        // Theme toggle
+        document.getElementById(&#39;btn-theme-toggle&#39;).addEventListener(&#39;click&#39;, () =&gt; {
+          state.profile.theme = state.profile.theme === &#39;dark&#39; ? &#39;light&#39; : &#39;dark&#39;;
+          saveState();
+          applyTheme();
+        });
+
+        // Next quote
+        document.getElementById(&#39;btn-next-quote&#39;).addEventListener(&#39;click&#39;, () =&gt; {
+          state.quoteIndex = (state.quoteIndex + 1) % QUOTES.length;
+          saveState();
+          renderSummary();
+        });
+
+        // D-Day Modal &amp; List
+        const ddayModal = document.getElementById(&#39;modal-dday&#39;);
+        document.getElementById(&#39;btn-open-dday&#39;).addEventListener(&#39;click&#39;, () =&gt; {
+          document.getElementById(&#39;input-dday-title&#39;).value = &#39;&#39;;
+          document.getElementById(&#39;input-dday-date&#39;).value = getFutureDateKey(30);
+          ddayModal.classList.remove(&#39;hidden&#39;);
+          ddayModal.classList.add(&#39;flex&#39;);
+        });
+
+        document.getElementById(&#39;btn-close-dday&#39;).addEventListener(&#39;click&#39;, () =&gt; {
+          ddayModal.classList.add(&#39;hidden&#39;);
+          ddayModal.classList.remove(&#39;flex&#39;);
+        });
+
+        ddayModal.addEventListener(&#39;click&#39;, (e) =&gt; {
+          if (e.target === ddayModal) {
+            ddayModal.classList.add(&#39;hidden&#39;);
+            ddayModal.classList.remove(&#39;flex&#39;);
+          }
+        });
+
+        document.getElementById(&#39;form-dday&#39;).addEventListener(&#39;submit&#39;, (e) =&gt; {
+          e.preventDefault();
+          const title = document.getElementById(&#39;input-dday-title&#39;).value.trim();
+          const date = document.getElementById(&#39;input-dday-date&#39;).value;
+          if (!title || !date) return;
+          if (!Array.isArray(state.ddays)) state.ddays = [];
+          state.ddays.push({ id: &#39;d_&#39; + Date.now(), title, date });
+          saveState();
+          renderDDays();
+          ddayModal.classList.add(&#39;hidden&#39;);
+          ddayModal.classList.remove(&#39;flex&#39;);
+          showToast(&#39;핵심 D-Day를 추가했어요!&#39;, &#39;success&#39;);
+        });
+
+        document.getElementById(&#39;dday-list&#39;).addEventListener(&#39;click&#39;, (e) =&gt; {
+          const del = e.target.closest(&#39;button[data-dday-delete]&#39;);
+          if (!del) return;
+          state.ddays = (state.ddays || []).filter((d) =&gt; d.id !== del.dataset.ddayDelete);
+          saveState();
+          renderDDays();
+          showToast(&#39;D-Day를 삭제했어요.&#39;, &#39;info&#39;);
+        });
+
+        // Water cups
+        document.getElementById(&#39;water-cups-grid&#39;).addEventListener(&#39;click&#39;, (e) =&gt; {
+          const btn = e.target.closest(&#39;button[data-cup]&#39;);
+          if (!btn) return;
+          const cup = Number(btn.dataset.cup);
+          state.waterCups = state.waterCups === cup ? cup - 1 : cup;
+          if (state.waterCups === 8) showToast(&#39;💧 오늘 목표 수분 8잔 달성! 완벽해요!&#39;, &#39;success&#39;);
+          saveState();
+          renderSummary();
+          renderAchievements();
+        });
+
+        document.getElementById(&#39;btn-water-add&#39;).addEventListener(&#39;click&#39;, () =&gt; {
+          if (state.waterCups &lt; 8) {
+            state.waterCups += 1;
+            if (state.waterCups === 8) showToast(&#39;💧 오늘 목표 수분 8잔 달성! 완벽해요!&#39;, &#39;success&#39;);
+            saveState();
+            renderSummary();
+            renderAchievements();
+          } else {
+            showToast(&#39;이미 오늘 수분 목표 8잔을 달성했어요!&#39;, &#39;info&#39;);
+          }
+        });
+
+        // Routine filters
+        document.querySelectorAll(&#39;.time-filter-btn&#39;).forEach((btn) =&gt; {
+          btn.addEventListener(&#39;click&#39;, () =&gt; {
+            routineTimeFilter = btn.dataset.timeFilter;
+            document.querySelectorAll(&#39;.time-filter-btn&#39;).forEach((b) =&gt; {
+              const active = b.dataset.timeFilter === routineTimeFilter;
+              b.className = active
+                ? &#39;time-filter-btn px-3 py-1.5 rounded-full text-xs font-semibold bg-slate-900 text-white dark:bg-white dark:text-black transition whitespace-nowrap&#39;
+                : &#39;time-filter-btn px-3 py-1.5 rounded-full text-xs font-semibold bg-slate-100 dark:bg-neutral-900 text-slate-600 dark:text-neutral-300 hover:bg-slate-200 dark:hover:bg-neutral-800 transition whitespace-nowrap&#39;;
+            });
+            renderRoutines();
+          });
+        });
+
+        // Add routine
+        document.getElementById(&#39;form-add-routine&#39;).addEventListener(&#39;submit&#39;, (e) =&gt; {
+          e.preventDefault();
+          const input = document.getElementById(&#39;input-routine-title&#39;);
+          const timeSel = document.getElementById(&#39;select-routine-time&#39;);
+          const title = input.value.trim();
+          if (!title) return;
+          state.routines.push({ id: &#39;r_&#39; + Date.now(), title, time: timeSel.value, done: false });
+          input.value = &#39;&#39;;
+          saveState();
+          renderAll();
+          showToast(&#39;새 루틴이 추가되었어요!&#39;, &#39;info&#39;);
+        });
+
+        // Routine Edit Modal
+        const editRoutineModal = document.getElementById(&#39;modal-edit-routine&#39;);
+        document.getElementById(&#39;btn-close-edit-routine&#39;).addEventListener(&#39;click&#39;, () =&gt; {
+          editRoutineModal.classList.add(&#39;hidden&#39;);
+          editRoutineModal.classList.remove(&#39;flex&#39;);
+          editingRoutineId = null;
+        });
+
+        editRoutineModal.addEventListener(&#39;click&#39;, (e) =&gt; {
+          if (e.target === editRoutineModal) {
+            editRoutineModal.classList.add(&#39;hidden&#39;);
+            editRoutineModal.classList.remove(&#39;flex&#39;);
+            editingRoutineId = null;
+          }
+        });
+
+        document.getElementById(&#39;form-edit-routine&#39;).addEventListener(&#39;submit&#39;, (e) =&gt; {
+          e.preventDefault();
+          if (!editingRoutineId) return;
+          const item = state.routines.find((r) =&gt; r.id === editingRoutineId);
+          if (item) {
+            item.title = document.getElementById(&#39;edit-routine-title&#39;).value.trim() || item.title;
+            item.time = document.getElementById(&#39;edit-routine-time&#39;).value;
+            saveState();
+            renderAll();
+            showToast(&#39;루틴을 수정했어요!&#39;, &#39;success&#39;);
+          }
+          editRoutineModal.classList.add(&#39;hidden&#39;);
+          editRoutineModal.classList.remove(&#39;flex&#39;);
+          editingRoutineId = null;
+        });
+
+        // Routine list delegation
+        document.getElementById(&#39;routine-list&#39;).addEventListener(&#39;change&#39;, (e) =&gt; {
+          const cb = e.target.closest(&#39;input[data-routine-toggle]&#39;);
+          if (!cb) return;
+          const item = state.routines.find((r) =&gt; r.id === cb.dataset.routineToggle);
+          if (!item) return;
+          item.done = cb.checked;
+          if (item.done) {
+            addXp(15, &#39;루틴 완료&#39;);
+          } else {
+            state.xp = Math.max(0, state.xp - 15);
+          }
+          saveState();
+          renderAll();
+        });
+
+        document.getElementById(&#39;routine-list&#39;).addEventListener(&#39;click&#39;, (e) =&gt; {
+          const editBtn = e.target.closest(&#39;button[data-routine-edit]&#39;);
+          if (editBtn) {
+            const item = state.routines.find((r) =&gt; r.id === editBtn.dataset.routineEdit);
+            if (!item) return;
+            editingRoutineId = item.id;
+            document.getElementById(&#39;edit-routine-title&#39;).value = item.title;
+            document.getElementById(&#39;edit-routine-time&#39;).value = item.time;
+            editRoutineModal.classList.remove(&#39;hidden&#39;);
+            editRoutineModal.classList.add(&#39;flex&#39;);
+            return;
+          }
+          const del = e.target.closest(&#39;button[data-routine-delete]&#39;);
+          if (!del) return;
+          state.routines = state.routines.filter((r) =&gt; r.id !== del.dataset.routineDelete);
+          saveState();
+          renderAll();
+          showToast(&#39;루틴을 삭제했어요.&#39;, &#39;info&#39;);
+        });
+
+        document.getElementById(&#39;btn-reset-routines&#39;).addEventListener(&#39;click&#39;, () =&gt; {
+          openConfirm(&#39;오늘 루틴 체크 초기화&#39;, &#39;오늘 완료 표시한 모든 루틴 체크를 해제할까요?&#39;, () =&gt; {
+            state.routines.forEach((r) =&gt; { r.done = false; });
+            state.celebratedToday = false;
+            saveState();
+            renderAll();
+            showToast(&#39;오늘 루틴 체크를 초기화했어요.&#39;, &#39;info&#39;);
+          });
+        });
+
+        // Roadmap Events
+        document.querySelectorAll(&#39;.roadmap-cat-btn&#39;).forEach((btn) =&gt; {
+          btn.addEventListener(&#39;click&#39;, () =&gt; {
+            activeRoadmapCat = btn.dataset.roadmapCat;
+            renderRoadmaps();
+          });
+        });
+
+        document.getElementById(&#39;form-add-roadmap-item&#39;).addEventListener(&#39;submit&#39;, (e) =&gt; {
+          e.preventDefault();
+          const input = document.getElementById(&#39;input-roadmap-title&#39;);
+          const phaseSel = document.getElementById(&#39;select-roadmap-phase&#39;);
+          const title = input.value.trim();
+          if (!title) return;
+          if (!state.roadmaps[activeRoadmapCat]) state.roadmaps[activeRoadmapCat] = [];
+          state.roadmaps[activeRoadmapCat].push({
+            id: `${activeRoadmapCat}_${Date.now()}`,
+            phase: Number(phaseSel.value) || 0,
+            title,
+            tip: &#39;&#39;,
+            done: false
+          });
+          input.value = &#39;&#39;;
+          saveState();
+          renderRoadmaps();
+          showToast(&#39;로드맵 항목을 추가했어요!&#39;, &#39;info&#39;);
+        });
+
+        document.getElementById(&#39;roadmap-phases-container&#39;).addEventListener(&#39;change&#39;, (e) =&gt; {
+          const cb = e.target.closest(&#39;input[data-rm-toggle]&#39;);
+          if (!cb) return;
+          const list = state.roadmaps[activeRoadmapCat] || [];
+          const item = list.find((i) =&gt; i.id === cb.dataset.rmToggle);
+          if (!item) return;
+          item.done = cb.checked;
+          if (item.done) {
+            addXp(25, &#39;로드맵 마일스톤 달성&#39;);
+            if (computeRoadmapPct(activeRoadmapCat) === 100) {
+              fireConfetti();
+              showToast(`🏆 ${ROADMAP_META[activeRoadmapCat].title} 100% 정복!`, &#39;success&#39;);
+            }
+          } else {
+            state.xp = Math.max(0, state.xp - 25);
+          }
+          saveState();
+          renderSummary();
+          renderRoadmaps();
+          renderAchievements();
+        });
+
+        document.getElementById(&#39;roadmap-phases-container&#39;).addEventListener(&#39;click&#39;, (e) =&gt; {
+          const toTodoBtn = e.target.closest(&#39;button[data-rm-to-todo]&#39;);
+          if (toTodoBtn) {
+            const list = state.roadmaps[activeRoadmapCat] || [];
+            const item = list.find((i) =&gt; i.id === toTodoBtn.dataset.rmToTodo);
+            if (!item) return;
+            state.todos.unshift({
+              id: &#39;t_&#39; + Date.now(),
+              title: item.title,
+              tag: &#39;업무/공부&#39;,
+              priority: true,
+              done: false
+            });
+            saveState();
+            renderAll();
+            showToast(&#39;오늘의 핵심 할 일로 보냈어요!&#39;, &#39;success&#39;);
+            return;
+          }
+
+          const delBtn = e.target.closest(&#39;button[data-rm-delete]&#39;);
+          if (delBtn) {
+            state.roadmaps[activeRoadmapCat] = (state.roadmaps[activeRoadmapCat] || []).filter(
+              (i) =&gt; i.id !== delBtn.dataset.rmDelete
+            );
+            saveState();
+            renderRoadmaps();
+            showToast(&#39;로드맵 항목을 삭제했어요.&#39;, &#39;info&#39;);
+          }
+        });
+
+        // Life &amp; Health Tips Events
+        document.getElementById(&#39;input-tip-search&#39;).addEventListener(&#39;input&#39;, (e) =&gt; {
+          tipSearchQuery = e.target.value || &#39;&#39;;
+          renderTips();
+        });
+
+        document.querySelectorAll(&#39;.tip-cat-btn&#39;).forEach((btn) =&gt; {
+          btn.addEventListener(&#39;click&#39;, () =&gt; {
+            activeTipCat = btn.dataset.tipCat;
+            document.querySelectorAll(&#39;.tip-cat-btn&#39;).forEach((b) =&gt; {
+              const active = b.dataset.tipCat === activeTipCat;
+              b.className = active
+                ? &#39;tip-cat-btn px-3 py-1.5 rounded-full text-xs font-semibold bg-slate-900 text-white dark:bg-white dark:text-black transition whitespace-nowrap&#39;
+                : &#39;tip-cat-btn px-3 py-1.5 rounded-full text-xs font-semibold bg-slate-100 dark:bg-neutral-900 text-slate-600 dark:text-neutral-300 hover:bg-slate-200 dark:hover:bg-neutral-800 transition whitespace-nowrap&#39;;
+            });
+            renderTips();
+          });
+        });
+
+        document.getElementById(&#39;btn-random-tip&#39;).addEventListener(&#39;click&#39;, () =&gt; {
+          const pick = LIFE_HEALTH_TIPS[Math.floor(Math.random() * LIFE_HEALTH_TIPS.length)];
+          const meta = TIP_CAT_META[pick.cat] || TIP_CAT_META.life;
+          document.getElementById(&#39;random-tip-title&#39;).textContent = `${meta.label} · ${pick.title}`;
+          document.getElementById(&#39;random-tip-desc&#39;).textContent = pick.desc;
+          document.getElementById(&#39;random-tip-banner&#39;).classList.remove(&#39;hidden&#39;);
+          if (window.lucide) lucide.createIcons();
+        });
+
+        document.getElementById(&#39;btn-close-random-tip&#39;).addEventListener(&#39;click&#39;, () =&gt; {
+          document.getElementById(&#39;random-tip-banner&#39;).classList.add(&#39;hidden&#39;);
+        });
+
+        document.getElementById(&#39;tips-grid&#39;).addEventListener(&#39;click&#39;, (e) =&gt; {
+          const bm = e.target.closest(&#39;button[data-tip-bookmark]&#39;);
+          if (bm) {
+            const id = bm.dataset.tipBookmark;
+            if (!Array.isArray(state.bookmarkedTips)) state.bookmarkedTips = [];
+            if (state.bookmarkedTips.includes(id)) {
+              state.bookmarkedTips = state.bookmarkedTips.filter((x) =&gt; x !== id);
+              showToast(&#39;북마크에서 해제했어요.&#39;, &#39;info&#39;);
+            } else {
+              state.bookmarkedTips.push(id);
+              showToast(&#39;꿀팁을 북마크에 저장했어요!&#39;, &#39;success&#39;);
+            }
+            saveState();
+            renderTips();
+            return;
+          }
+
+          const toRoutine = e.target.closest(&#39;button[data-tip-to-routine]&#39;);
+          if (toRoutine) {
+            const tip = LIFE_HEALTH_TIPS.find((t) =&gt; t.id === toRoutine.dataset.tipToRoutine);
+            if (!tip) return;
+            const meta = TIP_CAT_META[tip.cat] || TIP_CAT_META.life;
+            state.routines.push({
+              id: &#39;r_&#39; + Date.now(),
+              title: tip.title,
+              time: meta.defaultTime || &#39;morning&#39;,
+              done: false
+            });
+            saveState();
+            renderAll();
+            showToast(&#39;오늘의 루틴에 추가했어요!&#39;, &#39;success&#39;);
+          }
+        });
+
+        // Monthly Goals Events
+        document.getElementById(&#39;form-add-monthly&#39;).addEventListener(&#39;submit&#39;, (e) =&gt; {
+          e.preventDefault();
+          const input = document.getElementById(&#39;input-monthly-title&#39;);
+          const catSel = document.getElementById(&#39;select-monthly-category&#39;);
+          const title = input.value.trim();
+          if (!title) return;
+          state.monthlyGoals.unshift({ id: &#39;m_&#39; + Date.now(), title, category: catSel.value, progress: 0 });
+          input.value = &#39;&#39;;
+          saveState();
+          renderAll();
+          showToast(&#39;이번 달 목표가 추가되었어요!&#39;, &#39;info&#39;);
+        });
+
+        document.getElementById(&#39;monthly-goal-list&#39;).addEventListener(&#39;input&#39;, (e) =&gt; {
+          const range = e.target.closest(&#39;input[data-monthly-range]&#39;);
+          if (!range) return;
+          const goal = state.monthlyGoals.find((g) =&gt; g.id === range.dataset.monthlyRange);
+          if (!goal) return;
+          const prev = Number(goal.progress) || 0;
+          const next = Math.min(100, Math.max(0, Number(range.value) || 0));
+          goal.progress = next;
+          if (prev &lt; 100 &amp;&amp; next === 100) addXp(40, &#39;한 달 목표 100% 달성&#39;);
+          saveState();
+          renderSummary();
+          renderMonthlyGoals();
+        });
+
+        document.getElementById(&#39;monthly-goal-list&#39;).addEventListener(&#39;click&#39;, (e) =&gt; {
+          const stepBtn = e.target.closest(&#39;button[data-monthly-step]&#39;);
+          if (stepBtn) {
+            const goal = state.monthlyGoals.find((g) =&gt; g.id === stepBtn.dataset.monthlyStep);
+            if (!goal) return;
+            const prev = Number(goal.progress) || 0;
+            const next = Math.min(100, prev + Number(stepBtn.dataset.delta || 10));
+            goal.progress = next;
+            if (prev &lt; 100 &amp;&amp; next === 100) addXp(40, &#39;한 달 목표 100% 달성&#39;);
+            saveState();
+            renderAll();
+            return;
+          }
+
+          const completeBtn = e.target.closest(&#39;button[data-monthly-complete]&#39;);
+          if (completeBtn) {
+            const goal = state.monthlyGoals.find((g) =&gt; g.id === completeBtn.dataset.monthlyComplete);
+            if (!goal) return;
+            const prev = Number(goal.progress) || 0;
+            goal.progress = 100;
+            if (prev &lt; 100) addXp(40, &#39;한 달 목표 100% 달성&#39;);
+            saveState();
+            renderAll();
+            return;
+          }
+
+          const delBtn = e.target.closest(&#39;button[data-monthly-delete]&#39;);
+          if (delBtn) {
+            state.monthlyGoals = state.monthlyGoals.filter((g) =&gt; g.id !== delBtn.dataset.monthlyDelete);
+            saveState();
+            renderAll();
+            showToast(&#39;한 달 목표를 삭제했어요.&#39;, &#39;info&#39;);
+          }
+        });
+
+        // Timer presets &amp; Custom minutes &amp; Ambient sound
+        document.querySelectorAll(&#39;.timer-preset-btn&#39;).forEach((btn) =&gt; {
+          btn.addEventListener(&#39;click&#39;, () =&gt; {
+            if (timerInterval) {
+              clearInterval(timerInterval);
+              timerInterval = null;
+            }
+            timerRunning = false;
+            const mins = Number(btn.dataset.timerMin);
+            timerTotalSec = mins * 60;
+            timerRemainingSec = mins * 60;
+            timerModeLabel = btn.dataset.timerLabel;
+            document.getElementById(&#39;input-custom-min&#39;).value = String(mins);
+
+            document.querySelectorAll(&#39;.timer-preset-btn&#39;).forEach((b) =&gt; {
+              const active = b === btn;
+              b.className = active
+                ? &#39;timer-preset-btn px-3 py-1.5 rounded-full text-xs font-semibold bg-brand-600 text-white transition whitespace-nowrap&#39;
+                : &#39;timer-preset-btn px-3 py-1.5 rounded-full text-xs font-semibold bg-slate-100 dark:bg-neutral-900 text-slate-600 dark:text-neutral-300 hover:bg-slate-200 dark:hover:bg-neutral-800 transition whitespace-nowrap&#39;;
+            });
+            renderTimerDisplay();
+          });
+        });
+
+        document.getElementById(&#39;btn-apply-custom-min&#39;).addEventListener(&#39;click&#39;, () =&gt; {
+          const val = Math.min(180, Math.max(1, Number(document.getElementById(&#39;input-custom-min&#39;).value) || 25));
+          if (timerInterval) {
+            clearInterval(timerInterval);
+            timerInterval = null;
+          }
+          timerRunning = false;
+          timerTotalSec = val * 60;
+          timerRemainingSec = val * 60;
+          timerModeLabel = `커스텀 ${val}분`;
+          renderTimerDisplay();
+          showToast(`타이머를 ${val}분으로 설정했어요.`, &#39;info&#39;);
+        });
+
+        document.getElementById(&#39;btn-ambient-toggle&#39;).addEventListener(&#39;click&#39;, toggleAmbientNoise);
+
+        document.getElementById(&#39;btn-timer-toggle&#39;).addEventListener(&#39;click&#39;, () =&gt; {
+          if (timerRunning) {
+            clearInterval(timerInterval);
+            timerInterval = null;
+            timerRunning = false;
+            renderTimerDisplay();
+          } else {
+            if (timerRemainingSec &lt;= 0) timerRemainingSec = timerTotalSec;
+            timerRunning = true;
+            renderTimerDisplay();
+            if (timerInterval) clearInterval(timerInterval);
+            timerInterval = setInterval(() =&gt; {
+              timerRemainingSec -= 1;
+              if (timerRemainingSec &lt;= 0) {
+                clearInterval(timerInterval);
+                timerInterval = null;
+                timerRunning = false;
+                timerRemainingSec = 0;
+                renderTimerDisplay();
+                recordFocusSession();
+              } else {
+                renderTimerDisplay();
+              }
+            }, 1000);
+          }
+        });
+
+        document.getElementById(&#39;btn-timer-reset&#39;).addEventListener(&#39;click&#39;, () =&gt; {
+          if (timerInterval) {
+            clearInterval(timerInterval);
+            timerInterval = null;
+          }
+          timerRunning = false;
+          timerRemainingSec = timerTotalSec;
+          renderTimerDisplay();
+        });
+
+        document.getElementById(&#39;btn-sound-toggle&#39;).addEventListener(&#39;click&#39;, () =&gt; {
+          soundEnabled = !soundEnabled;
+          document.getElementById(&#39;icon-sound&#39;).setAttribute(&#39;data-lucide&#39;, soundEnabled ? &#39;volume-2&#39; : &#39;volume-x&#39;);
+          if (window.lucide) lucide.createIcons();
+          showToast(soundEnabled ? &#39;타이머 알림음 켜짐&#39; : &#39;타이머 알림음 꺼짐&#39;, &#39;info&#39;);
+        });
+
+        document.getElementById(&#39;btn-quick-log-focus&#39;).addEventListener(&#39;click&#39;, () =&gt; {
+          recordFocusSession();
+        });
+
+        // Todos
+        document.querySelectorAll(&#39;.todo-filter-btn&#39;).forEach((btn) =&gt; {
+          btn.addEventListener(&#39;click&#39;, () =&gt; {
+            todoFilter = btn.dataset.todoFilter;
+            document.querySelectorAll(&#39;.todo-filter-btn&#39;).forEach((b) =&gt; {
+              const active = b.dataset.todoFilter === todoFilter;
+              b.className = active
+                ? &#39;todo-filter-btn px-3 py-1.5 rounded-full text-xs font-semibold bg-slate-900 text-white dark:bg-white dark:text-black transition whitespace-nowrap&#39;
+                : &#39;todo-filter-btn px-3 py-1.5 rounded-full text-xs font-semibold bg-slate-100 dark:bg-neutral-900 text-slate-600 dark:text-neutral-300 transition whitespace-nowrap&#39;;
+            });
+            renderTodos();
+          });
+        });
+
+        document.getElementById(&#39;form-add-todo&#39;).addEventListener(&#39;submit&#39;, (e) =&gt; {
+          e.preventDefault();
+          const input = document.getElementById(&#39;input-todo-title&#39;);
+          const tagSel = document.getElementById(&#39;select-todo-tag&#39;);
+          const title = input.value.trim();
+          if (!title) return;
+          state.todos.unshift({ id: &#39;t_&#39; + Date.now(), title, tag: tagSel.value, priority: false, done: false });
+          input.value = &#39;&#39;;
+          saveState();
+          renderAll();
+          showToast(&#39;할 일이 추가되었어요!&#39;, &#39;info&#39;);
+        });
+
+        document.getElementById(&#39;todo-list&#39;).addEventListener(&#39;change&#39;, (e) =&gt; {
+          const cb = e.target.closest(&#39;input[data-todo-toggle]&#39;);
+          if (!cb) return;
+          const item = state.todos.find((t) =&gt; t.id === cb.dataset.todoToggle);
+          if (!item) return;
+          item.done = cb.checked;
+          if (item.done) {
+            addXp(20, &#39;할 일 완료&#39;);
+          } else {
+            state.xp = Math.max(0, state.xp - 20);
+          }
+          saveState();
+          renderAll();
+        });
+
+        document.getElementById(&#39;todo-list&#39;).addEventListener(&#39;click&#39;, (e) =&gt; {
+          const star = e.target.closest(&#39;button[data-todo-star]&#39;);
+          if (star) {
+            const item = state.todos.find((t) =&gt; t.id === star.dataset.todoStar);
+            if (item) {
+              item.priority = !item.priority;
+              saveState();
+              renderTodos();
+            }
+            return;
+          }
+          const del = e.target.closest(&#39;button[data-todo-delete]&#39;);
+          if (del) {
+            state.todos = state.todos.filter((t) =&gt; t.id !== del.dataset.todoDelete);
+            saveState();
+            renderAll();
+            showToast(&#39;할 일을 삭제했어요.&#39;, &#39;info&#39;);
+          }
+        });
+
+        // Mood selector
+        document.getElementById(&#39;mood-selector&#39;).addEventListener(&#39;click&#39;, (e) =&gt; {
+          const btn = e.target.closest(&#39;button[data-mood]&#39;);
+          if (!btn) return;
+          selectedMood = btn.dataset.mood;
+          document.querySelectorAll(&#39;.mood-btn&#39;).forEach((b) =&gt; {
+            const active = b.dataset.mood === selectedMood;
+            b.className = active
+              ? &#39;mood-btn py-2 px-1 rounded-xl border border-brand-500 bg-brand-50 dark:bg-neutral-900 text-brand-700 dark:text-brand-300 text-xs font-semibold transition whitespace-nowrap&#39;
+              : &#39;mood-btn py-2 px-1 rounded-xl border border-slate-200 dark:border-neutral-800 text-xs font-semibold hover:bg-slate-100 dark:hover:bg-neutral-900 transition whitespace-nowrap&#39;;
+          });
+        });
+
+        // Journal submit
+        document.getElementById(&#39;form-journal&#39;).addEventListener(&#39;submit&#39;, (e) =&gt; {
+          e.preventDefault();
+          const good = document.getElementById(&#39;journal-good&#39;).value.trim();
+          const improve = document.getElementById(&#39;journal-improve&#39;).value.trim();
+          const tomorrow = document.getElementById(&#39;journal-tomorrow&#39;).value.trim();
+          if (!good) return;
+
+          const today = getTodayKey();
+          state.journals.unshift({ id: &#39;j_&#39; + Date.now(), date: today, mood: selectedMood, good, improve, tomorrow });
+
+          document.getElementById(&#39;journal-good&#39;).value = &#39;&#39;;
+          document.getElementById(&#39;journal-improve&#39;).value = &#39;&#39;;
+          document.getElementById(&#39;journal-tomorrow&#39;).value = &#39;&#39;;
+
+          if (state.journalXpDate !== today) {
+            state.journalXpDate = today;
+            addXp(25, &#39;오늘의 회고 작성&#39;);
+          } else {
+            showToast(&#39;회고가 저장되었어요!&#39;, &#39;success&#39;);
+          }
+          saveState();
+          renderSummary();
+          renderJournals();
+          renderAchievements();
+        });
+
+        document.getElementById(&#39;journal-history-list&#39;).addEventListener(&#39;click&#39;, (e) =&gt; {
+          const del = e.target.closest(&#39;button[data-journal-delete]&#39;);
+          if (!del) return;
+          state.journals = state.journals.filter((j) =&gt; j.id !== del.dataset.journalDelete);
+          saveState();
+          renderJournals();
+          renderAchievements();
+          showToast(&#39;회고 기록을 삭제했어요.&#39;, &#39;info&#39;);
+        });
+
+        // Settings modal
+        const settingsModal = document.getElementById(&#39;modal-settings&#39;);
+        document.getElementById(&#39;btn-open-settings&#39;).addEventListener(&#39;click&#39;, () =&gt; {
+          document.getElementById(&#39;settings-nickname&#39;).value = state.profile.nickname || &#39;&#39;;
+          document.getElementById(&#39;settings-motto&#39;).value = state.profile.motto || &#39;&#39;;
+          settingsModal.classList.remove(&#39;hidden&#39;);
+          settingsModal.classList.add(&#39;flex&#39;);
+        });
+
+        document.getElementById(&#39;btn-close-settings&#39;).addEventListener(&#39;click&#39;, () =&gt; {
+          settingsModal.classList.add(&#39;hidden&#39;);
+          settingsModal.classList.remove(&#39;flex&#39;);
+        });
+
+        settingsModal.addEventListener(&#39;click&#39;, (e) =&gt; {
+          if (e.target === settingsModal) {
+            settingsModal.classList.add(&#39;hidden&#39;);
+            settingsModal.classList.remove(&#39;flex&#39;);
+          }
+        });
+
+        document.getElementById(&#39;form-settings&#39;).addEventListener(&#39;submit&#39;, (e) =&gt; {
+          e.preventDefault();
+          state.profile.nickname = document.getElementById(&#39;settings-nickname&#39;).value.trim() || &#39;갓생러&#39;;
+          state.profile.motto = document.getElementById(&#39;settings-motto&#39;).value.trim() || &#39;작은 루틴이 모여 단단한 나를 만든다.&#39;;
+          saveState();
+          renderSummary();
+          settingsModal.classList.add(&#39;hidden&#39;);
+          settingsModal.classList.remove(&#39;flex&#39;);
+          showToast(&#39;설정을 저장했어요!&#39;, &#39;success&#39;);
+        });
+
+        // Export JSON
+        document.getElementById(&#39;btn-export-json&#39;).addEventListener(&#39;click&#39;, () =&gt; {
+          try {
+            const blob = new Blob([JSON.stringify(state, null, 2)], { type: &#39;application/json&#39; });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement(&#39;a&#39;);
+            a.href = url;
+            a.download = `road-to-bilion-backup-${getTodayKey()}.json`;
+            document.body.appendChild(a);
+            a.click();
+            a.remove();
+            URL.revokeObjectURL(url);
+            showToast(&#39;데이터 백업 파일을 내보냈어요.&#39;, &#39;success&#39;);
+          } catch (e) {
+            showToast(&#39;내보내기에 실패했어요.&#39;, &#39;info&#39;);
+          }
+        });
+
+        // Import JSON
+        document.getElementById(&#39;input-import-json&#39;).addEventListener(&#39;change&#39;, (e) =&gt; {
+          const file = e.target.files &amp;&amp; e.target.files[0];
+          if (!file) return;
+          const reader = new FileReader();
+          reader.onload = () =&gt; {
+            try {
+              const parsed = JSON.parse(String(reader.result));
+              if (!parsed || typeof parsed !== &#39;object&#39; || !Array.isArray(parsed.routines)) {
+                showToast(&#39;올바른 Road To Bilion 백업 파일이 아니에요.&#39;, &#39;info&#39;);
+                return;
+              }
+              state = { ...getDefaultState(), ...parsed };
+              saveState();
+              applyTheme();
+              renderAll();
+              settingsModal.classList.add(&#39;hidden&#39;);
+              settingsModal.classList.remove(&#39;flex&#39;);
+              showToast(&#39;백업 데이터를 불러왔어요!&#39;, &#39;success&#39;);
+            } catch (err) {
+              showToast(&#39;JSON 파일을 읽는 중 오류가 발생했어요.&#39;, &#39;info&#39;);
+            }
+          };
+          reader.readAsText(file);
+          e.target.value = &#39;&#39;;
+        });
+
+        // Reset all
+        document.getElementById(&#39;btn-reset-all-prompt&#39;).addEventListener(&#39;click&#39;, () =&gt; {
+          settingsModal.classList.add(&#39;hidden&#39;);
+          settingsModal.classList.remove(&#39;flex&#39;);
+          openConfirm(&#39;전체 데이터 초기화&#39;, &#39;루틴, D-Day, 로드맵, 한 달 목표, 할 일, 회고, 북마크, 등급과 레벨을 모두 처음 상태로 되돌릴까요?&#39;, () =&gt; {
+            state = getDefaultState();
+            saveState();
+            applyTheme();
+            renderAll();
+            showToast(&#39;전체 데이터를 초기화했어요.&#39;, &#39;info&#39;);
+          });
+        });
+
+        // Confirm modal buttons
+        document.getElementById(&#39;btn-confirm-cancel&#39;).addEventListener(&#39;click&#39;, closeConfirm);
+        document.getElementById(&#39;btn-confirm-ok&#39;).addEventListener(&#39;click&#39;, () =&gt; {
+          const action = pendingConfirmAction;
+          closeConfirm();
+          if (typeof action === &#39;function&#39;) action();
+        });
+      }
+
+      // Init
+      setupPwaAssets();
+      bindEvents();
+      applyTheme();
+      renderAll();
+      if (window.lucide) lucide.createIcons();
+    })();
+  &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
